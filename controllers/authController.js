@@ -204,6 +204,7 @@ exports.resetPassword = catchAsync(async function (req, res, next) {
     passwordResetToken: resetToken,
     passwordResetExpires: { $gt: Date.now() },
   });
+
   // 2. Kiem tra neu token hop le(con thoi gian su dung) thi doi mat khau
   if (!user) {
     return next(new AppError('Invalid token reset password!!'), 400);

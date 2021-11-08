@@ -70,13 +70,14 @@ exports.getFacets = catchAsync(async (req, res, next) => {
     return next(new AppError('ID không hợp lệ', 400));
   }
 
-  const filter = { categoryPath: new RegExp(`${category.path}`) };
-  facets = await Product.aggregate([
-    { $match: filter },
-    { $unwind: '$facets' },
+  const f = { categoryPath: new RegExp(`${category.path}`) };
+  console.log('test');
+  const filters = await Product.aggregate([
+    { $match: f },
+    { $unwind: '$filters' },
     {
       $group: {
-        _id: '$facets',
+        _id: '$filters',
         count: { $sum: 1 },
       },
     },
@@ -85,13 +86,13 @@ exports.getFacets = catchAsync(async (req, res, next) => {
 
   res.status(200).json({
     status: 'success',
-    data: facets,
+    data: filters,
   });
 });
 
 exports.getProduct = factory.getOne(Product);
-
 exports.createProduct = factory.createOne(Product);
+
 exports.deleteProduct = catchAsync(async (req, res, next) => {
   const product = await Product.findByIdAndDelete(req.params.id);
 
