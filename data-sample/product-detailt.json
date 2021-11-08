@@ -1,0 +1,73 @@
+[
+  {
+    "_id": "794222",
+    "name": "Black Blurry Logo Hoodie",
+    "category": "320",
+    "brand": "Balenciaga",
+    "details": ["Chat vai"],
+    "filters": ["000123", "000200", "000122", "000124", "312908", "312870"]
+  },
+  {
+    "_id": "802180",
+    "name": "Ivory Teddy Snoopy Hoodie",
+    "category": "320",
+    "filters": ["000200", "000124", "000114", "312870"]
+  },
+  {
+    "_id": "788263",
+    "name": "Navy Apple Hoodie",
+    "brand": "Gucci",
+    "category": "320",
+    "filters": ["000114", "312870"]
+  },
+  {
+    "_id": "762738",
+    "name": "Black Hearts Cardigan",
+    "d": "160.00",
+    "category": "192",
+    "filters": ["000200", "000124", "000114", "312870"]
+  },
+  {
+    "_id": "806528",
+    "name": "White Allover Logo Hoodie",
+    "d": "149.00",
+    "category": "320",
+    "filters": ["101693"]
+  },
+  {
+    "_id": "762739",
+    "name": "White Hearts Cardigan",
+    "d": "160.00",
+    "category": "320"
+  },
+  {
+    "_id": "762691",
+    "name": "White Colourblock Dalmation Spots Cardigan",
+    "d": "220.00",
+    "category": "320"
+  },
+  {
+    "_id": "822622",
+    "name": "Pink Cardigan",
+    "category": "320"
+  },
+  {
+    "_id": "804414",
+    "name": "White Logo Faux Fur Hoodie",
+    "d": "155.00",
+    "brand": "DKNY",
+    "tags": ["test: test"]
+  },
+  {
+    "_id": "963471",
+    "name": "Pink Full Zip Hoodie with Pony Player",
+    "d": "67.00",
+    "category": "320"
+  },
+  {
+    "_id": "774677",
+    "name": "Black Tie Dye Hoodie",
+    "d": "215.00",
+    "category": "320"
+  }
+]
