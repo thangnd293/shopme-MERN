@@ -44,7 +44,6 @@ const productSchema = new mongoose.Schema(
       default: false,
     },
     slug: String,
-    tags: [String],
     filters: [String],
   },
   { toJSON: { virtuals: true }, toObject: { virtuals: true } }

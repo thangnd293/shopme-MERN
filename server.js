@@ -20,7 +20,7 @@ mongoose
 
 const app = require('./app');
 
-const port = 2000;
+const port = process.env.PORT || 2000;
 app.listen(port, function (req, res) {
   console.log(`Listening on port ${port}....`);
 });

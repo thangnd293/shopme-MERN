@@ -1,6 +1,5 @@
 const express = require('express');
 const variationController = require('./../controllers/variationController');
-const filterController = require('./../controllers/filterController');
 const router = express.Router({ mergeParams: true });
 
 router
