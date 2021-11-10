@@ -10,6 +10,11 @@ const wishListRoutes = require('./routes/wishListRoutes');
 const AppError = require(`${__dirname}/utils/appError`);
 const globalErrorHandler = require('./controllers/errorController');
 const app = express();
+const cors = require('cors');
+
+app.use(cors());
+
+app.options('*', cors());
 
 app.use(morgan('dev'));
 app.use(express.json());
