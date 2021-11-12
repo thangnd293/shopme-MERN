@@ -1,7 +1,5 @@
 const Product = require(`${__dirname}/../models/product`);
-const Category = require('./../models/category');
 const AppError = require('./../utils/appError');
-const APIFeatures = require('./../utils/apiFeatures');
 const catchAsync = require('./../utils/catchAsync');
 const factory = require('./handlerFactory');
 const Variation = require('./../models/productVariations');
@@ -24,8 +22,8 @@ exports.createVariation = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.updateVariation = factory.updateOne(Variation);
 exports.deleteVariation = factory.deleteOne(Variation);
+exports.updateVariation = factory.updateOne(Variation);
 exports.getVariation = factory.getOne(Variation);
 
 exports.getAllVariation = catchAsync(async (req, res, next) => {

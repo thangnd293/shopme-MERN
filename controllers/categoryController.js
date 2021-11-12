@@ -1,6 +1,5 @@
 const Category = require('./../models/category');
 const catchAsync = require('./../utils/catchAsync');
-const factory = require('./handlerFactory');
 
 exports.getAllCategories = catchAsync(async function (req, res, next) {
   let categories = await Category.find();
@@ -45,5 +44,14 @@ exports.getAllSubCategory = catchAsync(async function (req, res, next) {
     status: 'success',
     result: subCategories.length,
     data: subCategories,
+  });
+});
+
+exports.getAllTopCategories = catchAsync(async function (req, res, next) {
+  const categories = await Category.find({ parent: '/' });
+  res.status(200).json({
+    status: 'success',
+    result: categories.length,
+    data: categories,
   });
 });

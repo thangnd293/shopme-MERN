@@ -27,15 +27,9 @@ const productSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
-    thumbnail: {
-      type: [String],
-      default: [''],
-    },
+    imageCover: [String],
     images: [String],
-    details: {
-      type: [String],
-      require: true,
-    },
+    details: String,
     composition: [String],
     color: String,
     categoryPath: String,
@@ -66,10 +60,13 @@ productSchema.pre('save', async function (next) {
 
   this.slug = slugify(this.name, { lower: true });
 
+  console.log(this.filters);
+
   const filters = this.filters.map(async (id) => {
     const filter = await Filter.findById(id);
     return `${filter.type}-${filter.name}-${filter._id}`;
   });
+
   this.filters = await Promise.all(filters);
   next();
 });

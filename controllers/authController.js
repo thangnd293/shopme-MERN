@@ -82,7 +82,6 @@ exports.signup = catchAsync(async (req, res, next) => {
     password: req.body.password,
     passwordConfirm: req.body.passwordConfirm,
     phoneNumber: req.body.phoneNumber,
-    address: req.body.address,
   });
 
   //2. Tạo token xác nhận email

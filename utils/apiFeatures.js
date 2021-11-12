@@ -41,7 +41,6 @@ class APIFeatures {
       return this;
     }
 
-    // 8 tiếng đồng hồ
     const temp = queryStr.p.sort();
     let qr = {};
 

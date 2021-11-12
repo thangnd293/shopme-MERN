@@ -21,11 +21,6 @@ const variationSchema = mongoose.Schema({
     type: String,
     require: true,
   },
-  quantity: {
-    type: Number,
-    require: true,
-    min: 0,
-  },
 });
 
 variationSchema.index({ product: 1, size: 1 }, { unique: true });

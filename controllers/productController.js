@@ -1,3 +1,6 @@
+const multer = require('multer');
+const sharp = require('sharp');
+
 const Product = require(`${__dirname}/../models/product`);
 const Category = require('./../models/category');
 const AppError = require('./../utils/appError');
@@ -5,6 +8,26 @@ const APIFeatures = require('./../utils/apiFeatures');
 const catchAsync = require('./../utils/catchAsync');
 const factory = require('./handlerFactory');
 const ProductVariation = require('./../models/productVariations');
+
+const multerStorage = multer.memoryStorage();
+
+const multerFilter = (req, file, cb) => {
+  if (file.mimetype.startsWith('image')) {
+    cb(null, true);
+  } else {
+    cb(new AppError('Not an image! Please upload only images.', 400), true);
+  }
+};
+
+const upload = multer({
+  storage: multerStorage,
+  fileFilter: multerFilter,
+});
+
+exports.uploadProductImage = upload.fields([
+  { name: 'imageCover', maxCount: 2 },
+  { name: 'images', maxCount: 10 },
+]);
 
 exports.setCategoryPath = catchAsync(async function (req, res, next) {
   if (!req.body.category) {
@@ -70,10 +93,9 @@ exports.getFacets = catchAsync(async (req, res, next) => {
     return next(new AppError('ID không hợp lệ', 400));
   }
 
-  const f = { categoryPath: new RegExp(`${category.path}`) };
-  console.log('test');
+  const p = { categoryPath: new RegExp(`${category.path}`) };
   const filters = await Product.aggregate([
-    { $match: f },
+    { $match: p },
     { $unwind: '$filters' },
     {
       $group: {

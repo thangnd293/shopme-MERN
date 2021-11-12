@@ -1183,8 +1183,8 @@
   {
     "_id": "8836",
     "name": "Designers",
-    "parent": "/designers",
-    "level": 2,
+    "parent": "/",
+    "level": 1,
     "path": "/designers",
     "slug": "designers"
   },
