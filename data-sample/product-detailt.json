@@ -58,7 +58,8 @@
         "discountPrice": "164.00",
         "size": "13+ years"
       }
-    ]
+    ],
+    "isFeatured": true
   },
   {
     "_id": "821364",
@@ -101,7 +102,8 @@
         "discountPrice": "645.00",
         "size": "12 years"
       }
-    ]
+    ],
+    "isFeatured": true
   },
   {
     "_id": "762739",
@@ -156,7 +158,8 @@
         "discountPrice": "117.00",
         "size": "6 years"
       }
-    ]
+    ],
+    "isFeatured": true
   },
   {
     "_id": "821358",
@@ -200,7 +203,8 @@
         "discountPrice": "305.00",
         "size": "8 years"
       }
-    ]
+    ],
+    "isFeatured": true
   },
   {
     "_id": "787878",
@@ -363,38 +367,38 @@
     ],
     "variants": [
       {
-        "price": "720.00",
-        "discountPrice": "720.00",
+        "price": "172.00",
+        "discountPrice": "172.00",
         "size": "4 years"
       },
       {
-        "price": "720.00",
-        "discountPrice": "720.00",
+        "price": "172.00",
+        "discountPrice": "172.00",
         "size": "5 years"
       },
       {
-        "price": "720.00",
-        "discountPrice": "720.00",
+        "price": "179.00",
+        "discountPrice": "179.00",
         "size": "6 years"
       },
       {
-        "price": "720.00",
-        "discountPrice": "720.00",
+        "price": "179.00",
+        "discountPrice": "179.00",
         "size": "7 years"
       },
       {
-        "price": "720.00",
-        "discountPrice": "720.00",
+        "price": "179.00",
+        "discountPrice": "179.00",
         "size": "8 years"
       },
       {
-        "price": "910.00",
-        "discountPrice": "910.00",
+        "price": "179.00",
+        "discountPrice": "179.00",
         "size": "9 years"
       },
       {
-        "price": "720.00",
-        "discountPrice": "720.00",
+        "price": "179.00",
+        "discountPrice": "179.00",
         "size": "10 years"
       }
     ]
