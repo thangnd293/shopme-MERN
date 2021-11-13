@@ -246,7 +246,7 @@
     ]
   },
   {
-    "id": "802187",
+    "_id": "802187",
     "name": "Brown Cheetah Sherpa Zip Sweater",
     "brand": "The Marc Jacobs",
     "imageCovers": [
@@ -297,6 +297,105 @@
         "price": "126.00",
         "discountPrice": "126.00",
         "size": "12+ years"
+      }
+    ]
+  },
+  {
+    "_id": "798958",
+    "name": "Pink Charpal Down Jacket",
+    "brand": "Moncler",
+    "imageCovers": [
+      "https://www.melijoe.com/images/260754/card_medium.jpg",
+      "https://www.melijoe.com/images/260755/card_medium.jpg"
+    ],
+    "images": [
+      "https://www.melijoe.com/images/260754/image_gallery_large.jpg",
+      "https://www.melijoe.com/images/260755/image_gallery_large.jpg",
+      "https://www.melijoe.com/images/260756/image_gallery_large.jpg"
+    ],
+    "category": "192",
+    "shortDescription": "&#8211; Shell And Lining: 100% Polyamide&#8211; Padding: 90% Goose Down, 10% Goose Feathers&#8211; Machine washable 30 degrees",
+    "longDescription": "&#8211; Longline design&#8211; Down and feather filling&#8211; Detachable hood&#8211; Zip closure at the front&#8211; Two front pockets&#8211; DIST certified down (Down Integrity System &amp; Traceability)",
+    "filters": ["671043", "671005", "313797", "312885", "000169", "674079"],
+    "variants": [
+      {
+        "price": "720.00",
+        "discountPrice": "720.00",
+        "size": "5 years"
+      },
+      {
+        "price": "910.00",
+        "discountPrice": "910.00",
+        "size": "12 years"
+      }
+    ]
+  },
+  {
+    "_id": "775333",
+    "name": "Dark Silver Star Puffer Jacket",
+    "brand": "NUNUNU",
+    "imageCovers": [
+      "https://www.melijoe.com/images/260754/card_medium.jpg",
+      "https://www.melijoe.com/images/260755/card_medium.jpg"
+    ],
+    "images": [
+      "https://www.melijoe.com/images/260754/image_gallery_large.jpg",
+      "https://www.melijoe.com/images/260755/image_gallery_large.jpg",
+      "https://www.melijoe.com/images/260756/image_gallery_large.jpg"
+    ],
+    "category": "192",
+    "shortDescription": "&#8211; Shell: 100% Polyamide&#8211; Lining: 100% Cotton&#8211; Padding: 90% Down, 10% Feathers&#8211; Machine washable 30 degrees",
+    "longDescription": "&#8211; Diagonal zip closure at the front&#8211; Side seam pockets&#8211; Included face mask&#8211; Ribbed cuffs&#8211; Inner shoulder straps&#8211; Padded hood&#8211; Suitable for temperatures as low as -10°C",
+    "filters": [
+      "671012",
+      "671043",
+      "671057",
+      "671031",
+      "671022",
+      "671999",
+      "671010",
+      "000216",
+      "313797",
+      "312885",
+      "674080",
+      "674079",
+      "000216"
+    ],
+    "variants": [
+      {
+        "price": "720.00",
+        "discountPrice": "720.00",
+        "size": "4 years"
+      },
+      {
+        "price": "720.00",
+        "discountPrice": "720.00",
+        "size": "5 years"
+      },
+      {
+        "price": "720.00",
+        "discountPrice": "720.00",
+        "size": "6 years"
+      },
+      {
+        "price": "720.00",
+        "discountPrice": "720.00",
+        "size": "7 years"
+      },
+      {
+        "price": "720.00",
+        "discountPrice": "720.00",
+        "size": "8 years"
+      },
+      {
+        "price": "910.00",
+        "discountPrice": "910.00",
+        "size": "9 years"
+      },
+      {
+        "price": "720.00",
+        "discountPrice": "720.00",
+        "size": "10 years"
       }
     ]
   }
