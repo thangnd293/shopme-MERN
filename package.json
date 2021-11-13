@@ -27,8 +27,5 @@
     "slugify": "^1.6.1",
     "validator": "^13.7.0"
   },
-  "devDependencies": {},
-  "engines": {
-    "node": "14.17.4"
-  }
+  "devDependencies": {}
 }
