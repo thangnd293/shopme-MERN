@@ -41,7 +41,7 @@ cartSchema.pre('save', async function (next) {
     if (!vars) {
       return next(new AppError('ID invalid!!', 400));
     }
-    total += vars.price * item.quantity;
+    total += vars.discountPrice * item.quantity;
     qty += item.quantity;
   }
 

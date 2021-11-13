@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Product = require('./product');
+const AppError = require('./../utils/appError');
 
 const variationSchema = mongoose.Schema({
   product: {
@@ -9,12 +10,17 @@ const variationSchema = mongoose.Schema({
   },
   price: {
     type: Number,
-    require: [true, 'Vui lòng nhập giá cho sản phẩm'],
+    default: 1,
+    min: [1, 'Price must be more than 1$'],
   },
   discountPrice: {
     type: Number,
-    default: function () {
-      return this.price;
+    validate: {
+      validator: function (value) {
+        return this.price >= value && value >= 0;
+      },
+      message:
+        'Discount price must be less than the original price and greater than 0$!!',
     },
   },
   size: {
@@ -30,10 +36,18 @@ variationSchema.pre(/^find/, function (next) {
   if (!this.flag) {
     this.populate({ path: 'product' });
   }
+
   next();
 });
 
 variationSchema.pre('save', async function (next) {
+  if (this.size === undefined) {
+    return next(new AppError('Please choose size!!', 400));
+  }
+
+  if (this.discountPrice === undefined) {
+    this.discountPrice = this.price;
+  }
   await Product.findByIdAndUpdate(this.product, {
     price: this.price,
     discountPrice: this.discountPrice,

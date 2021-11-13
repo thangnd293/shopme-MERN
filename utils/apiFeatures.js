@@ -58,7 +58,7 @@ class APIFeatures {
       return {
         $or: o.map((id) => {
           return {
-            filters: new RegExp(`${id}`),
+            'facets._id': id,
           };
         }),
       };

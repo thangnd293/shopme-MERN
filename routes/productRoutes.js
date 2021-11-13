@@ -22,7 +22,12 @@ router
 router
   .route('/:id')
   .get(productController.getProduct)
-  .patch(productController.setCategoryPath, productController.updateProduct)
+  .patch(
+    productController.uploadProductImages,
+    productController.resizeProductImages,
+    productController.setCategoryPath,
+    productController.updateProduct
+  )
   .delete(productController.deleteProduct);
 
 module.exports = router;

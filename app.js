@@ -8,6 +8,7 @@ const variationRoutes = require('./routes/variationRoutes');
 const cartRoutes = require('./routes/cartRoutes');
 const wishListRoutes = require('./routes/wishListRoutes');
 const checkOutRoutes = require('./routes/checkOutRoutes');
+const filterRoutes = require('./routes/filterRoutes');
 const AppError = require(`${__dirname}/utils/appError`);
 const globalErrorHandler = require('./controllers/errorController');
 const app = express();
@@ -28,6 +29,7 @@ app.use('/api/v1/user', userRoutes);
 app.use('/api/v1/cart', cartRoutes);
 app.use('/api/v1/wishlist', wishListRoutes);
 app.use('/api/v1/checkout', checkOutRoutes);
+app.use('/api/v1/filters', filterRoutes);
 
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/index.html');

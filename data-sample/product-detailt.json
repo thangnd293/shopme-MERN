@@ -1,73 +1,303 @@
 [
   {
-    "_id": "794222",
-    "name": "Black Blurry Logo Hoodie",
+    "_id": "762691",
+    "name": "White Colourblock Dalmation Spots Cardigan",
+    "brand": "Stella McCartney Kids",
+    "imageCovers": [
+      "https://www.melijoe.com/images/257509/image_gallery_large.jpg",
+      "https://www.melijoe.com/images/257508/image_gallery_large.jpg"
+    ],
+    "images": [
+      "https://www.melijoe.com/images/257509/image_gallery_large.jpg",
+      "https://www.melijoe.com/images/257508/image_gallery_large.jpg"
+    ],
     "category": "320",
-    "brand": "Balenciaga",
-    "details": ["Chat vai"],
-    "filters": ["000123", "000200", "000122", "000124", "312908", "312870"]
+    "shortDescription": "",
+    "longDescription": "",
+    "filters": [
+      "671044",
+      "671012",
+      "671057",
+      "671022",
+      "671010",
+      "671078",
+      "674080",
+      "674079",
+      "313723",
+      "313681",
+      "000200"
+    ],
+    "variants": [
+      {
+        "price": "164.00",
+        "discountPrice": "164.00",
+        "size": "3 years"
+      },
+      {
+        "price": "164.00",
+        "discountPrice": "164.00",
+        "size": "4 years"
+      },
+      {
+        "price": "270.00",
+        "discountPrice": "270.00",
+        "size": "6 years"
+      },
+      {
+        "price": "270.00",
+        "discountPrice": "270.00",
+        "size": "8 years"
+      },
+      {
+        "price": "270.00",
+        "discountPrice": "270.00",
+        "size": "10 years"
+      },
+      {
+        "price": "164.00",
+        "discountPrice": "164.00",
+        "size": "13+ years"
+      }
+    ]
   },
   {
-    "_id": "802180",
-    "name": "Ivory Teddy Snoopy Hoodie",
+    "_id": "821364",
+    "name": "White Colourblock Dalmation Spots Cardigan",
+    "brand": "Stella McCartney Kids",
+    "imageCovers": [
+      "https://www.melijoe.com/images/247153/card_medium.jpg",
+      "https://www.melijoe.com/images/247199/card_medium.jpg"
+    ],
+    "images": [
+      "https://www.melijoe.com/images/247153/image_gallery_large.jpg",
+      "https://www.melijoe.com/images/247199/image_gallery_large.jpg"
+    ],
     "category": "320",
-    "filters": ["000200", "000124", "000114", "312870"]
-  },
-  {
-    "_id": "788263",
-    "name": "Navy Apple Hoodie",
-    "brand": "Gucci",
-    "category": "320",
-    "filters": ["000114", "312870"]
-  },
-  {
-    "_id": "762738",
-    "name": "Black Hearts Cardigan",
-    "d": "160.00",
-    "category": "192",
-    "filters": ["000200", "000124", "000114", "312870"]
-  },
-  {
-    "_id": "806528",
-    "name": "White Allover Logo Hoodie",
-    "d": "149.00",
-    "category": "320",
-    "filters": ["101693"]
+    "shortDescription": "&#8211; 100% Cashmere&#8211; Hand wash only",
+    "longDescription": "&#8211; Round neck&#8211; Button closure at the front&#8211; Ribbed cuffs and hem&#8211; Rhinestone details all over",
+    "filters": [
+      "671057",
+      "671010",
+      "671005",
+      "000115",
+      "674079",
+      "313681",
+      "312909",
+      "313723"
+    ],
+    "variants": [
+      {
+        "price": "630.00",
+        "discountPrice": "630.00",
+        "size": "6 years"
+      },
+      {
+        "price": "635.00",
+        "discountPrice": "635.00",
+        "size": "10 years"
+      },
+      {
+        "price": "645.00",
+        "discountPrice": "645.00",
+        "size": "12 years"
+      }
+    ]
   },
   {
     "_id": "762739",
     "name": "White Hearts Cardigan",
-    "d": "160.00",
-    "category": "320"
+    "brand": "Stella McCartney Kids",
+    "imageCovers": [
+      "https://www.melijoe.com/images/259985/card_medium.jpg",
+      "https://www.melijoe.com/images/260002/card_medium.jpg"
+    ],
+    "images": [
+      "https://www.melijoe.com/images/259985/image_gallery_large.jpg",
+      "https://www.melijoe.com/images/260002/image_gallery_large.jpg"
+    ],
+    "category": "320",
+    "shortDescription": "&#8211; 80% Cotton, 13% Polyester, 5% Wool, 1% Polyamide, 1% Metallic Fiber&#8211; Machine washable 30 degrees",
+    "longDescription": "&#8211; Button closure at the front&#8211; Ribbed cuffs and hem&#8211; Knitted heart shapes all over",
+    "filters": [
+      "671002",
+      "671044",
+      "671012",
+      "671043",
+      "671057",
+      "313681",
+      "312909",
+      "000200",
+      "674079",
+      "313723"
+    ],
+    "variants": [
+      {
+        "price": "117.00",
+        "discountPrice": "117.00",
+        "size": "2 years"
+      },
+      {
+        "price": "117.00",
+        "discountPrice": "117.00",
+        "size": "3 years"
+      },
+      {
+        "price": "117.00",
+        "discountPrice": "117.00",
+        "size": "4 years"
+      },
+      {
+        "price": "117.00",
+        "discountPrice": "117.00",
+        "size": "5 years"
+      },
+      {
+        "price": "117.00",
+        "discountPrice": "117.00",
+        "size": "6 years"
+      }
+    ]
   },
   {
-    "_id": "762691",
-    "name": "White Colourblock Dalmation Spots Cardigan",
-    "d": "220.00",
-    "category": "320"
+    "_id": "821358",
+    "name": "Beige Cardigan",
+    "brand": "Bonpoint",
+    "imageCovers": [
+      "https://www.melijoe.com/images/247149/card_medium.jpg",
+      "https://www.melijoe.com/images/247150/card_medium.jpg"
+    ],
+    "images": [
+      "https://www.melijoe.com/images/247149/image_gallery_large.jpg",
+      "https://www.melijoe.com/images/247150/image_gallery_large.jpg"
+    ],
+    "category": "320",
+    "shortDescription": "&#8211; 55% Polyamide, 36% Wool, 9% Cashmere&#8211; Machine washable 30 degrees",
+    "longDescription": "&#8211; V-neck design&#8211; Button closure at the front&#8211; Ribbed material&#8211; Two front pockets",
+    "filters": [
+      "671012",
+      "671057",
+      "671022",
+      "313681",
+      "312909",
+      "000115",
+      "674079",
+      "313723"
+    ],
+    "variants": [
+      {
+        "price": "295.00",
+        "discountPrice": "295.00",
+        "size": "4 years"
+      },
+
+      {
+        "price": "295.00",
+        "discountPrice": "295.00",
+        "size": "6 years"
+      },
+      {
+        "price": "305.00",
+        "discountPrice": "305.00",
+        "size": "8 years"
+      }
+    ]
   },
   {
-    "_id": "822622",
-    "name": "Pink Cardigan",
-    "category": "320"
+    "_id": "787878",
+    "name": "Pink Floral Cardigan",
+    "brand": "Tartine et Chocolat",
+    "imageCovers": [
+      "https://www.melijoe.com/images/220294/card_medium.jpg",
+      "https://www.melijoe.com/images/220300/card_medium.jpg"
+    ],
+    "images": [
+      "https://www.melijoe.com/images/220294/image_gallery_large.jpg",
+      "https://www.melijoe.com/images/220300/image_gallery_large.jpg"
+    ],
+    "category": "320",
+    "shortDescription": "&#8211; 70% Cotton, 25% Wool, 5% Cashmere&#8211; Machine washable 30 degrees",
+    "longDescription": "&#8211; Button closure at the front&#8211; Ribbed crew neckline&#8211; Embroidered flowers on the shoulders and on the sleeves",
+    "filters": [
+      "671044",
+      "671012",
+      "671005",
+      "313681",
+      "312909",
+      "000115",
+      "674079",
+      "313723"
+    ],
+    "variants": [
+      {
+        "price": "126.00",
+        "discountPrice": "126.00",
+        "size": "3 years"
+      },
+      {
+        "price": "126.00",
+        "discountPrice": "126.00",
+        "size": "4 years"
+      },
+      {
+        "price": "145.00",
+        "discountPrice": "145.00",
+        "size": "12 years"
+      }
+    ]
   },
   {
-    "_id": "804414",
-    "name": "White Logo Faux Fur Hoodie",
-    "d": "155.00",
-    "brand": "DKNY",
-    "tags": ["test: test"]
-  },
-  {
-    "_id": "963471",
-    "name": "Pink Full Zip Hoodie with Pony Player",
-    "d": "67.00",
-    "category": "320"
-  },
-  {
-    "_id": "774677",
-    "name": "Black Tie Dye Hoodie",
-    "d": "215.00",
-    "category": "320"
+    "id": "802187",
+    "name": "Brown Cheetah Sherpa Zip Sweater",
+    "brand": "The Marc Jacobs",
+    "imageCovers": [
+      "https://www.melijoe.com/images/223060/card_medium.jpg",
+      "https://www.melijoe.com/images/223061/card_medium.jpg"
+    ],
+    "images": [
+      "https://www.melijoe.com/images/223060/image_gallery_large.jpg",
+      "https://www.melijoe.com/images/223061/image_gallery_large.jpg",
+      "https://www.melijoe.com/images/223062/image_gallery_large.jpg"
+    ],
+    "category": "320",
+    "shortDescription": "&#8211; Shell: 100% Polyester&#8211; Lining: 100% Cotton&#8211; Trimming: 55% Cotton, 45% Polyamide&#8211; Machine washable 30 degrees",
+    "longDescription": "&#8211; Zip closure at the front&#8211; Contrast-colored chest pocket with a zip closure&#8211; Sherpa-lined high collar&#8211; Jersey lining",
+    "filters": [
+      "671057",
+      "671022",
+      "671010",
+      "671005",
+      "671078",
+      "312909",
+      "000205",
+      "674079",
+      "313723"
+    ],
+    "variants": [
+      {
+        "price": "126.00",
+        "discountPrice": "126.00",
+        "size": "6 years"
+      },
+      {
+        "price": "126.00",
+        "discountPrice": "126.00",
+        "size": "8 years"
+      },
+      {
+        "price": "126.00",
+        "discountPrice": "126.00",
+        "size": "10 years"
+      },
+      {
+        "price": "126.00",
+        "discountPrice": "126.00",
+        "size": "12 years"
+      },
+      {
+        "price": "126.00",
+        "discountPrice": "126.00",
+        "size": "12+ years"
+      }
+    ]
   }
 ]

@@ -19,26 +19,33 @@ const productSchema = new mongoose.Schema(
     },
     categoryName: String,
     brand: String,
-    price: {
-      type: Number,
-      default: 0,
-    },
-    discountPrice: {
-      type: Number,
-      default: 0,
-    },
-    imageCover: [String],
+    price: Number,
+    discountPrice: Number,
+    imageCovers: [String],
     images: [String],
-    details: String,
-    composition: [String],
-    color: String,
+    longDescription: String,
+    shortDescription: String,
     categoryPath: String,
     isFeatured: {
       type: Boolean,
       default: false,
     },
     slug: String,
-    filters: [String],
+    filters: [
+      {
+        type: String,
+        ref: 'Filter',
+      },
+    ],
+    facets: [
+      {
+        _id: String,
+        type: {
+          type: String,
+        },
+        name: String,
+      },
+    ],
   },
   { toJSON: { virtuals: true }, toObject: { virtuals: true } }
 );
@@ -60,14 +67,23 @@ productSchema.pre('save', async function (next) {
 
   this.slug = slugify(this.name, { lower: true });
 
-  console.log(this.filters);
+  this.facets = [];
+  await Promise.all(
+    this.filters.map(async (id) => {
+      const filter = await Filter.findById(id);
+      if (!filter) {
+        return next(
+          new AppError('Filter does not exist. Please try again later.')
+        );
+      }
+      this.facets.push({
+        _id: filter._id,
+        type: filter.type,
+        name: filter.name,
+      });
+    })
+  );
 
-  const filters = this.filters.map(async (id) => {
-    const filter = await Filter.findById(id);
-    return `${filter.type}-${filter.name}-${filter._id}`;
-  });
-
-  this.filters = await Promise.all(filters);
   next();
 });
 

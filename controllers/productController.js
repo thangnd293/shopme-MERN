@@ -24,11 +24,47 @@ const upload = multer({
   fileFilter: multerFilter,
 });
 
-exports.uploadProductImage = upload.fields([
-  { name: 'imageCover', maxCount: 2 },
+exports.uploadProductImages = upload.fields([
+  { name: 'imageCovers', maxCount: 2 },
   { name: 'images', maxCount: 10 },
 ]);
 
+exports.resizeProductImages = async function (req, res, next) {
+  if (!req.files.imageCovers || !req.files.images) {
+    return next();
+  }
+  req.body.imageCovers = [];
+  await Promise.all(
+    req.files.imageCovers.map(async (imageCover, i) => {
+      const filename = `product-${req.params.id}-${Date.now()}-cover-${
+        i + 1
+      }.jpeg`;
+
+      await sharp(imageCover.buffer)
+        .resize(1600, 1600)
+        .toFormat('jpeg')
+        .jpeg({ quality: 90 })
+        .toFile(`public/img/products/${filename}`);
+      req.body.imageCovers.push(filename);
+    })
+  );
+
+  req.body.images = [];
+  await Promise.all(
+    req.files.images.map(async (image, i) => {
+      const filename = `product-${req.params.id}-${Date.now()}-${i + 1}.jpeg`;
+
+      await sharp(image.buffer)
+        .resize(1600, 1600)
+        .toFormat('jpeg')
+        .jpeg({ quality: 90 })
+        .toFile(`public/img/products/${filename}`);
+      req.body.images.push(filename);
+    })
+  );
+
+  next();
+};
 exports.setCategoryPath = catchAsync(async function (req, res, next) {
   if (!req.body.category) {
     return next();
@@ -46,15 +82,14 @@ exports.setCategoryPath = catchAsync(async function (req, res, next) {
 });
 
 exports.updateProduct = catchAsync(async function (req, res, next) {
-  const { options, ...objBody } = req.body;
-
-  let product = await Product.findById(req.params.id);
+  const product = await Product.findById(req.params.id);
   if (!product) {
-    return next(new AppError('ID không tồn tại!!', 404));
+    return next(new AppError('Invalid ID!!', 404));
   }
-  product.set(objBody);
+  product.set(req.body);
 
   await product.save();
+
   res.status(200).json({
     status: 'success',
     data: product,
@@ -68,7 +103,20 @@ exports.getAllProducts = catchAsync(async (req, res, next) => {
     if (!category) {
       return next(new AppError('ID không hợp lệ', 400));
     }
-    filter = { categoryPath: new RegExp(`${category.path}`) };
+
+    if (req.params.categoryId.startsWith('88')) {
+      filter = { brand: category.name };
+
+      if (
+        req.params.categoryId === '8836' ||
+        req.params.categoryId === '8837' ||
+        req.params.categoryId === '8893'
+      ) {
+        filter = { brand: { $ne: null } };
+      }
+    } else {
+      filter = { categoryPath: new RegExp(`${category.path}`) };
+    }
   }
 
   const features = new APIFeatures(Product.find(filter), req.query)
@@ -96,24 +144,89 @@ exports.getFacets = catchAsync(async (req, res, next) => {
   const p = { categoryPath: new RegExp(`${category.path}`) };
   const filters = await Product.aggregate([
     { $match: p },
-    { $unwind: '$filters' },
+    { $unwind: '$facets' },
     {
       $group: {
-        _id: '$filters',
+        _id: '$facets',
         count: { $sum: 1 },
       },
     },
     { $sort: { _id: 1 } },
   ]);
 
+  filters.sort(function (a, b) {
+    if (a.type < b.type) {
+      return -1;
+    }
+    if (a.type > b.type) {
+      return 1;
+    }
+    return 0;
+  });
+
+  const facets = [];
+
+  if (filters.length !== 0) {
+    facets.push({
+      name: filters[0]._id.type,
+      values: [
+        {
+          name: filters[0]._id.name,
+          id: filters[0]._id._id,
+        },
+      ],
+    });
+    let i = 1;
+    let count = 0;
+    for (i; i < filters.length; i++) {
+      if (filters[i]._id.type !== filters[i - 1]._id.type) {
+        facets.push({
+          name: filters[i]._id.type,
+          values: [],
+        });
+        count++;
+      }
+      facets[count].values.push({
+        name: filters[i]._id.name,
+        id: filters[i]._id._id,
+      });
+    }
+  }
+
   res.status(200).json({
     status: 'success',
-    data: filters,
+    data: facets,
   });
 });
 
 exports.getProduct = factory.getOne(Product);
-exports.createProduct = factory.createOne(Product);
+exports.createProduct = catchAsync(async (req, res, next) => {
+  const { variants, ...objBody } = req.body;
+  const product = await Product.create(objBody);
+  let vars = [];
+  try {
+    vars = await Promise.all(
+      variants.map(
+        async (v) =>
+          await ProductVariation.create({
+            product: product._id,
+            ...v,
+          })
+      )
+    );
+  } catch (err) {
+    // await ProductVariation.deleteMany({ product: Product._id });
+    await ProductVariation.deleteMany({ product: product._id });
+    await Product.findByIdAndDelete(product._id);
+    return next(new AppError(err.message, 400));
+  }
+  // product.variants = vars;
+  const productObj = { ...product._doc, variants: vars };
+  res.status(200).json({
+    status: 'success',
+    data: productObj,
+  });
+});
 
 exports.deleteProduct = catchAsync(async (req, res, next) => {
   const product = await Product.findByIdAndDelete(req.params.id);

@@ -29,7 +29,7 @@ const createPaymentJson = async function (next) {
     itemArray.push({
       name: vars.product.name,
       sku: vars._id,
-      price: vars.price,
+      price: vars.discountPrice,
       currency: 'USD',
       quantity: item.quantity,
     });
