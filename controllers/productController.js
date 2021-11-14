@@ -215,12 +215,10 @@ exports.createProduct = catchAsync(async (req, res, next) => {
       )
     );
   } catch (err) {
-    // await ProductVariation.deleteMany({ product: Product._id });
     await ProductVariation.deleteMany({ product: product._id });
     await Product.findByIdAndDelete(product._id);
     return next(new AppError(err.message, 400));
   }
-  // product.variants = vars;
   const productObj = { ...product._doc, variants: vars };
   res.status(200).json({
     status: 'success',

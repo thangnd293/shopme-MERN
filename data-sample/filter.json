@@ -122,6 +122,7 @@
   { "_id": "000214", "type": "Brands", "name": "Young Sole" },
   { "_id": "000215", "type": "Brands", "name": "Zadig & Voltaire" },
   { "_id": "000216", "type": "Brands", "name": "NUNUNU" },
+  { "_id": "000217", "type": "Brands", "name": "Les Coyotes de Paris" },
 
   { "_id": "312884", "type": "Categories", "name": "Accessories" },
   { "_id": "312690", "type": "Categories", "name": "Bathtime" },
@@ -129,7 +130,7 @@
   { "_id": "312905", "type": "Categories", "name": "Bodysuits" },
   { "_id": "312878", "type": "Categories", "name": "Bouncers & Rockers" },
   { "_id": "312909", "type": "Categories", "name": "Cardigans" },
-  { "_id": "312885", "type": "Categories", "name": "Coats, jackets" },
+  { "_id": "312885", "type": "Categories", "name": "Coats & jackets" },
   { "_id": "312892", "type": "Categories", "name": "Cropped pants, Culottes" },
   { "_id": "312910", "type": "Categories", "name": "Dresses" },
   { "_id": "312872", "type": "Categories", "name": "Food" },

@@ -14,11 +14,16 @@ const connectString = process.env.DATABASE.replace(
   process.env.DATABASE_PASSWORD
 );
 
-mongoose
-  .connect(connectString)
-  .then(() => console.log('Connection database successfully'));
+// mongoose
+//   .connect(connectString)
+//   .then(() => console.log('Connection database successfully'));
 
 const app = require('./app');
+
+const mongoUrl = `mongodb://admin:xb8ujyQSP6EMGfyH@SG-thangnd-47867.servers.mongodirector.com:27017/admin`;
+mongoose
+  .connect(mongoUrl)
+  .then(() => console.log('Connection database successfully'));
 
 const port = process.env.PORT || 2000;
 app.listen(port, function (req, res) {

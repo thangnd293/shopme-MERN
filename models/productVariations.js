@@ -9,7 +9,7 @@ const variationSchema = mongoose.Schema({
     require: true,
   },
   price: {
-    type: Number,
+    type: String,
     default: 1,
     min: [1, 'Price must be more than 1$'],
   },
@@ -25,7 +25,6 @@ const variationSchema = mongoose.Schema({
   },
   size: {
     type: String,
-    require: true,
   },
 });
 
@@ -41,19 +40,26 @@ variationSchema.pre(/^find/, function (next) {
 });
 
 variationSchema.pre('save', async function (next) {
-  if (this.size === undefined) {
-    return next(new AppError('Please choose size!!', 400));
-  }
-
   if (this.discountPrice === undefined) {
     this.discountPrice = this.price;
   }
-  await Product.findByIdAndUpdate(this.product, {
-    price: this.price,
-    discountPrice: this.discountPrice,
-  });
-
   next();
+});
+
+variationSchema.post('save', async function () {
+  const variants = await this.constructor.find({ product: `${this.product}` });
+  let priceMin = this.price;
+  let discountPriceMin = this.discountPrice;
+  for (const v of variants) {
+    if (+v.price < +priceMin) {
+      priceMin = v.price;
+      discountPriceMin = v.discountPrice;
+    }
+  }
+  const p = await Product.findByIdAndUpdate(variants[0].product._id, {
+    price: priceMin,
+    discountPrice: discountPriceMin,
+  });
 });
 
 const ProductVariation = mongoose.model('ProductVariation', variationSchema);

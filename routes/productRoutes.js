@@ -9,9 +9,7 @@ const router = express.Router({ mergeParams: true });
 router.use('/:id/variations/', variationRoutes);
 
 router.route('/features/:count').get(productController.getProductFeatured);
-router
-  .route('/features')
-  .get(authController.protect, productController.getProductFeatured);
+router.route('/features').get(productController.getProductFeatured);
 
 router.route('/facets').get(productController.getFacets);
 router
