@@ -35,7 +35,6 @@ variationSchema.pre(/^find/, function (next) {
   if (!this.flag) {
     this.populate({ path: 'product' });
   }
-
   next();
 });
 
@@ -56,7 +55,7 @@ variationSchema.post('save', async function () {
       discountPriceMin = v.discountPrice;
     }
   }
-  const p = await Product.findByIdAndUpdate(variants[0].product._id, {
+  await Product.findByIdAndUpdate(variants[0].product._id, {
     price: priceMin,
     discountPrice: discountPriceMin,
   });

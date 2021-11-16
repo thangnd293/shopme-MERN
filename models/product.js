@@ -46,6 +46,10 @@ const productSchema = new mongoose.Schema(
         name: String,
       },
     ],
+    createAt: {
+      type: Date,
+      default: Date.now(),
+    },
   },
   { toJSON: { virtuals: true }, toObject: { virtuals: true } }
 );
@@ -70,7 +74,7 @@ productSchema.pre('save', async function (next) {
   this.facets = [];
   await Promise.all(
     this.filters.map(async (id) => {
-      const filter = await Filter.findById(id);
+      const filter = await Filter.findById(id).lean();
       if (!filter) {
         return next(
           new AppError('Filter does not exist. Please try again later.')

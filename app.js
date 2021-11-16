@@ -1,5 +1,8 @@
 const express = require('express');
 const morgan = require('morgan');
+const fs = require('fs');
+
+const Product = require('./models/product');
 
 const categoryRoutes = require('./routes/categoryRoutes');
 const productRoutes = require('./routes/productRoutes');
@@ -30,6 +33,24 @@ app.use('/api/v1/cart', cartRoutes);
 app.use('/api/v1/wishlist', wishListRoutes);
 app.use('/api/v1/checkout', checkOutRoutes);
 app.use('/api/v1/filters', filterRoutes);
+app.use(
+  '/api/v1/insert',
+  express.Router().post('/', async (req, res, next) => {
+    const data = req.body.data;
+    console.log(1);
+    try {
+      await Promise.all(
+        data.map(async (p) => {
+          await Product.create(p);
+        })
+      );
+    } catch (err) {
+      console.log(err);
+    }
+
+    res.send(200);
+  })
+);
 
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/index.html');

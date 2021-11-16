@@ -122,7 +122,9 @@
   { "_id": "000214", "type": "Brands", "name": "Young Sole" },
   { "_id": "000215", "type": "Brands", "name": "Zadig & Voltaire" },
   { "_id": "000216", "type": "Brands", "name": "NUNUNU" },
-  { "_id": "000217", "type": "Brands", "name": "Les Coyotes de Paris" },
+  { "_id": "000217", "type": "Brands", "name": "Les Coyotes de Paris" }, 
+  { "_id": "000218", "type": "Brands", "name": "Billieblush" },
+  { "_id": "000219", "type": "Brands", "name": "Tartine et Chocolat" },
 
   { "_id": "312884", "type": "Categories", "name": "Accessories" },
   { "_id": "312690", "type": "Categories", "name": "Bathtime" },

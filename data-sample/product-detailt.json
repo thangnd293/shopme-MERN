@@ -81,7 +81,7 @@
       "671057",
       "671010",
       "671005",
-      "000115",
+      "000200",
       "674079",
       "313681",
       "312909",
@@ -112,7 +112,7 @@
     "name": "White Hearts Cardigan",
     "brand": "Stella McCartney Kids",
     "imageCovers": [
-      "https://www.melijoe.com/images/242985/card_medium.jpg",
+      "https://www.melijoe.com/images/259985/card_medium.jpg",
       "https://www.melijoe.com/images/260002/card_medium.jpg"
     ],
     "images": [
@@ -231,7 +231,7 @@
       "671005",
       "313681",
       "312909",
-      "000115",
+      "000219",
       "674079",
       "313723",
       "673092"
@@ -306,61 +306,6 @@
         "price": 126.0,
         "discountPrice": 126.0,
         "size": "12+ years"
-      }
-    ]
-  },
-  {
-    "_id": "823716",
-    "name": "Knitted Cardigan Red",
-    "brand": "Jacadi",
-    "category": "320",
-    "shortDescription": "&#8211; 55% Wool, 40% Polyamide, 5% Cashmere&#8211; Machine washable 30 degrees",
-    "longDescription": "&#8211; Knitted design&#8211; Button closure at the front&#8211; Rib-knit cuffs",
-    "imageCovers": [
-      "https://www.melijoe.com/images/253055/card_medium.jpg",
-      "https://www.melijoe.com/images/253057/card_medium.jpg"
-    ],
-    "images": [
-      "https://www.melijoe.com/images/253055/image_gallery_large.jpg",
-      "https://www.melijoe.com/images/253057/image_gallery_large.jpg"
-    ],
-    "filters": [
-      "671012",
-      "671057",
-      "671022",
-      "671010",
-      "671005",
-      "000148",
-      "674079",
-      "313681",
-      "312909",
-      "673085 "
-    ],
-    "variants": [
-      {
-        "price": 88.0,
-        "discountPrice": 88.0,
-        "size": "4 years"
-      },
-      {
-        "price": 88.0,
-        "discountPrice": 88.0,
-        "size": "6 years"
-      },
-      {
-        "price": 97.0,
-        "discountPrice": 97.0,
-        "size": "8 years"
-      },
-      {
-        "price": 97.0,
-        "discountPrice": 97.0,
-        "size": "10 years"
-      },
-      {
-        "price": 97.0,
-        "discountPrice": 97.0,
-        "size": "12 years"
       }
     ]
   },
@@ -1901,6 +1846,236 @@
       {
         "price": 234.0,
         "discountPrice": 234.0
+      }
+    ]
+  },
+  {
+    "_id": "794163",
+    "name": "Black Fanny Pack",
+    "brand": "Dolce & Gabbana",
+    "category": "248",
+    "shortDescription": "&#8211; Measurements: 20 x 7 x 12 cm&#8211; 77% Polyamide, 7% Cotton, 4% Polyester, 12% Polyurethane&#8211; Spot clean only",
+    "longDescription": "&#8211; Made in Italy&#8211; Adjustable waiststrap with a buckle closure&#8211; Main compartment with a zip closure&#8211; One front pocket&#8211; All-over print",
+    "imageCovers": [
+      "https://www.melijoe.com/images/239686/card_medium.jpg",
+      "https://www.melijoe.com/images/239687/card_medium.jpg"
+    ],
+    "images": [
+      "https://www.melijoe.com/images/239686/image_gallery_large.jpg",
+      "https://www.melijoe.com/images/239687/image_gallery_large.jpg",
+      "https://www.melijoe.com/images/239688/image_gallery_large.jpg"
+    ],
+    "filters": ["313826", "000128", "673082", "674079", "674080", "312884"],
+    "variants": [
+      {
+        "price": 285.0,
+        "discountPrice": 285.0
+      }
+    ]
+  },
+  {
+    "_id": "799432",
+    "name": "Silver Unicorn Shoulder Bag",
+    "brand": "Billieblush",
+    "category": "248",
+    "shortDescription": "&#8211; Measurements: 12 x 4 cm&#8211; 100% Polyurethane",
+    "longDescription": "&#8211; Main compartment with a zip closure&#8211; Glittery unicorn appliqué on the front",
+    "imageCovers": [
+      "https://www.melijoe.com/images/232468/card_medium.jpg",
+      "https://www.melijoe.com/images/232470/card_medium.jpg"
+    ],
+    "images": [
+      "https://www.melijoe.com/images/232468/image_gallery_large.jpg",
+      "https://www.melijoe.com/images/232470/image_gallery_large.jpg",
+      "https://www.melijoe.com/images/232473/image_gallery_large.jpg"
+    ],
+    "filters": ["313826", "000218", "673101", "674079", "312884"],
+    "variants": [
+      {
+        "price": 45.0,
+        "discountPrice": 45.0
+      }
+    ]
+  },
+  {
+    "_id": "783587",
+    "name": "Black Biba Bag",
+    "brand": "Les Coyotes de Paris",
+    "category": "248",
+    "shortDescription": "&#8211; Measurements: 37.5 x 29 x 7 cm&#8211; 100% Nylon&#8211; Spot clean only",
+    "longDescription": "&#8211; Padded design&#8211; Main compartment with a zip closure&#8211; Two inner compartments&#8211; Padded shoulder strap",
+    "imageCovers": [
+      "https://www.melijoe.com/images/234111/card_medium.jpg",
+      "https://www.melijoe.com/images/234101/card_medium.jpg"
+    ],
+    "images": [
+      "https://www.melijoe.com/images/234111/image_gallery_large.jpg",
+      "https://www.melijoe.com/images/234101/image_gallery_large.jpg",
+      "https://www.melijoe.com/images/234112/image_gallery_large.jpg",
+      "https://www.melijoe.com/images/234100/image_gallery_large.jpg"
+    ],
+    "filters": ["313826", "000217", "673082", "674079", "312884"],
+    "variants": [
+      {
+        "price": 126.0,
+        "discountPrice": 126.0
+      }
+    ]
+  },
+  {
+    "_id": "762445",
+    "name": "Floral Sports Bag Black",
+    "brand": "IKKS",
+    "category": "248",
+    "shortDescription": "&#8211; Measurements: 20 x 33 x 20 cm&#8211; 50% Cotton, 50% Polyester&#8211; Lining: 100% Cotton&#8211; Spot clean only",
+    "longDescription": "&#8211; Spacious main compartment&#8211; Zip closure at the top&#8211; One side pocket&#8211; Shoulder strap&#8211; Handles at the top",
+    "imageCovers": [
+      "https://www.melijoe.com/images/251782/card_medium.jpg",
+      "https://www.melijoe.com/images/251783/card_medium.jpg"
+    ],
+    "images": [
+      "https://www.melijoe.com/images/251782/image_gallery_large.jpg",
+      "https://www.melijoe.com/images/251783/image_gallery_large.jpg",
+      "https://www.melijoe.com/images/251784/image_gallery_large.jpg"
+    ],
+    "filters": ["313826", "000145", "673082", "674079", "312884"],
+    "variants": [
+      {
+        "price": 73.0,
+        "discountPrice": 43.8
+      }
+    ]
+  },
+
+  {
+    "_id": "802245",
+    "name": "Navy Cheetah Sherpa Zip Sweater",
+    "brand": "The Marc Jacobs",
+    "category": "404",
+    "shortDescription": "&#8211; Shell: 100% Polyester&#8211; Lining: 100% Cotton&#8211; Trimming: 55% Cotton, 45% Polyamide&#8211; Machine washable 30 degrees",
+    "longDescription": "&#8211; Zip closure at the front&#8211; Contrast-colored chest pocket with a zip closure&#8211; Sherpa-lined high collar&#8211; Jersey lining&#8211; Logo embroidery at the back",
+    "imageCovers": [
+      "https://www.melijoe.com/images/223131/card_medium.jpg",
+      "https://www.melijoe.com/images/223133/card_medium.jpg"
+    ],
+    "images": [
+      "https://www.melijoe.com/images/223131/image_gallery_large.jpg",
+      "https://www.melijoe.com/images/223133/image_gallery_large.jpg",
+      "https://www.melijoe.com/images/223134/image_gallery_large.jpg"
+    ],
+    "filters": [
+      "671002",
+      "671044",
+      "671012",
+      "671043",
+      "671057",
+      "671031",
+      "671022",
+      "671999",
+      "671010",
+      "674080",
+      "313723",
+      "313681",
+      "000205",
+      "673082"
+    ],
+    "variants": [
+      {
+        "price": 155.0,
+        "discountPrice": 155.0,
+        "size": "2 years"
+      },
+      {
+        "price": 155.0,
+        "discountPrice": 155.0,
+        "size": "3 years"
+      },
+      {
+        "price": 155.0,
+        "discountPrice": 155.0,
+        "size": "4 years"
+      },
+      {
+        "price": 155.0,
+        "discountPrice": 155.0,
+        "size": "5 years"
+      },
+      {
+        "price": 169.0,
+        "discountPrice": 169.0,
+        "size": "6 years"
+      },
+      {
+        "price": 169.0,
+        "discountPrice": 169.0,
+        "size": "7 years"
+      },
+      {
+        "price": 169.0,
+        "discountPrice": 169.0,
+        "size": "8 years"
+      },
+      {
+        "price": 169.0,
+        "discountPrice": 169.0,
+        "size": "9 years"
+      },
+      {
+        "price": 169.0,
+        "discountPrice": 169.0,
+        "size": "10 years"
+      }
+    ]
+  },
+  {
+    "_id": "802242",
+    "displayProductId": "143502",
+    "name": "Cream Graphic Colorblock Hoodie",
+    "brand": "The Marc Jacobs",
+    "category": "404",
+    "shortDescription": "&#8211; Main: 100% Cotton&#8211; Ribbing: 97% Cotton, 3% Elastane&#8211; Machine washable 30 degrees",
+    "longDescription": "&#8211; Regular fit&#8211; Jersey-lined hood&#8211; Ribbed cuffs",
+    "imageCovers": [
+      "https://www.melijoe.com/images/224048/card_medium.jpg",
+      "https://www.melijoe.com/images/224079/card_medium.jpg"
+    ],
+    "images": [
+      "https://www.melijoe.com/images/224048/image_gallery_large.jpg",
+      "https://www.melijoe.com/images/224079/image_gallery_large.jpg"
+    ],
+    "filters": [
+      "671002",
+      "671010",
+      "671005",
+      "671078",
+      "674080",
+      "313723",
+      "313754",
+      "312889",
+      "312902",
+      "000205",
+      "673088"
+    ],
+    "variants": [
+      {
+        "price": 115.0,
+        "discountPrice": 115.0,
+        "size": "2 years"
+      },
+      {
+        "price": 129.0,
+        "discountPrice": 129.0,
+        "size": "10 years"
+      },
+      {
+        "price": 129.0,
+        "discountPrice": 129.0,
+        "size": "12 years"
+      },
+      {
+        "price": 139.0,
+        "discountPrice": 139.0,
+        "size": "13+ years"
       }
     ]
   }

@@ -6,7 +6,6 @@ const Category = require('./../models/category');
 const AppError = require('./../utils/appError');
 const APIFeatures = require('./../utils/apiFeatures');
 const catchAsync = require('./../utils/catchAsync');
-const factory = require('./handlerFactory');
 const ProductVariation = require('./../models/productVariations');
 
 const multerStorage = multer.memoryStorage();
@@ -99,7 +98,7 @@ exports.updateProduct = catchAsync(async function (req, res, next) {
 exports.getAllProducts = catchAsync(async (req, res, next) => {
   let filter = {};
   if (req.params.categoryId) {
-    const category = await Category.findById(req.params.categoryId);
+    const category = await Category.findById(req.params.categoryId).lean();
     if (!category) {
       return next(new AppError('ID không hợp lệ', 400));
     }
@@ -125,7 +124,9 @@ exports.getAllProducts = catchAsync(async (req, res, next) => {
     .limitFields()
     .paginate();
 
-  const doc = await features.query;
+  const doc = await features.query
+    .select('-filters -facets -createAt -longDescription -shortDescription')
+    .lean();
 
   res.status(200).json({
     status: 'success',
@@ -199,7 +200,25 @@ exports.getFacets = catchAsync(async (req, res, next) => {
   });
 });
 
-exports.getProduct = factory.getOne(Product);
+exports.getProduct = catchAsync(async (req, res, next) => {
+  const product = await Product.findById(req.params.id)
+    .select('-filters -facets -createAt')
+    .lean();
+  if (!product) {
+    return next(new AppError('No matching products found!!', 404));
+  }
+  console.log(product);
+  let variants = ProductVariation.find({ product: product._id }).select('-__v');
+  variants.flag = true;
+  variants = await variants.lean();
+  product.variants = variants;
+
+  res.status(200).json({
+    status: 'success',
+    data: product,
+  });
+});
+
 exports.createProduct = catchAsync(async (req, res, next) => {
   const { variants, ...objBody } = req.body;
   const product = await Product.create(objBody);
@@ -242,7 +261,9 @@ exports.deleteProduct = catchAsync(async (req, res, next) => {
 
 exports.getProductFeatured = catchAsync(async (req, res, next) => {
   const count = req.params.count ? req.params.count : 0;
-  const product = await Product.find({ isFeatured: true }).limit(+count);
+  const product = await Product.find({ isFeatured: true })
+    .limit(+count)
+    .lean();
 
   res.status(200).json({
     status: 'success',
