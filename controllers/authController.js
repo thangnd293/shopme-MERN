@@ -153,9 +153,11 @@ exports.login = catchAsync(async function (req, res, next) {
   if (!email || !password)
     return next(new AppError('Please provide email and password', 400));
   // Kiem tra tai khoan & mat khau
-  const user = await User.findOne({ email, isVerified: true }).select(
-    '+password'
-  );
+  // const user = await User.findOne({ email, isVerified: true }).select(
+  //   '+password'
+  // );
+
+  const user = await User.findOne({ email }).select('+password');
 
   if (!user || !(await user.correctPassword(password, user.password)))
     return next(new AppError('Incorrect email or password', 401));
