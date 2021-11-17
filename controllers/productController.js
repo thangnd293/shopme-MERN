@@ -207,7 +207,7 @@ exports.getProduct = catchAsync(async (req, res, next) => {
   if (!product) {
     return next(new AppError('No matching products found!!', 404));
   }
-  console.log(product);
+
   let variants = ProductVariation.find({ product: product._id }).select('-__v');
   variants.flag = true;
   variants = await variants.lean();

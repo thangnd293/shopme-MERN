@@ -17,7 +17,6 @@ const categorySchema = new mongoose.Schema({
     type: Number,
     require: true,
   },
-  createAt: Date,
   slug: String,
 });
 

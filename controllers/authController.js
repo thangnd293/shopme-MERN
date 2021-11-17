@@ -84,33 +84,34 @@ exports.signup = catchAsync(async (req, res, next) => {
     phoneNumber: req.body.phoneNumber,
   });
 
+  createSendToken(newUser, 200, res);
   //2. Tạo token xác nhận email
-  const verifyToken = newUser.createVerifyToken();
-  await newUser.save({ validateBeforeSave: false });
-  // 3. Gui toi email token de user reset password
-  const resetURL = `${req.protocol}://${req.get(
-    'host'
-  )}/api/v1/verify/${verifyToken}`;
-  const message = `Press here to verify your account: ${resetURL}`;
+  // const verifyToken = newUser.createVerifyToken();
+  // await newUser.save({ validateBeforeSave: false });
+  // // 3. Gui toi email token de user reset password
+  // const resetURL = `${req.protocol}://${req.get(
+  //   'host'
+  // )}/api/v1/verify/${verifyToken}`;
+  // const message = `Press here to verify your account: ${resetURL}`;
 
-  // Neu email gui khong thanh cong thi phai reset verifyToken va verifyExpires
-  try {
-    await sendEmail({
-      email: newUser.email,
-      subject: 'Verify your account (valid for 10 min)',
-      message,
-    });
+  // // Neu email gui khong thanh cong thi phai reset verifyToken va verifyExpires
+  // try {
+  //   await sendEmail({
+  //     email: newUser.email,
+  //     subject: 'Verify your account (valid for 10 min)',
+  //     message,
+  //   });
 
-    res.status(200).json({
-      status: 'success',
-      message: 'Token sent to email',
-    });
-  } catch (err) {
-    newUser.verifyToken = undefined;
-    newUser.verifyExpires = undefined;
-    await newUser.save({ validateBeforeSave: false });
-    next(new AppError('There was an error sending the email'), 500);
-  }
+  //   res.status(200).json({
+  //     status: 'success',
+  //     message: 'Token sent to email',
+  //   });
+  // } catch (err) {
+  //   newUser.verifyToken = undefined;
+  //   newUser.verifyExpires = undefined;
+  //   await newUser.save({ validateBeforeSave: false });
+  //   next(new AppError('There was an error sending the email'), 500);
+  // }
 });
 
 exports.verify = catchAsync(async (req, res, next) => {

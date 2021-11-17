@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Product = require('./product');
-const AppError = require('./../utils/appError');
 
 const variationSchema = mongoose.Schema({
   product: {
@@ -9,7 +8,7 @@ const variationSchema = mongoose.Schema({
     require: true,
   },
   price: {
-    type: String,
+    type: Number,
     default: 1,
     min: [1, 'Price must be more than 1$'],
   },
