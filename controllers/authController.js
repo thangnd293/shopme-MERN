@@ -86,7 +86,7 @@ exports.signup = catchAsync(async (req, res, next) => {
     });
   } catch (e) {
     return next(
-      AppError('Email already exists, please use another email', 400)
+      new AppError('Email already exists, please use another email', 400)
     );
   }
 
