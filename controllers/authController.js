@@ -75,8 +75,9 @@ exports.restrictTo = function (...roles) {
 
 exports.signup = catchAsync(async (req, res, next) => {
   //1. Lấy dữ liệu user nhập
+  let newUser;
   try {
-    const newUser = await User.create({
+    newUser = await User.create({
       fname: req.body.fname,
       lname: req.body.lname,
       email: req.body.email,
