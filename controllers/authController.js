@@ -75,14 +75,20 @@ exports.restrictTo = function (...roles) {
 
 exports.signup = catchAsync(async (req, res, next) => {
   //1. Lấy dữ liệu user nhập
-  const newUser = await User.create({
-    fname: req.body.fname,
-    lname: req.body.lname,
-    email: req.body.email,
-    password: req.body.password,
-    passwordConfirm: req.body.passwordConfirm,
-    phoneNumber: req.body.phoneNumber,
-  });
+  try {
+    const newUser = await User.create({
+      fname: req.body.fname,
+      lname: req.body.lname,
+      email: req.body.email,
+      password: req.body.password,
+      passwordConfirm: req.body.passwordConfirm,
+      phoneNumber: req.body.phoneNumber,
+    });
+  } catch (e) {
+    return next(
+      AppError('Email already exists, please use another email', 400)
+    );
+  }
 
   createSendToken(newUser, 200, res);
   //2. Tạo token xác nhận email
