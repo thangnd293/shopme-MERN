@@ -25,6 +25,13 @@ const createSendToken = function (user, code, res) {
   res.status(code).json({
     status: 'success',
     token,
+    data: {
+      fname: user.fname,
+      lname: user.lname,
+      email: user.email,
+      photo: user.photo,
+      phoneNumber: user.phoneNumber,
+    },
   });
 };
 
