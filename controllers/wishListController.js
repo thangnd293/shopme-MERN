@@ -15,9 +15,11 @@ exports.prepareWishList = catchAsync(async (req, res, next) => {
 });
 
 exports.getWishList = catchAsync(async (req, res, next) => {
-  const wishList = await WishList.findOne({ user: req.user.id }).populate(
-    'products.product'
-  );
+  const wishList = await WishList.findOne({ user: req.user.id }).populate({
+    path: 'products.product',
+    select:
+      '-filters -facets -longDescription -shortDescription -isFeatured -categoryPath -__v -createAt -images',
+  });
 
   res.status(200).json({
     status: 'success',
