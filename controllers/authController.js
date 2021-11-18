@@ -6,14 +6,15 @@ const sendEmail = require('./../utils/email');
 const catchAsync = require('./../utils/catchAsync');
 const AppError = require(`./../utils/appError`);
 
-const createToken = function (id) {
-  return jwt.sign({ id }, process.env.JWT_SECRET_KEY, {
+const createToken = function (id, name) {
+  return jwt.sign({ id, name }, process.env.JWT_SECRET_KEY, {
     expiresIn: process.env.JWT_EXPIRES_IN,
   });
 };
 
 const createSendToken = function (user, code, res) {
-  const token = createToken(user._id);
+  const name = user.lname + ' ' + user.fname;
+  const token = createToken(user._id, name);
 
   const cookieOption = {
     expires: new Date(
@@ -25,9 +26,6 @@ const createSendToken = function (user, code, res) {
   res.status(code).json({
     status: 'success',
     token,
-    data: {
-      user,
-    },
   });
 };
 
