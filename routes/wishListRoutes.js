@@ -7,6 +7,5 @@ router.use(authController.protect);
 router.use(wishListController.prepareWishList);
 router.route('/').get(wishListController.getWishList);
 router.route('/add').post(wishListController.addToWishList);
-router.route('/remove').post(wishListController.removeFromWishList);
 
 module.exports = router;
