@@ -39,7 +39,6 @@ exports.getAllSubCategory = catchAsync(async function (req, res, next) {
     parent: category.path,
   });
 
-  console.log(subCategories);
   res.status(200).json({
     status: 'success',
     result: subCategories.length,
