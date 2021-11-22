@@ -1,57 +1,5 @@
 [
   {
-    "_id": "762691",
-    "name": "White Colourblock Dalmation Spots Cardigan",
-    "brandId": "000200",
-    "color": "673087",
-    "imageCovers": [
-      "https://www.melijoe.com/images/257509/image_gallery_large.jpg",
-      "https://www.melijoe.com/images/257508/image_gallery_large.jpg"
-    ],
-    "images": [
-      "https://www.melijoe.com/images/257509/image_gallery_large.jpg",
-      "https://www.melijoe.com/images/257508/image_gallery_large.jpg"
-    ],
-    "category": "320",
-    "shortDescription": "",
-    "longDescription": "",
-    "filters": ["674080", "674079", "313723", "313681"],
-    "variants": [
-      {
-        "price": 164.0,
-        "discountPrice": 164.0,
-        "sizeId": "671044"
-      },
-      {
-        "price": 164.0,
-        "discountPrice": 164.0,
-        "sizeId": "671012"
-      },
-      {
-        "price": 270.0,
-        "discountPrice": 270.0,
-        "sizeId": "671057"
-      },
-      {
-        "price": 270.0,
-        "discountPrice": 270.0,
-        "sizeId": "671022"
-      },
-      {
-        "price": 270.0,
-        "discountPrice": 270.0,
-        "sizeId": "671010"
-      },
-      {
-        "price": 164.0,
-        "discountPrice": 164.0,
-        "sizeId": "671078"
-      }
-    ],
-    "isFeatured": true
-  },
-  {
-    "_id": "821364",
     "name": "White Colourblock Dalmation Spots Cardigan",
     "brandId": "000200",
     "color": "673097",
@@ -89,6 +37,7 @@
   {
     "name": "White Hearts Cardigan",
     "brandId": "000200",
+    "color": "673087",
     "imageCovers": [
       "https://www.melijoe.com/images/259985/card_medium.jpg",
       "https://www.melijoe.com/images/260002/card_medium.jpg"
@@ -97,11 +46,10 @@
       "https://www.melijoe.com/images/259985/image_gallery_large.jpg",
       "https://www.melijoe.com/images/260002/image_gallery_large.jpg"
     ],
-    "category": ["320"],
+    "categories": ["320"],
     "shortDescription": "&#8211; 80% Cotton, 13% Polyester, 5% Wool, 1% Polyamide, 1% Metallic Fiber&#8211; Machine washable 30 degrees",
     "longDescription": "&#8211; Button closure at the front&#8211; Ribbed cuffs and hem&#8211; Knitted heart shapes all over",
     "filters": ["313681", "312909", "674079", "313723"],
-    "color": "673087",
     "variants": [
       {
         "price": 117.0,
@@ -133,7 +81,7 @@
   },
   {
     "name": "Beige Cardigan",
-    "brand": "000115",
+    "brandId": "000115",
     "color": "673097",
     "imageCovers": [
       "https://www.melijoe.com/images/247149/card_medium.jpg",
@@ -170,7 +118,7 @@
   {
     "_id": "787878",
     "name": "Pink Floral Cardigan",
-    "brand": "Tartine et Chocolat",
+    "brandId": "Tartine et Chocolat",
     "imageCovers": [
       "https://www.melijoe.com/images/220294/card_medium.jpg",
       "https://www.melijoe.com/images/220300/card_medium.jpg"
@@ -179,7 +127,7 @@
       "https://www.melijoe.com/images/220294/image_gallery_large.jpg",
       "https://www.melijoe.com/images/220300/image_gallery_large.jpg"
     ],
-    "category": "320",
+    "categories": "320",
     "shortDescription": "&#8211; 70% Cotton, 25% Wool, 5% Cashmere&#8211; Machine washable 30 degrees",
     "longDescription": "&#8211; Button closure at the front&#8211; Ribbed crew neckline&#8211; Embroidered flowers on the shoulders and on the sleeves",
     "filters": [
@@ -214,7 +162,7 @@
   {
     "_id": "802187",
     "name": "Brown Cheetah Sherpa Zip Sweater",
-    "brand": "The Marc Jacobs",
+    "brandId": "The Marc Jacobs",
     "imageCovers": [
       "https://www.melijoe.com/images/223060/card_medium.jpg",
       "https://www.melijoe.com/images/223061/card_medium.jpg"
@@ -224,7 +172,7 @@
       "https://www.melijoe.com/images/223061/image_gallery_large.jpg",
       "https://www.melijoe.com/images/223062/image_gallery_large.jpg"
     ],
-    "category": "320",
+    "categories": "320",
     "shortDescription": "&#8211; Shell: 100% Polyester&#8211; Lining: 100% Cotton&#8211; Trimming: 55% Cotton, 45% Polyamide&#8211; Machine washable 30 degrees",
     "longDescription": "&#8211; Zip closure at the front&#8211; Contrast-colored chest pocket with a zip closure&#8211; Sherpa-lined high collar&#8211; Jersey lining",
     "filters": [
@@ -269,8 +217,8 @@
   {
     "_id": "774346",
     "name": "Navy Cardigan",
-    "brand": "Petit Bateau",
-    "category": "320",
+    "brandId": "Petit Bateau",
+    "categories": "320",
     "shortDescription": "&#8211; 75% Cotton, 25% Polyester&#8211; Machine washable 30 degrees",
     "longDescription": "&#8211; Regular fit&#8211; Quilted design&#8211; Snap button closure at the front",
     "imageCovers": [
@@ -325,8 +273,8 @@
   {
     "_id": "795985",
     "name": "Winter Moss Maja Cardigan",
-    "brand": "Wheat",
-    "category": "320",
+    "brandId": "Wheat",
+    "categories": "320",
     "shortDescription": "&#8211; 100% Organic Cotton&#8211; Machine washable 30 degrees",
     "longDescription": "&#8211; Knitted design with pointelle details&#8211; Button closure at the front&#8211; This product is crafted with sustainable organic cotton",
     "imageCovers": [
@@ -416,8 +364,8 @@
   {
     "_id": "774347",
     "name": "Pink Quilt Cardigan",
-    "brand": "Petit Bateau",
-    "category": "320",
+    "brandId": "Petit Bateau",
+    "categories": "320",
     "shortDescription": "&#8211; 75% Cotton, 25% Polyester&#8211; Machine washable 40 degrees",
     "longDescription": "&#8211; Quilted pattern&#8211; Snap buttons at the front",
     "imageCovers": [
@@ -465,8 +413,8 @@
   {
     "_id": "762590",
     "name": "Black Multicolor Sequin Cardigan",
-    "brand": "Stella McCartney Kids",
-    "category": "320",
+    "brandId": "Stella McCartney Kids",
+    "categories": "320",
     "shortDescription": "&#8211; 95% Cotton, 5% Elastane&#8211; Machine washable 30 degrees",
     "longDescription": "&#8211; Sequin design&#8211; V-neck design&#8211; Button closure at the front&#8211; Ribbed cuffs and hem",
     "imageCovers": [
@@ -520,8 +468,8 @@
   {
     "_id": "823719",
     "name": "Navy Blue Bennie Zip Sweater",
-    "brand": "Jacadi",
-    "category": "320",
+    "brandId": "Jacadi",
+    "categories": "320",
     "shortDescription": "&#8211; Shell And Lining: 62% Polyester, 38% Viscose&#8211; Hood Lining: 100% Cotton&#8211; Machine washable 30 degrees",
     "longDescription": "&#8211; Zip closure at the front&#8211; Slanted front pockets&#8211; Floral hood lining",
     "imageCovers": [
@@ -576,8 +524,8 @@
   {
     "_id": "769892",
     "name": "Pink Quilted Heart Hoodie",
-    "brand": "MSGM",
-    "category": "320",
+    "brandId": "MSGM",
+    "categories": "320",
     "shortDescription": "&#8211; 100% Cotton&#8211; Machine washable 30 degrees",
     "longDescription": "&#8211; Jersey-lined hood&#8211; Brushed fleece lining&#8211; Ribbed cuffs and hem&#8211; Quilted heart shape at the front",
     "imageCovers": [
@@ -634,8 +582,8 @@
   {
     "_id": "822605",
     "name": "Fuchsia Cardigan",
-    "brand": "Garcia",
-    "category": "320",
+    "brandId": "Garcia",
+    "categories": "320",
     "shortDescription": "&#8211; 54% Polyamide, 30% Viscose, 16% Polyester&#8211; Machine washable 40 degrees",
     "longDescription": "&#8211; Comfy design&#8211; Button closure at the front",
     "imageCovers": [
@@ -677,8 +625,8 @@
   {
     "_id": "823837",
     "name": "Red Knit Cardigan",
-    "brand": "Jacadi",
-    "category": "320",
+    "brandId": "Jacadi",
+    "categories": "320",
     "shortDescription": "&#8211; 95% Organic Cotton&#8211; Machine washable 30 degrees",
     "longDescription": "&#8211; Button closure at the front",
     "imageCovers": [
@@ -726,8 +674,8 @@
   {
     "_id": "773238",
     "name": "Doeskin Melange Georgette Cardigan",
-    "brand": "Molo",
-    "category": "320",
+    "brandId": "Molo",
+    "categories": "320",
     "shortDescription": "&#8211; 55% Viscose, 20% Acrylic, 20% Nylon, 5% Elastane&#8211; Machine washable 30 degrees",
     "longDescription": "&#8211; Button closure at the front&#8211; Ribbed knit design",
     "imageCovers": [
@@ -776,8 +724,8 @@
   {
     "_id": "799028",
     "name": "Black Tricot Cardigan",
-    "brand": "Moncler",
-    "category": "320",
+    "brandId": "Moncler",
+    "categories": "320",
     "shortDescription": "&#8211; 100% Polyamide&#8211; Hand wash only",
     "longDescription": "&#8211; Zip closure at the front&#8211; Ribbed cuffs and hem&#8211; Ribbed crew neckline&#8211; Logo applique on the sleeve",
     "imageCovers": [
@@ -826,8 +774,8 @@
   {
     "_id": "793559",
     "name": "Gray Ice Skate Cardigan",
-    "brand": "Il Gufo",
-    "category": "320",
+    "brandId": "Il Gufo",
+    "categories": "320",
     "shortDescription": "&#8211; 100% Virgin Wool&#8211; Hand wash only",
     "longDescription": "&#8211; Button closure at the front&#8211; Ribbed rounded neckline&#8211; Ribbed cuffs&#8211; Embroidered skate shoes at the front",
     "imageCovers": [
@@ -881,8 +829,8 @@
   {
     "_id": "821359",
     "name": "Navy Jacquard Cardigan",
-    "brand": "Bonpoint",
-    "category": "320",
+    "brandId": "Bonpoint",
+    "categories": "320",
     "shortDescription": "&#8211; 100% Wool&#8211; Machine washable 30 degrees",
     "longDescription": "&#8211; Sleeveless design&#8211; Button closure at the front&#8211; Ribbed cuffs and hem&#8211; Ribbed v-neck design",
     "imageCovers": [
@@ -930,8 +878,8 @@
   {
     "_id": "821356",
     "name": "Navy Cherry Detail Cardigan",
-    "brand": "Bonpoint",
-    "category": "320",
+    "brandId": "Bonpoint",
+    "categories": "320",
     "shortDescription": "&#8211; 100% Cashmere&#8211; Hand wash only",
     "longDescription": "&#8211; Button closure at the front&#8211; Ribbed round neck&#8211; Ribbed cuffs and hem&#8211; Intarsia details at the front",
     "imageCovers": [
@@ -991,7 +939,7 @@
   {
     "_id": "773990",
     "name": "Purple Night Gianna Cardigan",
-    "brand": "Molo",
+    "brandId": "Molo",
     "imageCovers": [
       "https://www.melijoe.com/images/260305/card_medium.jpg",
       "https://www.melijoe.com/images/260302/card_medium.jpg"
@@ -1001,7 +949,7 @@
       "https://www.melijoe.com/images/260302/image_gallery_large.jpg",
       "https://www.melijoe.com/images/260312/image_gallery_large.jpg"
     ],
-    "category": "320",
+    "categories": "320",
     "shortDescription": "&#8211; 100% Polyester&#8211; Machine washable 30 degrees",
     "longDescription": "&#8211; Soft velour material&#8211; Knitted design&#8211; Button closure at the front",
     "filters": [
@@ -1042,7 +990,7 @@
   {
     "_id": "775333",
     "name": "Dark Silver Star Puffer Jacket",
-    "brand": "NUNUNU",
+    "brandId": "NUNUNU",
     "imageCovers": [
       "https://www.melijoe.com/images/264180/card_medium.jpg",
       "https://www.melijoe.com/images/264179/card_medium.jpg"
@@ -1052,7 +1000,7 @@
       "https://www.melijoe.com/images/264179/image_gallery_large.jpg",
       "https://www.melijoe.com/images/264182/image_gallery_large.jpg"
     ],
-    "category": "192",
+    "categories": "192",
     "shortDescription": "&#8211; Shell: 100% Polyamide&#8211; Lining: 100% Cotton&#8211; Padding: 90% Down, 10% Feathers&#8211; Machine washable 30 degrees",
     "longDescription": "&#8211; Diagonal zip closure at the front&#8211; Side seam pockets&#8211; Included face mask&#8211; Ribbed cuffs&#8211; Inner shoulder straps&#8211; Padded hood&#8211; Suitable for temperatures as low as -10°C",
     "filters": [
@@ -1112,7 +1060,7 @@
   {
     "_id": "798958",
     "name": "Pink Charpal Down Jacket",
-    "brand": "Moncler",
+    "brandId": "Moncler",
     "imageCovers": [
       "https://www.melijoe.com/images/260754/card_medium.jpg",
       "https://www.melijoe.com/images/260755/card_medium.jpg"
@@ -1122,7 +1070,7 @@
       "https://www.melijoe.com/images/260755/image_gallery_large.jpg",
       "https://www.melijoe.com/images/260756/image_gallery_large.jpg"
     ],
-    "category": "192",
+    "categories": "192",
     "shortDescription": "&#8211; Shell And Lining: 100% Polyamide&#8211; Padding: 90% Goose Down, 10% Goose Feathers&#8211; Machine washable 30 degrees",
     "longDescription": "&#8211; Longline design&#8211; Down and feather filling&#8211; Detachable hood&#8211; Zip closure at the front&#8211; Two front pockets&#8211; DIST certified down (Down Integrity System &amp; Traceability)",
     "filters": [
@@ -1150,10 +1098,10 @@
   {
     "_id": "777654",
     "name": "Morel Grey Isabelle Padded Jacket",
-    "brand": "Mini A Ture",
-    "category": "192",
+    "brandId": "Mini A Ture",
+    "categories": "192",
     "shortDescription": "&#8211; Waterproof: 12,000 mm&#8211; Breathable: 8,000 g/m2/24 h&#8211; 100% Recycled Polyester&#8211; Machine washable 40 degrees",
-    "longDescription": "&#8211; Zip closure with chin guard with a stormflap&#8211; Side seam pockets&#8211; Detachable padded hood&#8211; Elastic band at the back waist&#8211; Renewably-sourced DUPONT&#8482; Sorona® fibers&#8211; Made from recycled polyester&#8211; The brand&#39;s signature star reflector in the pocket",
+    "longDescription": "&#8211; Zip closure with chin guard with a stormflap&#8211; Side seam pockets&#8211; Detachable padded hood&#8211; Elastic band at the back waist&#8211; Renewably-sourced DUPONT&#8482; Sorona® fibers&#8211; Made from recycled polyester&#8211; The brandId&#39;s signature star reflector in the pocket",
     "imageCovers": [
       "https://www.melijoe.com/images/245908/card_medium.jpg",
       "https://www.melijoe.com/images/245903/card_medium.jpg"
@@ -1194,8 +1142,8 @@
   {
     "_id": "783548",
     "name": "Black Hally Puffer Jacket",
-    "brand": "Les Coyotes De Paris",
-    "category": "192",
+    "brandId": "Les Coyotes De Paris",
+    "categories": "192",
     "shortDescription": "&#8211; 100% Nylon&#8211; Dry clean only",
     "longDescription": "&#8211; Warm padding&#8211; Detachable hood&#8211; Zip closure at the front&#8211; Two front pockets&#8211; Elasticated hem",
     "imageCovers": [
@@ -1233,8 +1181,8 @@
   {
     "_id": "798933",
     "name": "Beige Acelia Puffer Jacket",
-    "brand": "Moncler",
-    "category": "192",
+    "brandId": "Moncler",
+    "categories": "192",
     "shortDescription": "&#8211; Shell And Lining: 100% Polyamide&#8211; Padding: 90% Down, 10% Feathers&#8211; Hand wash only",
     "longDescription": "&#8211; Down and feather filling&#8211; Fixed padded hood&#8211; Zip closure at the front&#8211; Two pockets at the front&#8211; Embroidered logo at the sleeve&#8211; Elasticated waist with a cinch cord fastening&#8211; Elasticated cuffs&#8211; Elasticated waist belt&#8211; DIST certified down (Down Integrity System &amp; Traceability)",
     "imageCovers": [
@@ -1279,8 +1227,8 @@
   {
     "_id": "782116",
     "name": "Beige Faux Fur Boots",
-    "brand": "Mayoral",
-    "category": "177",
+    "brandId": "Mayoral",
+    "categories": "177",
     "shortDescription": "&#8211; Upper: Other Materials, Textiles.&#8211; Lining: Textiles, Leather.&#8211; Sole: Other Materials&#8211; Please note that when you purchase shoes for your child, you should select a sizeId that is 1.5 cm larger than your child&#39;s foot. Wellies and boots should be up to 2 cm larger, for extra socks and insolesSize Guide (Foot Length): 19 = 118 mm20 = 124 mm21 = 130 mm 22 = 136 mm23 = 142 mm24 = 148 mm25 = 154 mm ",
     "longDescription": "&#8211; Faux leather upper&#8211; Faux fur trim&#8211; Zip closure on the side for easy on and off&#8211; Leather insole&#8211; Non-slip sole",
     "imageCovers": [
@@ -1348,8 +1296,8 @@
   {
     "_id": "795889",
     "name": "Black Kaya Lace Tex Boots",
-    "brand": "Wheat",
-    "category": "177",
+    "brandId": "Wheat",
+    "categories": "177",
     "shortDescription": "&#8211; Upper: Leather.&amp;#8211; Lining: Textiles.&amp;#8211; Sole: Other Materials&#8211; Please note that when you purchase shoes for your child, you should select a sizeId that is 1.5 cm larger than your child&#39;s foot. Wellies and boots should be up to 2 cm larger, for extra socks and insolesSize Guide (Insole): 22 = 147 mm &#10;23 = 154 mm &#10;24 = 160 mm &#10;25 = 168 mm &#10;26 = 174 mm &#10;27 = 180 mm &#10;28 = 185 mm &#10;29 = 191 mm &#10;30 = 197 mm &#10;31 = 203 mm &#10;32 = 210 mm ",
     "longDescription": "&#8211; Made in Portugal&#8211; Leather upper&#8211; Wool lining&#8211; Zip closure at the side for easy on and off&#8211; Non-slip rubber sole&#8211; Waterproof TEX membrane&#8211; Chrome-free",
     "imageCovers": [
@@ -1406,8 +1354,8 @@
   {
     "_id": "806634",
     "name": "Brown Trip Fringe Boots",
-    "brand": "Pom d&#39;Api",
-    "category": "177",
+    "brandId": "Pom d&#39;Api",
+    "categories": "177",
     "shortDescription": "&#8211; Upper: Leather.&amp;#8211; Lining: Leather.&amp;#8211; Sole: Other Materials&#8211; Please note that when you purchase shoes for your child, you should select a sizeId that is 1.5 cm larger than your child&#39;s foot. Wellies and boots should be up to 2 cm larger, for extra socks and insolesSize Guide (Foot Length): 24 = 151 mm25 = 157 mm26 = 163 mm 27 = 169 mm28 = 176 mm29 = 183 mm30 = 190 mm31 = 196 mm32 = 203 mm33 = 210 mm34 = 217 mm 35 = 223 mm 36 = 230 mm37 =  237 mm ",
     "longDescription": "&#8211; Suede upper&#8211; Zip closure on the side for easy on and off&#8211; Leather insole&#8211; Non-slip rubber sole",
     "imageCovers": [
@@ -1499,8 +1447,8 @@
   {
     "_id": "740418",
     "name": "Cream Stella B79 Tennis Sneakers",
-    "brand": "Bensimon",
-    "category": "177",
+    "brandId": "Bensimon",
+    "categories": "177",
     "shortDescription": "&#8211; Upper: Textiles.&amp;#8211; Lining: Textiles.&amp;#8211; Sole: Other Materials&#8211; Please note that when you purchase shoes for your child, you should select a sizeId that is 1.5 cm larger than your child&#39;s foot. Wellies and boots should be up to 2 cm larger, for extra socks and insolesSize Guide (Foot Length): 23 = 144 mm24 = 150 mm25 = 157 mm26 = 164 mm27 = 170 mm28 = 177 mm29 = 184 mm30 = 190 mm31 = 197 mm32 = 204 mm33 = 210 mm34 = 217 mm35 = 224 mm36 = 230 mm37 = 237 mm38 = 244 mm39 = 250 mm ",
     "longDescription": "&#8211; Canvas upper&#8211; Lace fastening&#8211; Removable insole&#8211; Chunky rubber sole&#8211; Rubber toe cap&#8211; Made in Europe&#8211; Machine washable",
     "imageCovers": [
@@ -1585,10 +1533,10 @@
     ]
   },
   {
-    "_id": "799722",
     "name": "Pink Moon Boots",
-    "brand": "Mayoral",
-    "category": "177",
+    "brandId": "000163",
+    "categories": ["177"],
+    "color": "673092",
     "shortDescription": "&#8211; Upper: Other Materials, Textiles.&#8211; Lining: Textiles, Leather.&#8211; Sole: Other Materials&#8211; Please note that when you purchase shoes for your child, you should select a sizeId that is 1.5 cm larger than your child&#39;s foot. Wellies and boots should be up to 2 cm larger, for extra socks and insolesSize Guide (Foot Length): 19 = 118 mm20 = 124 mm21 = 130 mm 22 = 136 mm23 = 142 mm24 = 148 mm25 = 154 mm ",
     "longDescription": "&#8211; Faux leather upper&#8211; Faux fur trim&#8211; Lace closure&#8211; Zip closure on the side for easy on and off&#8211; Leather insole&#8211; Non-slip sole",
     "imageCovers": [
@@ -1601,43 +1549,32 @@
       "https://www.melijoe.com/images/259898/image_gallery_large.jpg",
       "https://www.melijoe.com/images/259902/image_gallery_large.jpg"
     ],
-    "filters": [
-      "672051",
-      "672014",
-      "672055",
-      "672029",
-      "672034",
-      "312870",
-      "313807",
-      "000163",
-      "674079",
-      "673092"
-    ],
+    "filters": ["312870", "313807", "000163", "674079"],
     "variants": [
       {
         "price": 74.0,
         "discountPrice": 74.0,
-        "sizeId": "26 (UK 8.5 - US 9.5)"
+        "sizeId": "672051"
       },
       {
         "price": 74.0,
         "discountPrice": 74.0,
-        "sizeId": "27 (UK 9 - US 10)"
+        "sizeId": "672014"
       },
       {
         "price": 74.0,
         "discountPrice": 74.0,
-        "sizeId": "30 (UK 12 - US 13)"
+        "sizeId": "672055"
       },
       {
         "price": 74.0,
         "discountPrice": 74.0,
-        "sizeId": "32 (UK 13-US 1)"
+        "sizeId": "672029"
       },
       {
         "price": 74.0,
         "discountPrice": 74.0,
-        "sizeId": "35 (UK 2.5 - US 3.5)"
+        "sizeId": "672034"
       }
     ]
   },
@@ -1645,8 +1582,8 @@
   {
     "_id": "69979",
     "name": "Rucksack Portedown",
-    "brand": "Schott",
-    "category": "245",
+    "brandId": "Schott",
+    "categories": "245",
     "shortDescription": "Main fabric:100% PolyesterLining:  100% Polyester",
     "longDescription": "Padded fabric, Polyester lining, Soft ligthweight rucksack, Small handles, Reinforced straps, Outside pockets, Computer compartment, Can be carried by hand or on your back, Snap button, Zipper on the top, Clip straps, Embroidered logo, Bag sizeId: Height: 46 cm (18,11 inches) x Width 40 cm (15.7 inches) x Thickness 14 cm (5.5 inches) Weight: 570 g (20,10 OZ)",
     "imageCovers": [
@@ -1678,8 +1615,8 @@
   {
     "_id": "762667",
     "name": "White Dalmation Spots Backpack",
-    "brand": "Stella McCartney Kids",
-    "category": "245",
+    "brandId": "Stella McCartney Kids",
+    "categories": "245",
     "shortDescription": "&#8211; Measurements: 16 x 28 cm&#8211; Shell: 98% Cotton, 2% Elastane&#8211; Lining: 100% Polyester&#8211; Application: 100% Polyurethane&#8211; Spot clean only",
     "longDescription": "&#8211; Drawstring closure&#8211; Adjustable shoulder straps&#8211; 3D animal ears at the sides&#8211; Animal face at the front",
     "imageCovers": [
@@ -1702,8 +1639,8 @@
   {
     "_id": "794162",
     "name": "Red Logo Backpack",
-    "brand": "Dolce & Gabbana",
-    "category": "245",
+    "brandId": "Dolce & Gabbana",
+    "categories": "245",
     "shortDescription": "&#8211; Measurements: 40 x 11,5 x 30 cm&#8211; 90% Polyamide, 10% Leather&#8211; Spot clean only",
     "longDescription": "&#8211; Made in Italy&#8211; Adjustable shoulder straps&#8211; Name label at the back&#8211; Hanger loop&#8211; Main compartment with a zip closure&#8211; Front pocket&#8211; Logo detail at the front",
     "imageCovers": [
@@ -1734,8 +1671,8 @@
   {
     "_id": "773354",
     "name": "Velvet Floral Big Backpack",
-    "brand": "Molo",
-    "category": "245",
+    "brandId": "Molo",
+    "categories": "245",
     "shortDescription": "&#8211; Measurements: 37 x 28 x 13 cm&#8211; 100% Polyester&#8211; Spot clean only",
     "longDescription": "&#8211; Large main compartment with a zip closure&#8211; Zipped front compartment&#8211; Two bottle pockets at the sides&#8211; Laptop pocket inside&#8211; Adjustable shoulder straps",
     "imageCovers": [
@@ -1758,8 +1695,8 @@
   {
     "_id": "773350",
     "name": "Autumn Fawns Backpack",
-    "brand": "Molo",
-    "category": "245",
+    "brandId": "Molo",
+    "categories": "245",
     "shortDescription": "&#8211; Measurements: 30 x 25 x 10 cm&#8211; 100% Polyester&#8211; Spot clean only",
     "longDescription": "&#8211; Large main compartment with a zip closure&#8211; Zipped front compartment&#8211; Adjustable shoulder straps",
     "imageCovers": [
@@ -1783,8 +1720,8 @@
   {
     "_id": "751613",
     "name": "Cherry Pompon Ergomaxx Backpack",
-    "brand": "Jeune Premier",
-    "category": "248",
+    "brandId": "Jeune Premier",
+    "categories": "248",
     "shortDescription": "&#8211; Measurements: 39 x 18 x 26 cm&#8211; Capacity: 18 L&#8211; Weight: 1250 g&#8211; Suitable for ages 6 to 10 years&#8211; 100% Polyester&#8211; Spot clean only",
     "longDescription": "&#8211; Spacious main compartment&#8211; Zip pocket at the front and at the side&#8211; Adjustable, padded shoulder straps&#8211; Reflective details",
     "imageCovers": [
@@ -1809,8 +1746,8 @@
   {
     "_id": "794163",
     "name": "Black Fanny Pack",
-    "brand": "Dolce & Gabbana",
-    "category": "248",
+    "brandId": "Dolce & Gabbana",
+    "categories": "248",
     "shortDescription": "&#8211; Measurements: 20 x 7 x 12 cm&#8211; 77% Polyamide, 7% Cotton, 4% Polyester, 12% Polyurethane&#8211; Spot clean only",
     "longDescription": "&#8211; Made in Italy&#8211; Adjustable waiststrap with a buckle closure&#8211; Main compartment with a zip closure&#8211; One front pocket&#8211; All-over print",
     "imageCovers": [
@@ -1833,8 +1770,8 @@
   {
     "_id": "799432",
     "name": "Silver Unicorn Shoulder Bag",
-    "brand": "Billieblush",
-    "category": "248",
+    "brandId": "Billieblush",
+    "categories": "248",
     "shortDescription": "&#8211; Measurements: 12 x 4 cm&#8211; 100% Polyurethane",
     "longDescription": "&#8211; Main compartment with a zip closure&#8211; Glittery unicorn appliqué on the front",
     "imageCovers": [
@@ -1857,8 +1794,8 @@
   {
     "_id": "783587",
     "name": "Black Biba Bag",
-    "brand": "Les Coyotes de Paris",
-    "category": "248",
+    "brandId": "Les Coyotes de Paris",
+    "categories": "248",
     "shortDescription": "&#8211; Measurements: 37.5 x 29 x 7 cm&#8211; 100% Nylon&#8211; Spot clean only",
     "longDescription": "&#8211; Padded design&#8211; Main compartment with a zip closure&#8211; Two inner compartments&#8211; Padded shoulder strap",
     "imageCovers": [
@@ -1882,8 +1819,8 @@
   {
     "_id": "762445",
     "name": "Floral Sports Bag Black",
-    "brand": "IKKS",
-    "category": "248",
+    "brandId": "IKKS",
+    "categories": "248",
     "shortDescription": "&#8211; Measurements: 20 x 33 x 20 cm&#8211; 50% Cotton, 50% Polyester&#8211; Lining: 100% Cotton&#8211; Spot clean only",
     "longDescription": "&#8211; Spacious main compartment&#8211; Zip closure at the top&#8211; One side pocket&#8211; Shoulder strap&#8211; Handles at the top",
     "imageCovers": [
@@ -1907,8 +1844,8 @@
   {
     "_id": "802245",
     "name": "Navy Cheetah Sherpa Zip Sweater",
-    "brand": "The Marc Jacobs",
-    "category": "404",
+    "brandId": "The Marc Jacobs",
+    "categories": "404",
     "shortDescription": "&#8211; Shell: 100% Polyester&#8211; Lining: 100% Cotton&#8211; Trimming: 55% Cotton, 45% Polyamide&#8211; Machine washable 30 degrees",
     "longDescription": "&#8211; Zip closure at the front&#8211; Contrast-colored chest pocket with a zip closure&#8211; Sherpa-lined high collar&#8211; Jersey lining&#8211; Logo embroidery at the back",
     "imageCovers": [
@@ -1988,8 +1925,8 @@
     "_id": "802242",
     "displayProductId": "143502",
     "name": "Cream Graphic Colorblock Hoodie",
-    "brand": "The Marc Jacobs",
-    "category": "404",
+    "brandId": "The Marc Jacobs",
+    "categories": "404",
     "shortDescription": "&#8211; Main: 100% Cotton&#8211; Ribbing: 97% Cotton, 3% Elastane&#8211; Machine washable 30 degrees",
     "longDescription": "&#8211; Regular fit&#8211; Jersey-lined hood&#8211; Ribbed cuffs",
     "imageCovers": [

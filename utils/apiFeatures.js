@@ -31,13 +31,9 @@ class APIFeatures {
     queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, (match) => `$${match}`);
 
     queryStr = JSON.parse(queryStr);
-    if (!Array.isArray(queryStr.p)) {
-      if (queryStr.p) {
-        queryStr.filters = new RegExp(`${queryStr.p}`);
-        delete queryStr.p;
-      }
 
-      this.query = this.query.find(queryStr);
+    if (!Array.isArray(queryStr.p) && queryStr.p) {
+      this.query = this.query.find({ 'facets._id': queryStr.p });
       return this;
     }
 
@@ -63,13 +59,9 @@ class APIFeatures {
         }),
       };
     });
-    console.log(qr);
-
     qr = {
       $and: qr,
     };
-
-    console.log(qr);
 
     // Thuc hien truy van
     this.query = this.query.find(qr);

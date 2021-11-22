@@ -90,7 +90,6 @@ exports.getAllProducts = catchAsync(async (req, res, next) => {
     if (!category) {
       return next(new AppError('ID không hợp lệ', 400));
     }
-
     if (req.params.categoryId.startsWith('88')) {
       filter = { brand: category.name };
 
@@ -105,7 +104,7 @@ exports.getAllProducts = catchAsync(async (req, res, next) => {
       filter = { categoryPath: new RegExp(`${category.path}`) };
     }
   }
-
+  console.log(req.query);
   const features = new APIFeatures(Product.find(filter), req.query)
     .filterFacets()
     .sort()
@@ -139,7 +138,7 @@ exports.getFacets = catchAsync(async (req, res, next) => {
     {
       $group: {
         _id: '$facets',
-        count: { $sum: 1 }, 
+        count: { $sum: 1 },
       },
     },
     { $sort: { _id: 1 } },

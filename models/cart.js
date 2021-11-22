@@ -52,11 +52,11 @@ cartSchema.pre('save', async function (next) {
       },
       {
         $match: {
-          'variants._id': item.productVariation,
+          'variants._id': mongoose.mongo.ObjectId(item.productVariation),
         },
       },
     ]);
-
+    console.log(vars);
     if (!vars) {
       return next(new AppError('ID invalid!!', 400));
     }
