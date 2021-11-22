@@ -20,8 +20,8 @@ const connectString = process.env.DATABASE.replace(
 
 const app = require('./app');
 
-// const mongoUrl = `mongodb://admin:xb8ujyQSP6EMGfyH@SG-thangnd-47867.servers.mongodirector.com:27017/admin`;
-const mongoUrl = `mongodb+srv://thangnd:kVCjpMjwvKd5vzFS@shopme.e2nl2.mongodb.net/test?retryWrites=true&w=majority`;
+const mongoUrl = `mongodb://admin:xb8ujyQSP6EMGfyH@SG-thangnd-47867.servers.mongodirector.com:27017/admin`;
+// const mongoUrl = `mongodb+srv://thangnd:kVCjpMjwvKd5vzFS@shopme.e2nl2.mongodb.net/test?retryWrites=true&w=majority`;
 
 mongoose
   .connect(mongoUrl)

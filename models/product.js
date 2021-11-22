@@ -195,17 +195,19 @@ productSchema.pre('save', async function (next) {
       }
 
       const filter = await Filter.findById(variant.sizeId).lean();
-      if (!filter) {
+
+      if (variant.sizeId && !filter) {
         return next(
           new AppError(`Size does not exist. Please try again later.`, 404)
         );
       }
-      variant.size = filter.name;
+
+      variant.size = filter?.name;
 
       this.facets.push({
-        _id: filter._id,
-        type: filter.type,
-        name: filter.name,
+        _id: filter?._id,
+        type: filter?.type,
+        name: filter?.name,
       });
 
       if (variant.price < price) {
