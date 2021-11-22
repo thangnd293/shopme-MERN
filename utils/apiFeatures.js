@@ -32,8 +32,10 @@ class APIFeatures {
 
     queryStr = JSON.parse(queryStr);
 
-    if (!Array.isArray(queryStr.p) && queryStr.p) {
-      this.query = this.query.find({ 'facets._id': queryStr.p });
+    if (!Array.isArray(queryStr.p)) {
+      if (queryStr.p) {
+        this.query = this.query.find({ 'facets._id': queryStr.p });
+      }
       return this;
     }
 
