@@ -27,7 +27,7 @@ exports.getAllCategories = catchAsync(async function (req, res, next) {
   }
   // SEND RESPONSE
   res.status(200).json({
-    status: 'success',
+    status: 'Success',
     data: result,
   });
 });
@@ -40,7 +40,7 @@ exports.getAllSubCategory = catchAsync(async function (req, res, next) {
   });
 
   res.status(200).json({
-    status: 'success',
+    status: 'Success',
     result: subCategories.length,
     data: subCategories,
   });
@@ -49,7 +49,7 @@ exports.getAllSubCategory = catchAsync(async function (req, res, next) {
 exports.getAllTopCategories = catchAsync(async function (req, res, next) {
   const categories = await Category.find({ parent: '/' });
   res.status(200).json({
-    status: 'success',
+    status: 'Success',
     result: categories.length,
     data: categories,
   });

@@ -6,7 +6,7 @@ exports.getRoot = catchAsync(async (req, res, next) => {
   const filters = await Filter.find({ type: '/' });
 
   res.status(200).json({
-    status: 'success',
+    status: 'Success',
     result: filters.length,
     data: filters,
   });
@@ -15,7 +15,7 @@ exports.getClothingSizes = catchAsync(async (req, res, next) => {
   const filters = await Filter.find({ type: 'Clothing sizes' });
 
   res.status(200).json({
-    status: 'success',
+    status: 'Success',
     result: filters.length,
     data: filters,
   });
@@ -24,7 +24,7 @@ exports.shoeSizes = catchAsync(async (req, res, next) => {
   const filters = await Filter.find({ type: 'Shoe Sizes' });
 
   res.status(200).json({
-    status: 'success',
+    status: 'Success',
     result: filters.length,
     data: filters,
   });
@@ -38,7 +38,7 @@ exports.getAllOfRoot = catchAsync(async (req, res, next) => {
   const filters = await Filter.find({ type: parent.name });
 
   res.status(200).json({
-    status: 'success',
+    status: 'Success',
     result: filters.length,
     data: filters,
   });

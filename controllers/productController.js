@@ -78,7 +78,7 @@ exports.updateProduct = catchAsync(async function (req, res, next) {
   await product.save();
 
   res.status(200).json({
-    status: 'success',
+    status: 'Success',
     data: product,
   });
 }); //done
@@ -104,7 +104,6 @@ exports.getAllProducts = catchAsync(async (req, res, next) => {
       filter = { categoryPath: new RegExp(`${category.path}`) };
     }
   }
-  console.log(req.query);
   const features = new APIFeatures(Product.find(filter), req.query)
     .filterFacets()
     .sort()
@@ -118,7 +117,7 @@ exports.getAllProducts = catchAsync(async (req, res, next) => {
     .lean();
 
   res.status(200).json({
-    status: 'success',
+    status: 'Success',
     results: doc.length,
     data: doc,
   });
@@ -132,7 +131,7 @@ exports.getFacets = catchAsync(async (req, res, next) => {
   }
 
   const p = { categoryPath: new RegExp(`${category.path}`) };
-  const filters = await Product.aggregate([
+  const f = await Product.aggregate([
     { $match: p },
     { $unwind: '$facets' },
     {
@@ -144,7 +143,7 @@ exports.getFacets = catchAsync(async (req, res, next) => {
     { $sort: { _id: 1 } },
   ]);
 
-  filters.sort(function (a, b) {
+  f.sort(function (a, b) {
     if (a.type < b.type) {
       return -1;
     }
@@ -154,8 +153,14 @@ exports.getFacets = catchAsync(async (req, res, next) => {
     return 0;
   });
 
-  const facets = [];
+  const filters = [];
+  f.forEach((filter, i) => {
+    if (Object.keys(f[i]._id).length !== 0) {
+      filters.push({ ...f[i] });
+    }
+  });
 
+  const facets = [];
   if (filters.length !== 0) {
     facets.push({
       name: filters[0]._id.type,
@@ -184,7 +189,7 @@ exports.getFacets = catchAsync(async (req, res, next) => {
   }
 
   res.status(200).json({
-    status: 'success',
+    status: 'Success',
     data: facets,
   });
 }); //done
@@ -198,7 +203,7 @@ exports.getProduct = catchAsync(async (req, res, next) => {
   }
 
   res.status(200).json({
-    status: 'success',
+    status: 'Success',
     data: product,
   });
 }); //done
@@ -214,7 +219,7 @@ exports.getProductFeatured = catchAsync(async (req, res, next) => {
     .lean();
 
   res.status(200).json({
-    status: 'success',
+    status: 'Success',
     results: product.length,
     data: product,
   });
@@ -245,7 +250,7 @@ exports.getVariant = catchAsync(async (req, res, next) => {
   ]);
 
   res.status(200).json({
-    status: 'success',
+    status: 'Success',
     data: variant,
   });
 });
@@ -268,7 +273,7 @@ exports.getAllVariants = catchAsync(async (req, res, next) => {
   ]);
 
   res.status(200).json({
-    status: 'success',
+    status: 'Success',
     results: variants.length,
     data: variants,
   });
@@ -285,7 +290,7 @@ exports.createVariant = catchAsync(async (req, res, next) => {
   await product.save();
 
   res.status(201).json({
-    status: 'success',
+    status: 'Success',
     data: product,
   });
 });
@@ -318,7 +323,7 @@ exports.updateVariant = catchAsync(async (req, res, next) => {
   await product.save();
 
   res.status(200).json({
-    status: 'success',
+    status: 'Success',
     data: product,
   });
 });
@@ -342,7 +347,7 @@ exports.deleteVariant = catchAsync(async (req, res, next) => {
   await product.save();
 
   res.status(200).json({
-    status: 'success',
+    status: 'Success',
     data: product,
   });
 });
@@ -361,7 +366,7 @@ exports.deleteVariant = catchAsync(async (req, res, next) => {
 //   product.variants = variants;
 
 //   res.status(200).json({
-//     status: 'success',
+//     status: 'Success',
 //     data: product,
 //   });
 // });
@@ -387,7 +392,7 @@ exports.deleteVariant = catchAsync(async (req, res, next) => {
 //   }
 //   const productObj = { ...product._doc, variants: vars };
 //   res.status(200).json({
-//     status: 'success',
+//     status: 'Success',
 //     data: productObj,
 //   });
 // });

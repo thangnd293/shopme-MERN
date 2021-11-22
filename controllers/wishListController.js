@@ -22,7 +22,7 @@ exports.getWishList = catchAsync(async (req, res, next) => {
   });
 
   res.status(200).json({
-    status: 'success',
+    status: 'Success',
     data: wishList,
   });
 });
@@ -56,7 +56,7 @@ exports.addToWishList = catchAsync(async (req, res, next) => {
   });
 
   res.status(200).json({
-    status: 'success',
+    status: 'Success',
     data: wishList,
   });
 });

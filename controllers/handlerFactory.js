@@ -12,7 +12,7 @@ exports.deleteOne = (Model) =>
     }
 
     res.status(204).json({
-      status: 'success',
+      status: 'Success',
       data: null,
     });
   });
@@ -29,7 +29,7 @@ exports.updateOne = (Model) =>
     }
 
     res.status(200).json({
-      status: 'success',
+      status: 'Success',
       data: doc,
     });
   });
@@ -39,7 +39,7 @@ exports.createOne = (Model) =>
     const doc = await Model.create(req.body);
 
     res.status(201).json({
-      status: 'success',
+      status: 'Success',
       data: {
         data: doc,
       },
@@ -58,7 +58,7 @@ exports.getOne = (Model, popOptions) =>
     }
 
     res.status(200).json({
-      status: 'success',
+      status: 'Success',
       data: doc,
     });
   });
@@ -82,7 +82,7 @@ exports.getAll = (Model) =>
     const doc = await features.query;
 
     res.status(200).json({
-      status: 'success',
+      status: 'Success',
       results: doc.length,
       data: doc,
     });

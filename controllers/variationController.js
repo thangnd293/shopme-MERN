@@ -15,7 +15,7 @@ exports.createVariation = catchAsync(async (req, res, next) => {
   const vari = await Variation.create(req.body);
 
   res.status(201).json({
-    status: 'success',
+    status: 'Success',
     data: {
       data: vari,
     },
@@ -38,7 +38,7 @@ exports.getAllVariation = catchAsync(async (req, res, next) => {
   vars = await vars;
 
   res.status(201).json({
-    status: 'success',
+    status: 'Success',
     result: vars.length,
     data: vars,
   });

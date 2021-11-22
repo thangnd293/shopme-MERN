@@ -23,7 +23,7 @@ const createSendToken = function (user, code, res) {
   };
   res.cookie('jwt', token, cookieOption);
   res.status(code).json({
-    status: 'success',
+    status: 'Success',
     token,
     data: {
       fname: user.fname,
@@ -114,7 +114,7 @@ exports.signup = catchAsync(async (req, res, next) => {
   //   });
 
   //   res.status(200).json({
-  //     status: 'success',
+  //     status: 'Success',
   //     message: 'Token sent to email',
   //   });
   // } catch (err) {
@@ -148,7 +148,7 @@ exports.verify = catchAsync(async (req, res, next) => {
   await user.save({ validateBeforeSave: false });
 
   res.status(200).json({
-    status: 'success',
+    status: 'Success',
   });
 });
 
@@ -195,7 +195,7 @@ exports.forgotPassword = catchAsync(async function (req, res, next) {
     });
 
     res.status(200).json({
-      status: 'success',
+      status: 'Success',
       message: 'Token sent to email',
     });
   } catch (err) {
