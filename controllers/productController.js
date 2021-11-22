@@ -1,12 +1,13 @@
 const multer = require('multer');
 const sharp = require('sharp');
+const mongoose = require('mongoose');
 
 const Product = require(`${__dirname}/../models/product`);
 const Category = require('./../models/category');
 const AppError = require('./../utils/appError');
 const APIFeatures = require('./../utils/apiFeatures');
 const catchAsync = require('./../utils/catchAsync');
-const ProductVariation = require('./../models/productVariations');
+const factory = require('./handlerFactory');
 
 const multerStorage = multer.memoryStorage();
 
@@ -64,28 +65,15 @@ exports.resizeProductImages = async function (req, res, next) {
 
   next();
 };
-exports.setCategoryPath = catchAsync(async function (req, res, next) {
-  if (!req.body.category) {
-    return next();
-  }
-
-  const category = await Category.findById(`${req.body.category}`);
-
-  if (!category) {
-    return next(new AppError('Không tìm thấy loại sản phẩm tương ứng!!', 404));
-  }
-
-  req.body.categoryName = category.name;
-  req.body.categoryPath = category.path;
-  next();
-});
 
 exports.updateProduct = catchAsync(async function (req, res, next) {
   const product = await Product.findById(req.params.id);
   if (!product) {
     return next(new AppError('Invalid ID!!', 404));
   }
-  product.set(req.body);
+  const { variants, ...body } = req.body;
+
+  product.set(body);
 
   await product.save();
 
@@ -93,7 +81,7 @@ exports.updateProduct = catchAsync(async function (req, res, next) {
     status: 'success',
     data: product,
   });
-});
+}); //done
 
 exports.getAllProducts = catchAsync(async (req, res, next) => {
   let filter = {};
@@ -125,7 +113,9 @@ exports.getAllProducts = catchAsync(async (req, res, next) => {
     .paginate();
 
   const doc = await features.query
-    .select('-filters -facets -createAt -longDescription -shortDescription')
+    .select(
+      '-filters -facets -createAt -longDescription -shortDescription -categories'
+    )
     .lean();
 
   res.status(200).json({
@@ -133,7 +123,7 @@ exports.getAllProducts = catchAsync(async (req, res, next) => {
     results: doc.length,
     data: doc,
   });
-});
+}); //done
 
 exports.getFacets = catchAsync(async (req, res, next) => {
   const category = await Category.findById(req.params.categoryId);
@@ -149,7 +139,7 @@ exports.getFacets = catchAsync(async (req, res, next) => {
     {
       $group: {
         _id: '$facets',
-        count: { $sum: 1 },
+        count: { $sum: 1 }, 
       },
     },
     { $sort: { _id: 1 } },
@@ -198,7 +188,7 @@ exports.getFacets = catchAsync(async (req, res, next) => {
     status: 'success',
     data: facets,
   });
-});
+}); //done
 
 exports.getProduct = catchAsync(async (req, res, next) => {
   const product = await Product.findById(req.params.id)
@@ -208,56 +198,15 @@ exports.getProduct = catchAsync(async (req, res, next) => {
     return next(new AppError('No matching products found!!', 404));
   }
 
-  let variants = ProductVariation.find({ product: product._id }).select('-__v');
-  variants.flag = true;
-  variants = await variants.lean();
-  product.variants = variants;
-
   res.status(200).json({
     status: 'success',
     data: product,
   });
-});
+}); //done
 
-exports.createProduct = catchAsync(async (req, res, next) => {
-  const { variants, ...objBody } = req.body;
-  const product = await Product.create(objBody);
-  let vars = [];
-  try {
-    vars = await Promise.all(
-      variants.map(
-        async (v) =>
-          await ProductVariation.create({
-            product: product._id,
-            ...v,
-          })
-      )
-    );
-  } catch (err) {
-    await ProductVariation.deleteMany({ product: product._id });
-    await Product.findByIdAndDelete(product._id);
-    return next(new AppError(err.message, 400));
-  }
-  const productObj = { ...product._doc, variants: vars };
-  res.status(200).json({
-    status: 'success',
-    data: productObj,
-  });
-});
+exports.createProduct = factory.createOne(Product);
 
-exports.deleteProduct = catchAsync(async (req, res, next) => {
-  const product = await Product.findByIdAndDelete(req.params.id);
-
-  if (!product) {
-    return next(new AppError('ID không tồn tại!!', 404));
-  }
-  await ProductVariation.deleteMany({ product: req.params.id });
-
-  res.status(204).json({
-    status: 'success',
-    data: null,
-  });
-});
+exports.deleteProduct = factory.deleteOne(Product);
 
 exports.getProductFeatured = catchAsync(async (req, res, next) => {
   const count = req.params.count ? req.params.count : 0;
@@ -271,3 +220,175 @@ exports.getProductFeatured = catchAsync(async (req, res, next) => {
     data: product,
   });
 });
+
+// ======================================Variants===========================================
+
+exports.getVariant = catchAsync(async (req, res, next) => {
+  const variant = await Product.aggregate([
+    {
+      $unwind: '$variants',
+    },
+    {
+      $project: {
+        _id: 1,
+        name: 1,
+        imageCovers: 1,
+        images: 1,
+        slug: 1,
+        variants: 1,
+      },
+    },
+    {
+      $match: {
+        'variants._id': new mongoose.mongo.ObjectId(req.params.id),
+      },
+    },
+  ]);
+
+  res.status(200).json({
+    status: 'success',
+    data: variant,
+  });
+});
+
+exports.getAllVariants = catchAsync(async (req, res, next) => {
+  const variants = await Product.aggregate([
+    {
+      $unwind: '$variants',
+    },
+    {
+      $project: {
+        _id: 1,
+        name: 1,
+        imageCovers: 1,
+        images: 1,
+        slug: 1,
+        variants: 1,
+      },
+    },
+  ]);
+
+  res.status(200).json({
+    status: 'success',
+    results: variants.length,
+    data: variants,
+  });
+});
+
+exports.createVariant = catchAsync(async (req, res, next) => {
+  const product = await Product.findById(req.params.id);
+
+  if (!product) {
+    return next(new AppError('No matching products found!!', 404));
+  }
+
+  product.variants.push(req.body);
+  await product.save();
+
+  res.status(201).json({
+    status: 'success',
+    data: product,
+  });
+});
+
+exports.updateVariant = catchAsync(async (req, res, next) => {
+  const product = await Product.findById(req.params.productId);
+
+  if (!product) {
+    return next(new AppError('No matching products found!!', 404));
+  }
+
+  const varIndex = product.variants.findIndex(
+    (v) => `${v._id}` === req.params.id
+  );
+
+  if (varIndex === -1) {
+    return next(new AppError('No matching variants found!!', 404));
+  }
+
+  product.variants[varIndex].sizeId = !req.body.sizeId
+    ? product.variants[varIndex].sizeId
+    : req.body.sizeId;
+  product.variants[varIndex].price = !req.body.price
+    ? product.variants[varIndex].price
+    : req.body.price;
+  product.variants[varIndex].discountPrice = !req.body.discountPrice
+    ? product.variants[varIndex].discountPrice
+    : req.body.discountPrice;
+
+  await product.save();
+
+  res.status(200).json({
+    status: 'success',
+    data: product,
+  });
+});
+
+exports.deleteVariant = catchAsync(async (req, res, next) => {
+  const product = await Product.findById(req.params.productId);
+
+  if (!product) {
+    return next(new AppError('No matching products found!!', 404));
+  }
+  const varIndex = product.variants.findIndex(
+    (v) => `${v._id}` === req.params.id
+  );
+
+  if (varIndex === -1) {
+    return next(new AppError('No matching variants found!!', 404));
+  }
+
+  product.variants.splice(varIndex, 1);
+
+  await product.save();
+
+  res.status(200).json({
+    status: 'success',
+    data: product,
+  });
+});
+
+// exports.getProduct = catchAsync(async (req, res, next) => {
+//   const product = await Product.findById(req.params.id)
+//     .select('-filters -facets -createAt')
+//     .lean();
+//   if (!product) {
+//     return next(new AppError('No matching products found!!', 404));
+//   }
+
+//   let variants = ProductVariation.find({ product: product._id }).select('-__v');
+//   variants.flag = true;
+//   variants = await variants.lean();
+//   product.variants = variants;
+
+//   res.status(200).json({
+//     status: 'success',
+//     data: product,
+//   });
+// });
+
+// exports.createProduct = catchAsync(async (req, res, next) => {
+//   const { variants, ...objBody } = req.body;
+//   const product = await Product.create(objBody);
+//   let vars = [];
+//   try {
+//     vars = await Promise.all(
+//       variants.map(
+//         async (v) =>
+//           await ProductVariation.create({
+//             product: product._id,
+//             ...v,
+//           })
+//       )
+//     );
+//   } catch (err) {
+//     await ProductVariation.deleteMany({ product: product._id });
+//     await Product.findByIdAndDelete(product._id);
+//     return next(new AppError(err.message, 400));
+//   }
+//   const productObj = { ...product._doc, variants: vars };
+//   res.status(200).json({
+//     status: 'success',
+//     data: productObj,
+//   });
+// });

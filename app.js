@@ -25,16 +25,16 @@ app.options('*', cors());
 app.use(morgan('dev'));
 app.use(express.json());
 
-app.use('/api/v1/categories', categoryRoutes);
-app.use('/api/v1/variations', variationRoutes);
-app.use('/api/v1/products', productRoutes);
-app.use('/api/v1/user', userRoutes);
-app.use('/api/v1/cart', cartRoutes);
-app.use('/api/v1/wishlist', wishListRoutes);
-app.use('/api/v1/checkout', checkOutRoutes);
-app.use('/api/v1/filters', filterRoutes);
+app.use('/api/v2/categories', categoryRoutes);
+// app.use('/api/v2/variations', variationRoutes);
+app.use('/api/v2/products', productRoutes);
+app.use('/api/v2/user', userRoutes);
+app.use('/api/v2/cart', cartRoutes);
+app.use('/api/v2/wishlist', wishListRoutes);
+app.use('/api/v2/checkout', checkOutRoutes);
+app.use('/api/v2/filters', filterRoutes);
 app.use(
-  '/api/v1/insert',
+  '/api/v2/insert',
   express.Router().post('/', async (req, res, next) => {
     const data = req.body.data;
     console.log(1);

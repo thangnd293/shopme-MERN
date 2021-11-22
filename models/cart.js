@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const ProductVariation = require('./productVariations');
+const Product = require('./product');
 const AppError = require('./../utils/appError');
 
 const cartSchema = mongoose.Schema({
@@ -12,7 +12,6 @@ const cartSchema = mongoose.Schema({
     {
       productVariation: {
         type: mongoose.Schema.ObjectId,
-        ref: 'ProductVariation',
         require: true,
       },
       quantity: {
@@ -37,11 +36,32 @@ cartSchema.pre('save', async function (next) {
   let qty = 0;
   let total = 0;
   for (const item of this.items) {
-    const vars = await ProductVariation.findById(item.productVariation);
+    const vars = await Product.aggregate([
+      {
+        $unwind: '$variants',
+      },
+      {
+        $project: {
+          _id: 1,
+          name: 1,
+          imageCovers: 1,
+          images: 1,
+          slug: 1,
+          variants: 1,
+        },
+      },
+      {
+        $match: {
+          'variants._id': item.productVariation,
+        },
+      },
+    ]);
+
     if (!vars) {
       return next(new AppError('ID invalid!!', 400));
     }
-    total += vars.discountPrice * item.quantity;
+
+    total += vars[0].variants.discountPrice * item.quantity;
     qty += item.quantity;
   }
 

@@ -30,9 +30,7 @@ exports.updateOne = (Model) =>
 
     res.status(200).json({
       status: 'success',
-      data: {
-        data: doc,
-      },
+      data: doc,
     });
   });
 
@@ -61,9 +59,7 @@ exports.getOne = (Model, popOptions) =>
 
     res.status(200).json({
       status: 'success',
-      data: {
-        data: doc,
-      },
+      data: doc,
     });
   });
 
@@ -83,11 +79,8 @@ exports.getAll = (Model) =>
       .sort()
       .limitFields()
       .paginate();
-    // const doc = await features.query.explain();
     const doc = await features.query;
 
-    // const doc = await Model.find({ 'options.price': '200000' });
-    // SEND RESPONSE
     res.status(200).json({
       status: 'success',
       results: doc.length,

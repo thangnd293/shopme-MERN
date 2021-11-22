@@ -63,10 +63,13 @@ class APIFeatures {
         }),
       };
     });
+    console.log(qr);
 
     qr = {
       $and: qr,
     };
+
+    console.log(qr);
 
     // Thuc hien truy van
     this.query = this.query.find(qr);

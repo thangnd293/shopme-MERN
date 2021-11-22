@@ -1,6 +1,7 @@
 const Cart = require('./../models/cart');
 const catchAsync = require('./../utils/catchAsync');
 const AppError = require('./../utils/appError');
+const Product = require('./../models/product');
 
 exports.prepareCart = catchAsync(async (req, res, next) => {
   let cart = await Cart.findOne({ user: req.user._id });
@@ -14,9 +15,34 @@ exports.prepareCart = catchAsync(async (req, res, next) => {
 });
 
 exports.getCart = catchAsync(async (req, res, next) => {
-  const cart = await Cart.findOne({ user: req.user._id }).populate(
-    'items.productVariation'
+  const cart = await Cart.findOne({ user: req.user._id }).lean();
+
+  cart.items = await Promise.all(
+    cart.items.map(
+      async (item) =>
+        await Product.aggregate([
+          {
+            $unwind: '$variants',
+          },
+          {
+            $project: {
+              _id: 1,
+              name: 1,
+              imageCovers: 1,
+              images: 1,
+              slug: 1,
+              variants: 1,
+            },
+          },
+          {
+            $match: {
+              'variants._id': item.productVariation,
+            },
+          },
+        ])
+    )
   );
+
   res.status(200).json({
     status: 'success',
     data: cart,

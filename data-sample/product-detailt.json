@@ -2,7 +2,8 @@
   {
     "_id": "762691",
     "name": "White Colourblock Dalmation Spots Cardigan",
-    "brand": "Stella McCartney Kids",
+    "brandId": "000200",
+    "color": "673087",
     "imageCovers": [
       "https://www.melijoe.com/images/257509/image_gallery_large.jpg",
       "https://www.melijoe.com/images/257508/image_gallery_large.jpg"
@@ -14,50 +15,37 @@
     "category": "320",
     "shortDescription": "",
     "longDescription": "",
-    "filters": [
-      "671044",
-      "671012",
-      "671057",
-      "671022",
-      "671010",
-      "671078",
-      "674080",
-      "674079",
-      "313723",
-      "313681",
-      "000200",
-      "673087"
-    ],
+    "filters": ["674080", "674079", "313723", "313681"],
     "variants": [
       {
         "price": 164.0,
         "discountPrice": 164.0,
-        "size": "3 years"
+        "sizeId": "671044"
       },
       {
         "price": 164.0,
         "discountPrice": 164.0,
-        "size": "4 years"
+        "sizeId": "671012"
       },
       {
         "price": 270.0,
         "discountPrice": 270.0,
-        "size": "6 years"
+        "sizeId": "671057"
       },
       {
         "price": 270.0,
         "discountPrice": 270.0,
-        "size": "8 years"
+        "sizeId": "671022"
       },
       {
         "price": 270.0,
         "discountPrice": 270.0,
-        "size": "10 years"
+        "sizeId": "671010"
       },
       {
         "price": 164.0,
         "discountPrice": 164.0,
-        "size": "13+ years"
+        "sizeId": "671078"
       }
     ],
     "isFeatured": true
@@ -65,7 +53,8 @@
   {
     "_id": "821364",
     "name": "White Colourblock Dalmation Spots Cardigan",
-    "brand": "Stella McCartney Kids",
+    "brandId": "000200",
+    "color": "673097",
     "imageCovers": [
       "https://www.melijoe.com/images/247153/card_medium.jpg",
       "https://www.melijoe.com/images/247199/card_medium.jpg"
@@ -74,43 +63,32 @@
       "https://www.melijoe.com/images/247153/image_gallery_large.jpg",
       "https://www.melijoe.com/images/247199/image_gallery_large.jpg"
     ],
-    "category": "320",
+    "categories": ["320"],
     "shortDescription": "&#8211; 100% Cashmere&#8211; Hand wash only",
     "longDescription": "&#8211; Round neck&#8211; Button closure at the front&#8211; Ribbed cuffs and hem&#8211; Rhinestone details all over",
-    "filters": [
-      "671057",
-      "671010",
-      "671005",
-      "000200",
-      "674079",
-      "313681",
-      "312909",
-      "313723",
-      "673097"
-    ],
+    "filters": ["674079", "313681", "312909", "313723"],
     "variants": [
       {
         "price": 630.0,
         "discountPrice": 630.0,
-        "size": "6 years"
+        "sizeId": "671057"
       },
       {
         "price": 635.0,
         "discountPrice": 635.0,
-        "size": "10 years"
+        "sizeId": "671010"
       },
       {
         "price": 645.0,
         "discountPrice": 645.0,
-        "size": "12 years"
+        "sizeId": "671005"
       }
     ],
     "isFeatured": true
   },
   {
-    "_id": "762739",
     "name": "White Hearts Cardigan",
-    "brand": "Stella McCartney Kids",
+    "brandId": "000200",
     "imageCovers": [
       "https://www.melijoe.com/images/259985/card_medium.jpg",
       "https://www.melijoe.com/images/260002/card_medium.jpg"
@@ -119,55 +97,44 @@
       "https://www.melijoe.com/images/259985/image_gallery_large.jpg",
       "https://www.melijoe.com/images/260002/image_gallery_large.jpg"
     ],
-    "category": "320",
+    "category": ["320"],
     "shortDescription": "&#8211; 80% Cotton, 13% Polyester, 5% Wool, 1% Polyamide, 1% Metallic Fiber&#8211; Machine washable 30 degrees",
     "longDescription": "&#8211; Button closure at the front&#8211; Ribbed cuffs and hem&#8211; Knitted heart shapes all over",
-    "filters": [
-      "671002",
-      "671044",
-      "671012",
-      "671043",
-      "671057",
-      "313681",
-      "312909",
-      "000200",
-      "674079",
-      "313723",
-      "673087"
-    ],
+    "filters": ["313681", "312909", "674079", "313723"],
+    "color": "673087",
     "variants": [
       {
         "price": 117.0,
         "discountPrice": 117.0,
-        "size": "2 years"
+        "sizeId": "671002"
       },
       {
         "price": 117.0,
         "discountPrice": 117.0,
-        "size": "3 years"
+        "sizeId": "671044"
       },
       {
         "price": 117.0,
         "discountPrice": 117.0,
-        "size": "4 years"
+        "sizeId": "671012"
       },
       {
         "price": 117.0,
         "discountPrice": 117.0,
-        "size": "5 years"
+        "sizeId": "671043"
       },
       {
         "price": 117.0,
         "discountPrice": 117.0,
-        "size": "6 years"
+        "sizeId": "671057"
       }
     ],
     "isFeatured": true
   },
   {
-    "_id": "821358",
     "name": "Beige Cardigan",
-    "brand": "Bonpoint",
+    "brand": "000115",
+    "color": "673097",
     "imageCovers": [
       "https://www.melijoe.com/images/247149/card_medium.jpg",
       "https://www.melijoe.com/images/247150/card_medium.jpg"
@@ -176,36 +143,26 @@
       "https://www.melijoe.com/images/247149/image_gallery_large.jpg",
       "https://www.melijoe.com/images/247150/image_gallery_large.jpg"
     ],
-    "category": "320",
+    "categories": ["320"],
     "shortDescription": "&#8211; 55% Polyamide, 36% Wool, 9% Cashmere&#8211; Machine washable 30 degrees",
     "longDescription": "&#8211; V-neck design&#8211; Button closure at the front&#8211; Ribbed material&#8211; Two front pockets",
-    "filters": [
-      "671012",
-      "671057",
-      "671022",
-      "313681",
-      "312909",
-      "000115",
-      "674079",
-      "313723",
-      "673097"
-    ],
+    "filters": ["313681", "312909", "674079", "313723"],
     "variants": [
       {
         "price": 295.0,
         "discountPrice": 295.0,
-        "size": "4 years"
+        "sizeId": "671012"
       },
 
       {
         "price": 295.0,
         "discountPrice": 295.0,
-        "size": "6 years"
+        "sizeId": "671057"
       },
       {
         "price": 305.0,
         "discountPrice": 305.0,
-        "size": "8 years"
+        "sizeId": "671022"
       }
     ],
     "isFeatured": true
@@ -240,17 +197,17 @@
       {
         "price": 126.0,
         "discountPrice": 126.0,
-        "size": "3 years"
+        "sizeId": "3 years"
       },
       {
         "price": 126.0,
         "discountPrice": 126.0,
-        "size": "4 years"
+        "sizeId": "4 years"
       },
       {
         "price": 145.0,
         "discountPrice": 145.0,
-        "size": "12 years"
+        "sizeId": "12 years"
       }
     ]
   },
@@ -285,27 +242,27 @@
       {
         "price": 126.0,
         "discountPrice": 126.0,
-        "size": "6 years"
+        "sizeId": "6 years"
       },
       {
         "price": 126.0,
         "discountPrice": 126.0,
-        "size": "8 years"
+        "sizeId": "8 years"
       },
       {
         "price": 126.0,
         "discountPrice": 126.0,
-        "size": "10 years"
+        "sizeId": "10 years"
       },
       {
         "price": 126.0,
         "discountPrice": 126.0,
-        "size": "12 years"
+        "sizeId": "12 years"
       },
       {
         "price": 126.0,
         "discountPrice": 126.0,
-        "size": "12+ years"
+        "sizeId": "12+ years"
       }
     ]
   },
@@ -341,27 +298,27 @@
       {
         "price": 59.0,
         "discountPrice": 59.0,
-        "size": "3 years"
+        "sizeId": "3 years"
       },
       {
         "price": 59.0,
         "discountPrice": 59.0,
-        "size": "4 years"
+        "sizeId": "4 years"
       },
       {
         "price": 65.0,
         "discountPrice": 65.0,
-        "size": "5 years"
+        "sizeId": "5 years"
       },
       {
         "price": 65.0,
         "discountPrice": 65.0,
-        "size": "6 years"
+        "sizeId": "6 years"
       },
       {
         "price": 65.0,
         "discountPrice": 65.0,
-        "size": "10 years"
+        "sizeId": "10 years"
       }
     ]
   },
@@ -402,57 +359,57 @@
       {
         "price": 33.0,
         "discountPrice": 33.0,
-        "size": "0-3 months"
+        "sizeId": "0-3 months"
       },
       {
         "price": 33.0,
         "discountPrice": 33.0,
-        "size": "3-6 months"
+        "sizeId": "3-6 months"
       },
       {
         "price": 33.0,
         "discountPrice": 33.0,
-        "size": "6-9 months"
+        "sizeId": "6-9 months"
       },
       {
         "price": 33.0,
         "discountPrice": 33.0,
-        "size": "9-12 months"
+        "sizeId": "9-12 months"
       },
       {
         "price": 33.0,
         "discountPrice": 33.0,
-        "size": "2 years"
+        "sizeId": "2 years"
       },
       {
         "price": 42.0,
         "discountPrice": 42.0,
-        "size": "3 years"
+        "sizeId": "3 years"
       },
       {
         "price": 42.0,
         "discountPrice": 42.0,
-        "size": "4 years"
+        "sizeId": "4 years"
       },
       {
         "price": 42.0,
         "discountPrice": 42.0,
-        "size": "5 years"
+        "sizeId": "5 years"
       },
       {
         "price": 42.0,
         "discountPrice": 42.0,
-        "size": "6 years"
+        "sizeId": "6 years"
       },
       {
         "price": 42.0,
         "discountPrice": 42.0,
-        "size": "7 years"
+        "sizeId": "7 years"
       },
       {
         "price": 42.0,
         "discountPrice": 42.0,
-        "size": "8 years"
+        "sizeId": "8 years"
       }
     ]
   },
@@ -486,22 +443,22 @@
       {
         "price": 59.0,
         "discountPrice": 59.0,
-        "size": "3 years"
+        "sizeId": "3 years"
       },
       {
         "price": 59.0,
         "discountPrice": 59.0,
-        "size": "5 years"
+        "sizeId": "5 years"
       },
       {
         "price": 65.0,
         "discountPrice": 65.0,
-        "size": "6 years"
+        "sizeId": "6 years"
       },
       {
         "price": 65.0,
         "discountPrice": 65.0,
-        "size": "10 years"
+        "sizeId": "10 years"
       }
     ]
   },
@@ -536,27 +493,27 @@
       {
         "price": 130.0,
         "discountPrice": 130.0,
-        "size": "4 years"
+        "sizeId": "4 years"
       },
       {
         "price": 130.0,
         "discountPrice": 130.0,
-        "size": "5 years"
+        "sizeId": "5 years"
       },
       {
         "price": 150.0,
         "discountPrice": 150.0,
-        "size": "8 years"
+        "sizeId": "8 years"
       },
       {
         "price": 150.0,
         "discountPrice": 150.0,
-        "size": "10 years"
+        "sizeId": "10 years"
       },
       {
         "price": 150.0,
         "discountPrice": 150.0,
-        "size": "12 years"
+        "sizeId": "12 years"
       }
     ]
   },
@@ -592,27 +549,27 @@
       {
         "price": 88.0,
         "discountPrice": 88.0,
-        "size": "4 years"
+        "sizeId": "4 years"
       },
       {
         "price": 88.0,
         "discountPrice": 88.0,
-        "size": "5 years"
+        "sizeId": "5 years"
       },
       {
         "price": 97.0,
         "discountPrice": 97.0,
-        "size": "8 years"
+        "sizeId": "8 years"
       },
       {
         "price": 97.0,
         "discountPrice": 97.0,
-        "size": "10 years"
+        "sizeId": "10 years"
       },
       {
         "price": 97.0,
         "discountPrice": 97.0,
-        "size": "12 years"
+        "sizeId": "12 years"
       }
     ]
   },
@@ -650,27 +607,27 @@
       {
         "price": 126.0,
         "discountPrice": 126.0,
-        "size": "4 years"
+        "sizeId": "4 years"
       },
       {
         "price": 126.0,
         "discountPrice": 126.0,
-        "size": "6 years"
+        "sizeId": "6 years"
       },
       {
         "price": 126.0,
         "discountPrice": 126.0,
-        "size": "8 years"
+        "sizeId": "8 years"
       },
       {
         "price": 126.0,
         "discountPrice": 126.0,
-        "size": "10 years"
+        "sizeId": "10 years"
       },
       {
         "price": 126.0,
         "discountPrice": 126.0,
-        "size": "12 years"
+        "sizeId": "12 years"
       }
     ]
   },
@@ -703,17 +660,17 @@
       {
         "price": 88.0,
         "discountPrice": 88.0,
-        "size": "1 years"
+        "sizeId": "1 years"
       },
       {
         "price": 88.0,
         "discountPrice": 88.0,
-        "size": "2 years"
+        "sizeId": "2 years"
       },
       {
         "price": 97.0,
         "discountPrice": 97.0,
-        "size": "3 years"
+        "sizeId": "3 years"
       }
     ]
   },
@@ -747,22 +704,22 @@
       {
         "price": 67.0,
         "discountPrice": 67.0,
-        "size": "0-3 months"
+        "sizeId": "0-3 months"
       },
       {
         "price": 67.0,
         "discountPrice": 67.0,
-        "size": "3-6 months"
+        "sizeId": "3-6 months"
       },
       {
         "price": 67.0,
         "discountPrice": 67.0,
-        "size": "6-9 months"
+        "sizeId": "6-9 months"
       },
       {
         "price": 67.0,
         "discountPrice": 67.0,
-        "size": "9-12 months"
+        "sizeId": "9-12 months"
       }
     ]
   },
@@ -797,22 +754,22 @@
       {
         "price": 45.0,
         "discountPrice": 45.0,
-        "size": "0-3 months"
+        "sizeId": "0-3 months"
       },
       {
         "price": 45.0,
         "discountPrice": 45.0,
-        "size": "3-6 months"
+        "sizeId": "3-6 months"
       },
       {
         "price": 45.0,
         "discountPrice": 45.0,
-        "size": "6-9 months"
+        "sizeId": "6-9 months"
       },
       {
         "price": 45.0,
         "discountPrice": 45.0,
-        "size": "9-12 months"
+        "sizeId": "9-12 months"
       }
     ]
   },
@@ -847,22 +804,22 @@
       {
         "price": 425.0,
         "discountPrice": 425.0,
-        "size": "4 years"
+        "sizeId": "4 years"
       },
       {
         "price": 535.0,
         "discountPrice": 535.0,
-        "size": "8 years"
+        "sizeId": "8 years"
       },
       {
         "price": 535.0,
         "discountPrice": 535.0,
-        "size": "10 years"
+        "sizeId": "10 years"
       },
       {
         "price": 535.0,
         "discountPrice": 535.0,
-        "size": "12 years"
+        "sizeId": "12 years"
       }
     ]
   },
@@ -897,27 +854,27 @@
       {
         "price": 425.0,
         "discountPrice": 425.0,
-        "size": "2 years"
+        "sizeId": "2 years"
       },
       {
         "price": 535.0,
         "discountPrice": 535.0,
-        "size": "3 years"
+        "sizeId": "3 years"
       },
       {
         "price": 535.0,
         "discountPrice": 535.0,
-        "size": "4 years"
+        "sizeId": "4 years"
       },
       {
         "price": 535.0,
         "discountPrice": 535.0,
-        "size": "5 years"
+        "sizeId": "5 years"
       },
       {
         "price": 535.0,
         "discountPrice": 535.0,
-        "size": "6 years"
+        "sizeId": "6 years"
       }
     ]
   },
@@ -951,22 +908,22 @@
       {
         "price": 260.0,
         "discountPrice": 260.0,
-        "size": "4 years"
+        "sizeId": "4 years"
       },
       {
         "price": 260.0,
         "discountPrice": 260.0,
-        "size": "6 years"
+        "sizeId": "6 years"
       },
       {
         "price": 265.0,
         "discountPrice": 265.0,
-        "size": "8 years"
+        "sizeId": "8 years"
       },
       {
         "price": 265.0,
         "discountPrice": 265.0,
-        "size": "10 years"
+        "sizeId": "10 years"
       }
     ]
   },
@@ -1002,32 +959,32 @@
       {
         "price": 430.0,
         "discountPrice": 430.0,
-        "size": "4 years"
+        "sizeId": "4 years"
       },
       {
         "price": 430.0,
         "discountPrice": 430.0,
-        "size": "6 years"
+        "sizeId": "6 years"
       },
       {
         "price": 440.0,
         "discountPrice": 440.0,
-        "size": "8 years"
+        "sizeId": "8 years"
       },
       {
         "price": 440.0,
         "discountPrice": 440.0,
-        "size": "10 years"
+        "sizeId": "10 years"
       },
       {
         "price": 450.0,
         "discountPrice": 450.0,
-        "size": "12 years"
+        "sizeId": "12 years"
       },
       {
         "price": 450.0,
         "discountPrice": 450.0,
-        "size": "13+ years"
+        "sizeId": "13+ years"
       }
     ]
   },
@@ -1062,22 +1019,22 @@
       {
         "price": 80.0,
         "discountPrice": 80.0,
-        "size": "7 years"
+        "sizeId": "7 years"
       },
       {
         "price": 80.0,
         "discountPrice": 80.0,
-        "size": "8 years"
+        "sizeId": "8 years"
       },
       {
         "price": 80.0,
         "discountPrice": 80.0,
-        "size": "9 years"
+        "sizeId": "9 years"
       },
       {
         "price": 80.0,
         "discountPrice": 80.0,
-        "size": "10 years"
+        "sizeId": "10 years"
       }
     ]
   },
@@ -1118,37 +1075,37 @@
       {
         "price": 172.0,
         "discountPrice": 172.0,
-        "size": "4 years"
+        "sizeId": "4 years"
       },
       {
         "price": 172.0,
         "discountPrice": 172.0,
-        "size": "5 years"
+        "sizeId": "5 years"
       },
       {
         "price": 179.0,
         "discountPrice": 179.0,
-        "size": "6 years"
+        "sizeId": "6 years"
       },
       {
         "price": 179.0,
         "discountPrice": 179.0,
-        "size": "7 years"
+        "sizeId": "7 years"
       },
       {
         "price": 179.0,
         "discountPrice": 179.0,
-        "size": "8 years"
+        "sizeId": "8 years"
       },
       {
         "price": 179.0,
         "discountPrice": 179.0,
-        "size": "9 years"
+        "sizeId": "9 years"
       },
       {
         "price": 179.0,
         "discountPrice": 179.0,
-        "size": "10 years"
+        "sizeId": "10 years"
       }
     ]
   },
@@ -1181,12 +1138,12 @@
       {
         "price": 720.0,
         "discountPrice": 720.0,
-        "size": "5 years"
+        "sizeId": "5 years"
       },
       {
         "price": 910.0,
         "discountPrice": 910.0,
-        "size": "12 years"
+        "sizeId": "12 years"
       }
     ]
   },
@@ -1220,17 +1177,17 @@
       {
         "price": 300.0,
         "discountPrice": 225.0,
-        "size": "5 years"
+        "sizeId": "5 years"
       },
       {
         "price": 300.0,
         "discountPrice": 225.0,
-        "size": "6 years"
+        "sizeId": "6 years"
       },
       {
         "price": 300.0,
         "discountPrice": 225.0,
-        "size": "7 years"
+        "sizeId": "7 years"
       }
     ]
   },
@@ -1264,12 +1221,12 @@
       {
         "price": 263.0,
         "discountPrice": 263.0,
-        "size": "8 years"
+        "sizeId": "8 years"
       },
       {
         "price": 263.0,
         "discountPrice": 263.0,
-        "size": "13+ years"
+        "sizeId": "13+ years"
       }
     ]
   },
@@ -1304,17 +1261,17 @@
       {
         "price": 715.0,
         "discountPrice": 715.0,
-        "size": "6 years"
+        "sizeId": "6 years"
       },
       {
         "price": 905.0,
         "discountPrice": 905.0,
-        "size": "8 years"
+        "sizeId": "8 years"
       },
       {
         "price": 905.0,
         "discountPrice": 905.0,
-        "size": "13+ years"
+        "sizeId": "13+ years"
       }
     ]
   },
@@ -1324,7 +1281,7 @@
     "name": "Beige Faux Fur Boots",
     "brand": "Mayoral",
     "category": "177",
-    "shortDescription": "&#8211; Upper: Other Materials, Textiles.&#8211; Lining: Textiles, Leather.&#8211; Sole: Other Materials&#8211; Please note that when you purchase shoes for your child, you should select a size that is 1.5 cm larger than your child&#39;s foot. Wellies and boots should be up to 2 cm larger, for extra socks and insolesSize Guide (Foot Length): 19 = 118 mm20 = 124 mm21 = 130 mm 22 = 136 mm23 = 142 mm24 = 148 mm25 = 154 mm ",
+    "shortDescription": "&#8211; Upper: Other Materials, Textiles.&#8211; Lining: Textiles, Leather.&#8211; Sole: Other Materials&#8211; Please note that when you purchase shoes for your child, you should select a sizeId that is 1.5 cm larger than your child&#39;s foot. Wellies and boots should be up to 2 cm larger, for extra socks and insolesSize Guide (Foot Length): 19 = 118 mm20 = 124 mm21 = 130 mm 22 = 136 mm23 = 142 mm24 = 148 mm25 = 154 mm ",
     "longDescription": "&#8211; Faux leather upper&#8211; Faux fur trim&#8211; Zip closure on the side for easy on and off&#8211; Leather insole&#8211; Non-slip sole",
     "imageCovers": [
       "https://www.melijoe.com/images/259897/card_medium.jpg",
@@ -1354,37 +1311,37 @@
       {
         "price": 64.0,
         "discountPrice": 64.0,
-        "size": "19 (UK 3- US 4)"
+        "sizeId": "19 (UK 3- US 4)"
       },
       {
         "price": 64.0,
         "discountPrice": 64.0,
-        "size": "20 (UK 4-US 5)"
+        "sizeId": "20 (UK 4-US 5)"
       },
       {
         "price": 64.0,
         "discountPrice": 64.0,
-        "size": "21 (UK 4.5-US 5.5)"
+        "sizeId": "21 (UK 4.5-US 5.5)"
       },
       {
         "price": 64.0,
         "discountPrice": 64.0,
-        "size": "22 (UK 5 - US 6)"
+        "sizeId": "22 (UK 5 - US 6)"
       },
       {
         "price": 64.0,
         "discountPrice": 64.0,
-        "size": "23 (UK 6 - US 7)"
+        "sizeId": "23 (UK 6 - US 7)"
       },
       {
         "price": 64.0,
         "discountPrice": 64.0,
-        "size": "24 (UK 7 - US 8)"
+        "sizeId": "24 (UK 7 - US 8)"
       },
       {
         "price": 715.0,
         "discountPrice": 715.0,
-        "size": "25 (UK 8 - US 9)"
+        "sizeId": "25 (UK 8 - US 9)"
       }
     ]
   },
@@ -1393,7 +1350,7 @@
     "name": "Black Kaya Lace Tex Boots",
     "brand": "Wheat",
     "category": "177",
-    "shortDescription": "&#8211; Upper: Leather.&amp;#8211; Lining: Textiles.&amp;#8211; Sole: Other Materials&#8211; Please note that when you purchase shoes for your child, you should select a size that is 1.5 cm larger than your child&#39;s foot. Wellies and boots should be up to 2 cm larger, for extra socks and insolesSize Guide (Insole): 22 = 147 mm &#10;23 = 154 mm &#10;24 = 160 mm &#10;25 = 168 mm &#10;26 = 174 mm &#10;27 = 180 mm &#10;28 = 185 mm &#10;29 = 191 mm &#10;30 = 197 mm &#10;31 = 203 mm &#10;32 = 210 mm ",
+    "shortDescription": "&#8211; Upper: Leather.&amp;#8211; Lining: Textiles.&amp;#8211; Sole: Other Materials&#8211; Please note that when you purchase shoes for your child, you should select a sizeId that is 1.5 cm larger than your child&#39;s foot. Wellies and boots should be up to 2 cm larger, for extra socks and insolesSize Guide (Insole): 22 = 147 mm &#10;23 = 154 mm &#10;24 = 160 mm &#10;25 = 168 mm &#10;26 = 174 mm &#10;27 = 180 mm &#10;28 = 185 mm &#10;29 = 191 mm &#10;30 = 197 mm &#10;31 = 203 mm &#10;32 = 210 mm ",
     "longDescription": "&#8211; Made in Portugal&#8211; Leather upper&#8211; Wool lining&#8211; Zip closure at the side for easy on and off&#8211; Non-slip rubber sole&#8211; Waterproof TEX membrane&#8211; Chrome-free",
     "imageCovers": [
       "https://www.melijoe.com/images/251339/card_medium.jpg",
@@ -1422,27 +1379,27 @@
       {
         "price": 122.0,
         "discountPrice": 122.0,
-        "size": "24 (UK 7 - US 8)"
+        "sizeId": "24 (UK 7 - US 8)"
       },
       {
         "price": 122.0,
         "discountPrice": 122.0,
-        "size": "27 (UK 9 - US 10)"
+        "sizeId": "27 (UK 9 - US 10)"
       },
       {
         "price": 122.0,
         "discountPrice": 122.0,
-        "size": "28 (UK 10 - US 11)"
+        "sizeId": "28 (UK 10 - US 11)"
       },
       {
         "price": 122.0,
         "discountPrice": 122.0,
-        "size": "29 (UK 11 - US 12))"
+        "sizeId": "29 (UK 11 - US 12))"
       },
       {
         "price": 122.0,
         "discountPrice": 122.0,
-        "size": "30 (UK 12 - US 13)"
+        "sizeId": "30 (UK 12 - US 13)"
       }
     ]
   },
@@ -1451,7 +1408,7 @@
     "name": "Brown Trip Fringe Boots",
     "brand": "Pom d&#39;Api",
     "category": "177",
-    "shortDescription": "&#8211; Upper: Leather.&amp;#8211; Lining: Leather.&amp;#8211; Sole: Other Materials&#8211; Please note that when you purchase shoes for your child, you should select a size that is 1.5 cm larger than your child&#39;s foot. Wellies and boots should be up to 2 cm larger, for extra socks and insolesSize Guide (Foot Length): 24 = 151 mm25 = 157 mm26 = 163 mm 27 = 169 mm28 = 176 mm29 = 183 mm30 = 190 mm31 = 196 mm32 = 203 mm33 = 210 mm34 = 217 mm 35 = 223 mm 36 = 230 mm37 =  237 mm ",
+    "shortDescription": "&#8211; Upper: Leather.&amp;#8211; Lining: Leather.&amp;#8211; Sole: Other Materials&#8211; Please note that when you purchase shoes for your child, you should select a sizeId that is 1.5 cm larger than your child&#39;s foot. Wellies and boots should be up to 2 cm larger, for extra socks and insolesSize Guide (Foot Length): 24 = 151 mm25 = 157 mm26 = 163 mm 27 = 169 mm28 = 176 mm29 = 183 mm30 = 190 mm31 = 196 mm32 = 203 mm33 = 210 mm34 = 217 mm 35 = 223 mm 36 = 230 mm37 =  237 mm ",
     "longDescription": "&#8211; Suede upper&#8211; Zip closure on the side for easy on and off&#8211; Leather insole&#8211; Non-slip rubber sole",
     "imageCovers": [
       "https://www.melijoe.com/images/252091/card_medium.jpg",
@@ -1485,57 +1442,57 @@
       {
         "price": 130.7,
         "discountPrice": 130.7,
-        "size": "28 (UK 10 - US 11)"
+        "sizeId": "28 (UK 10 - US 11)"
       },
       {
         "price": 130.7,
         "discountPrice": 130.7,
-        "size": "29 (UK 11 - US 12))"
+        "sizeId": "29 (UK 11 - US 12))"
       },
       {
         "price": 130.7,
         "discountPrice": 130.7,
-        "size": "30 (UK 12 - US 13)"
+        "sizeId": "30 (UK 12 - US 13)"
       },
       {
         "price": 141.7,
         "discountPrice": 141.7,
-        "size": "31 (UK 12.5 - US 13.5)"
+        "sizeId": "31 (UK 12.5 - US 13.5)"
       },
       {
         "price": 141.7,
         "discountPrice": 141.7,
-        "size": "32 (UK 13-US 1)"
+        "sizeId": "32 (UK 13-US 1)"
       },
       {
         "price": 141.7,
         "discountPrice": 141.7,
-        "size": "33 (UK 1 - US 2)"
+        "sizeId": "33 (UK 1 - US 2)"
       },
       {
         "price": 141.7,
         "discountPrice": 141.7,
-        "size": "34 (UK 2-US 3)"
+        "sizeId": "34 (UK 2-US 3)"
       },
       {
         "price": 157.0,
         "discountPrice": 157.0,
-        "size": "35 (UK 2.5 - US 3.5)"
+        "sizeId": "35 (UK 2.5 - US 3.5)"
       },
       {
         "price": 157.0,
         "discountPrice": 157.0,
-        "size": "36 (UK 3 - US 4)"
+        "sizeId": "36 (UK 3 - US 4)"
       },
       {
         "price": 157.0,
         "discountPrice": 157.0,
-        "size": "37 (UK 4 - US 5)"
+        "sizeId": "37 (UK 4 - US 5)"
       },
       {
         "price": 157.0,
         "discountPrice": 157.0,
-        "size": "38 (UK 5 - US 6)"
+        "sizeId": "38 (UK 5 - US 6)"
       }
     ]
   },
@@ -1544,7 +1501,7 @@
     "name": "Cream Stella B79 Tennis Sneakers",
     "brand": "Bensimon",
     "category": "177",
-    "shortDescription": "&#8211; Upper: Textiles.&amp;#8211; Lining: Textiles.&amp;#8211; Sole: Other Materials&#8211; Please note that when you purchase shoes for your child, you should select a size that is 1.5 cm larger than your child&#39;s foot. Wellies and boots should be up to 2 cm larger, for extra socks and insolesSize Guide (Foot Length): 23 = 144 mm24 = 150 mm25 = 157 mm26 = 164 mm27 = 170 mm28 = 177 mm29 = 184 mm30 = 190 mm31 = 197 mm32 = 204 mm33 = 210 mm34 = 217 mm35 = 224 mm36 = 230 mm37 = 237 mm38 = 244 mm39 = 250 mm ",
+    "shortDescription": "&#8211; Upper: Textiles.&amp;#8211; Lining: Textiles.&amp;#8211; Sole: Other Materials&#8211; Please note that when you purchase shoes for your child, you should select a sizeId that is 1.5 cm larger than your child&#39;s foot. Wellies and boots should be up to 2 cm larger, for extra socks and insolesSize Guide (Foot Length): 23 = 144 mm24 = 150 mm25 = 157 mm26 = 164 mm27 = 170 mm28 = 177 mm29 = 184 mm30 = 190 mm31 = 197 mm32 = 204 mm33 = 210 mm34 = 217 mm35 = 224 mm36 = 230 mm37 = 237 mm38 = 244 mm39 = 250 mm ",
     "longDescription": "&#8211; Canvas upper&#8211; Lace fastening&#8211; Removable insole&#8211; Chunky rubber sole&#8211; Rubber toe cap&#8211; Made in Europe&#8211; Machine washable",
     "imageCovers": [
       "https://www.melijoe.com/images/210866/card_medium.jpg",
@@ -1578,52 +1535,52 @@
       {
         "price": 60.0,
         "discountPrice": 36.0,
-        "size": "26 (UK 8.5 - US 9.5)"
+        "sizeId": "26 (UK 8.5 - US 9.5)"
       },
       {
         "price": 60.0,
         "discountPrice": 36.0,
-        "size": "27 (UK 9 - US 10)"
+        "sizeId": "27 (UK 9 - US 10)"
       },
       {
         "price": 60.0,
         "discountPrice": 36.0,
-        "size": "28 (UK 10 - US 11)"
+        "sizeId": "28 (UK 10 - US 11)"
       },
       {
         "price": 60.0,
         "discountPrice": 36.0,
-        "size": "29 (UK 11 - US 12))"
+        "sizeId": "29 (UK 11 - US 12))"
       },
       {
         "price": 60.0,
         "discountPrice": 36.0,
-        "size": "30 (UK 12 - US 13)"
+        "sizeId": "30 (UK 12 - US 13)"
       },
       {
         "price": 60.0,
         "discountPrice": 36.0,
-        "size": "31 (UK 12.5 - US 13.5)"
+        "sizeId": "31 (UK 12.5 - US 13.5)"
       },
       {
         "price": 60.0,
         "discountPrice": 36.0,
-        "size": "32 (UK 13-US 1)"
+        "sizeId": "32 (UK 13-US 1)"
       },
       {
         "price": 60.0,
         "discountPrice": 36.0,
-        "size": "33 (UK 1 - US 2)"
+        "sizeId": "33 (UK 1 - US 2)"
       },
       {
         "price": 60.0,
         "discountPrice": 36.0,
-        "size": "34 (UK 2-US 3)"
+        "sizeId": "34 (UK 2-US 3)"
       },
       {
         "price": 60.0,
         "discountPrice": 36.0,
-        "size": "35 (UK 2.5 - US 3.5)"
+        "sizeId": "35 (UK 2.5 - US 3.5)"
       }
     ]
   },
@@ -1632,7 +1589,7 @@
     "name": "Pink Moon Boots",
     "brand": "Mayoral",
     "category": "177",
-    "shortDescription": "&#8211; Upper: Other Materials, Textiles.&#8211; Lining: Textiles, Leather.&#8211; Sole: Other Materials&#8211; Please note that when you purchase shoes for your child, you should select a size that is 1.5 cm larger than your child&#39;s foot. Wellies and boots should be up to 2 cm larger, for extra socks and insolesSize Guide (Foot Length): 19 = 118 mm20 = 124 mm21 = 130 mm 22 = 136 mm23 = 142 mm24 = 148 mm25 = 154 mm ",
+    "shortDescription": "&#8211; Upper: Other Materials, Textiles.&#8211; Lining: Textiles, Leather.&#8211; Sole: Other Materials&#8211; Please note that when you purchase shoes for your child, you should select a sizeId that is 1.5 cm larger than your child&#39;s foot. Wellies and boots should be up to 2 cm larger, for extra socks and insolesSize Guide (Foot Length): 19 = 118 mm20 = 124 mm21 = 130 mm 22 = 136 mm23 = 142 mm24 = 148 mm25 = 154 mm ",
     "longDescription": "&#8211; Faux leather upper&#8211; Faux fur trim&#8211; Lace closure&#8211; Zip closure on the side for easy on and off&#8211; Leather insole&#8211; Non-slip sole",
     "imageCovers": [
       "https://www.melijoe.com/images/259901/card_medium.jpg",
@@ -1660,27 +1617,27 @@
       {
         "price": 74.0,
         "discountPrice": 74.0,
-        "size": "26 (UK 8.5 - US 9.5)"
+        "sizeId": "26 (UK 8.5 - US 9.5)"
       },
       {
         "price": 74.0,
         "discountPrice": 74.0,
-        "size": "27 (UK 9 - US 10)"
+        "sizeId": "27 (UK 9 - US 10)"
       },
       {
         "price": 74.0,
         "discountPrice": 74.0,
-        "size": "30 (UK 12 - US 13)"
+        "sizeId": "30 (UK 12 - US 13)"
       },
       {
         "price": 74.0,
         "discountPrice": 74.0,
-        "size": "32 (UK 13-US 1)"
+        "sizeId": "32 (UK 13-US 1)"
       },
       {
         "price": 74.0,
         "discountPrice": 74.0,
-        "size": "35 (UK 2.5 - US 3.5)"
+        "sizeId": "35 (UK 2.5 - US 3.5)"
       }
     ]
   },
@@ -1691,7 +1648,7 @@
     "brand": "Schott",
     "category": "245",
     "shortDescription": "Main fabric:100% PolyesterLining:  100% Polyester",
-    "longDescription": "Padded fabric, Polyester lining, Soft ligthweight rucksack, Small handles, Reinforced straps, Outside pockets, Computer compartment, Can be carried by hand or on your back, Snap button, Zipper on the top, Clip straps, Embroidered logo, Bag size: Height: 46 cm (18,11 inches) x Width 40 cm (15.7 inches) x Thickness 14 cm (5.5 inches) Weight: 570 g (20,10 OZ)",
+    "longDescription": "Padded fabric, Polyester lining, Soft ligthweight rucksack, Small handles, Reinforced straps, Outside pockets, Computer compartment, Can be carried by hand or on your back, Snap button, Zipper on the top, Clip straps, Embroidered logo, Bag sizeId: Height: 46 cm (18,11 inches) x Width 40 cm (15.7 inches) x Thickness 14 cm (5.5 inches) Weight: 570 g (20,10 OZ)",
     "imageCovers": [
       "https://www.melijoe.com/images/120380/card_medium.jpg",
       "https://www.melijoe.com/images/120388/card_medium.jpg"
@@ -1983,47 +1940,47 @@
       {
         "price": 155.0,
         "discountPrice": 155.0,
-        "size": "2 years"
+        "sizeId": "2 years"
       },
       {
         "price": 155.0,
         "discountPrice": 155.0,
-        "size": "3 years"
+        "sizeId": "3 years"
       },
       {
         "price": 155.0,
         "discountPrice": 155.0,
-        "size": "4 years"
+        "sizeId": "4 years"
       },
       {
         "price": 155.0,
         "discountPrice": 155.0,
-        "size": "5 years"
+        "sizeId": "5 years"
       },
       {
         "price": 169.0,
         "discountPrice": 169.0,
-        "size": "6 years"
+        "sizeId": "6 years"
       },
       {
         "price": 169.0,
         "discountPrice": 169.0,
-        "size": "7 years"
+        "sizeId": "7 years"
       },
       {
         "price": 169.0,
         "discountPrice": 169.0,
-        "size": "8 years"
+        "sizeId": "8 years"
       },
       {
         "price": 169.0,
         "discountPrice": 169.0,
-        "size": "9 years"
+        "sizeId": "9 years"
       },
       {
         "price": 169.0,
         "discountPrice": 169.0,
-        "size": "10 years"
+        "sizeId": "10 years"
       }
     ]
   },
@@ -2060,22 +2017,22 @@
       {
         "price": 115.0,
         "discountPrice": 115.0,
-        "size": "2 years"
+        "sizeId": "2 years"
       },
       {
         "price": 129.0,
         "discountPrice": 129.0,
-        "size": "10 years"
+        "sizeId": "10 years"
       },
       {
         "price": 129.0,
         "discountPrice": 129.0,
-        "size": "12 years"
+        "sizeId": "12 years"
       },
       {
         "price": 139.0,
         "discountPrice": 139.0,
-        "size": "13+ years"
+        "sizeId": "13+ years"
       }
     ]
   }
