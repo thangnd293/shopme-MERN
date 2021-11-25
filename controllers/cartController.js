@@ -20,7 +20,7 @@ exports.getCart = catchAsync(async (req, res, next) => {
   cart.items = await Promise.all(
     cart.items.map(
       async (item) => ({
-        variant: await Product.aggregate([
+        data: await Product.aggregate([
           {
             $unwind: '$variants',
           },
