@@ -79,16 +79,23 @@ exports.restrictTo = function (...roles) {
 
 exports.signup = catchAsync(async (req, res, next) => {
   //1. Lấy dữ liệu user nhập
-  let newUser;
-  try {
-    newUser = await User.create({
-      fname: req.body.fname,
+  const newUserObj = {
+    fname: req.body.fname,
       lname: req.body.lname,
       email: req.body.email,
       password: req.body.password,
       passwordConfirm: req.body.passwordConfirm,
-      phoneNumber: req.body.phoneNumber,
-    });
+      phoneNumber: req.body.phoneNumber
+  }
+  let newUser;
+  try {
+    const user = await User.findOne({email: req.body.email}).lean();
+    if(user && !user.isVerified) {
+      await User.findByIdAndDelete(user._id);
+    }
+
+    newUser = await User.create(newUserObj);
+
   } catch (e) {
     return next(
       new AppError('Email already exists, please use another email', 400)
