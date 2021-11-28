@@ -31,7 +31,7 @@ exports.createBill = catchAsync(async (req, resp, next) => {
     cart.items = [];
     await cart.save();
 
-    res.status(200).json({
+    resp.status(200).json({
         status: 'Success'
     });
 })
