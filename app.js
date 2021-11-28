@@ -48,9 +48,6 @@ app.use(
   })
 );
 
-app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/index.html');
-});
 app.all('*', function (req, res, next) {
   next(new AppError(`Can't find ${req.originalUrl} on this server`, 404));
 });
