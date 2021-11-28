@@ -17,6 +17,7 @@ const cartSchema = mongoose.Schema({
       quantity: {
         type: Number,
         default: 1,
+        max: [10, "One item can only be purchased up to 10 pieces"]
       },
     },
   ],
