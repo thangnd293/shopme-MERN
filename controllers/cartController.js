@@ -2,7 +2,6 @@ const Cart = require('./../models/cart');
 const catchAsync = require('./../utils/catchAsync');
 const AppError = require('./../utils/appError');
 const Product = require('./../models/product');
-
 exports.prepareCart = catchAsync(async (req, res, next) => {
   let cart = await Cart.findOne({ user: req.user._id });
   if (!cart) {
@@ -39,8 +38,8 @@ exports.getCart = catchAsync(async (req, res, next) => {
 
   cart.items = validItems;
   await cart.save();
-
-  cart.items = await Promise.all(
+  const result = cart._doc;
+  result.items = await Promise.all(
     cart.items.map(
       async (item) => {
         const data = await Product.aggregate([
@@ -62,21 +61,22 @@ exports.getCart = catchAsync(async (req, res, next) => {
             $match: {
               'variants._id': item.productVariation,
             },
-          },
+          }
         ])
         return {
-          data: data[0],
+          data: data,
           quantity: item.quantity
         }
       }
     )
   );
-
   res.status(200).json({
     status: 'Success',
-    data: cart,
+    data: result,
   });
 });
+
+
 
 exports.addToCart = catchAsync(async (req, res, next) => {
   if (req.body.quantity <= 0 || !req.body.productVariation) {
@@ -91,6 +91,7 @@ exports.addToCart = catchAsync(async (req, res, next) => {
       break;
     }
   }
+  
   if (!flag) {
     req.cart.items.push({
       productVariation: req.body.productVariation,
