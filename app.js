@@ -9,7 +9,7 @@ const productRoutes = require('./routes/productRoutes');
 const userRoutes = require('./routes/userRoutes');
 const cartRoutes = require('./routes/cartRoutes');
 const wishListRoutes = require('./routes/wishListRoutes');
-const orderRoutes = require('./routes/orderRoutes');
+const billRoutes = require('./routes/billRoutes');
 const filterRoutes = require('./routes/filterRoutes');
 const AppError = require(`${__dirname}/utils/appError`);
 const globalErrorHandler = require('./controllers/errorController');
@@ -30,7 +30,7 @@ app.use('/api/v1/products', productRoutes);
 app.use('/api/v1/user', userRoutes);
 app.use('/api/v1/cart', cartRoutes);
 app.use('/api/v1/wishlist', wishListRoutes);
-app.use('/api/v1/order', orderRoutes);
+app.use('/api/v1/bill', billRoutes);
 app.use('/api/v1/filters', filterRoutes);
 app.use(
   '/api/v1/insert',
