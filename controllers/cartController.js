@@ -38,38 +38,9 @@ exports.getCart = catchAsync(async (req, res, next) => {
 
   cart.items = validItems;
   await cart.save();
-  const result = cart._doc;
-  result.items = await Promise.all(
-    cart.items.map(
-      async (item) => {
-        const data = await Product.aggregate([
-          {
-            $unwind: '$variants',
-          },
-          {
-            $project: {
-              _id: 1,
-              name: 1,
-              imageCovers: 1,
-              images: 1,
-              slug: 1,
-              variants: 1,
-              brand: 1,
-            },
-          },
-          {
-            $match: {
-              'variants._id': item.productVariation,
-            },
-          }
-        ])
-        return {
-          data: data[0],
-          quantity: item.quantity
-        }
-      }
-    )
-  );
+
+  const result = await getInfoItem(cart._doc);
+
   res.status(200).json({
     status: 'Success',
     data: result,
@@ -98,39 +69,7 @@ exports.addToCart = catchAsync(async (req, res, next) => {
   }
   await req.cart.save();
 
-  const result = req.cart._doc;
-  result.items = await Promise.all(
-    req.cart.items.map(
-      async (item) => {
-        const data = await Product.aggregate([
-          {
-            $unwind: '$variants',
-          },
-          {
-            $project: {
-              _id: 1,
-              name: 1,
-              imageCovers: 1,
-              images: 1,
-              slug: 1,
-              variants: 1,
-              brand: 1,
-            },
-          },
-          {
-            $match: {
-              'variants._id': item.productVariation,
-            },
-          }
-        ])
-        return {
-          data: data[0],
-          quantity: item.quantity
-        }
-      }
-    )
-  );
-
+  const result = await getInfoItem(req.cart._doc);
 
   res.status(200).json({
     status: 'Success',
@@ -149,42 +88,11 @@ exports.updateCart = catchAsync(async (req, res, next) => {
   }
   await req.cart.save();
 
-  const result = req.cart._doc;
-  result.items = await Promise.all(
-    req.cart.items.map (
-      async (item) => {
-        const data = await Product.aggregate([
-          {
-            $unwind: '$variants',
-          },
-          {
-            $project: {
-              _id: 1,
-              name: 1,
-              imageCovers: 1,
-              images: 1,
-              slug: 1,
-              variants: 1,
-              brand: 1,
-            },
-          },
-          {
-            $match: {
-              'variants._id': item.productVariation,
-            },
-          }
-        ])
-        return {
-          data: data[0],
-          quantity: item.quantity
-        }
-      }
-    )
-  );
+  const result = await getInfoItem(req.cart._doc);
 
   res.status(200).json({
     status: 'Success',
-    data: req.cart,
+    data: result,
   });
 });
 
@@ -203,7 +111,26 @@ exports.removeItemCart = catchAsync(async (req, res, next) => {
 
   await req.cart.save();
 
-  const result = cart._doc;
+  const result = await getInfoItem(req.cart._doc);
+
+  res.status(200).json({
+    status: 'Success',
+    data: result,
+  });
+});
+
+exports.resetCart = catchAsync(async (req, res, next) => {
+  req.cart.items = [];
+  await req.cart.save();
+
+  res.status(200).json({
+    status: 'Success',
+    data: req.cart,
+  });
+});
+
+const getInfoItem = async function(cart) {
+  const result = cart;
   result.items = await Promise.all(
     cart.items.map(
       async (item) => {
@@ -235,19 +162,6 @@ exports.removeItemCart = catchAsync(async (req, res, next) => {
       }
     )
   );
-
-  res.status(200).json({
-    status: 'Success',
-    data: req.cart,
-  });
-});
-
-exports.resetCart = catchAsync(async (req, res, next) => {
-  req.cart.items = [];
-  await req.cart.save();
-
-  res.status(200).json({
-    status: 'Success',
-    data: req.cart,
-  });
-});
+  
+  return result;
+}
