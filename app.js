@@ -7,7 +7,6 @@ const Product = require('./models/product');
 const categoryRoutes = require('./routes/categoryRoutes');
 const productRoutes = require('./routes/productRoutes');
 const userRoutes = require('./routes/userRoutes');
-const variationRoutes = require('./routes/variationRoutes');
 const cartRoutes = require('./routes/cartRoutes');
 const wishListRoutes = require('./routes/wishListRoutes');
 const checkOutRoutes = require('./routes/checkOutRoutes');

@@ -6,11 +6,12 @@ const userController = require('./../controllers/userController');
 const router = express.Router();
 
 router.post('/signup', authController.signup);
-router.get('/verify/:token', authController.verify);
+router.post('/verify', authController.verify);
+router.post('/sendVerify', authController.sendVerify);
 router.post('/login', authController.login);
 
 router.post('/forgot-password', authController.forgotPassword);
-router.route('/reset-password/:token').patch(authController.resetPassword);
+router.route('/reset-password').patch(authController.resetPassword);
 
 // Phải đăng nhập trước
 router.use(authController.protect);

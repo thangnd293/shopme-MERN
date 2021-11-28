@@ -15,7 +15,30 @@ exports.prepareCart = catchAsync(async (req, res, next) => {
 });
 
 exports.getCart = catchAsync(async (req, res, next) => {
-  const cart = await Cart.findOne({ user: req.user._id }).lean();
+  const cart = await Cart.findOne({ user: req.user._id });
+  let items = [...cart.items];
+  
+  items = await Promise.all(
+    cart.items.map(
+      async (item) => {
+        const data = await Product.findOne({'variants._id' : item.productVariation});
+        return {
+          productVariation: !data ? null : item.productVariation,
+          quantity: item.quantity
+        }
+      }
+    )
+  );
+
+  const validItems = [];
+  items.forEach(item => {
+    if(item.productVariation) {
+      validItems.push(item);
+    }
+  })
+
+  cart.items = validItems;
+  await cart.save();
 
   cart.items = await Promise.all(
     cart.items.map(
@@ -32,6 +55,7 @@ exports.getCart = catchAsync(async (req, res, next) => {
               images: 1,
               slug: 1,
               variants: 1,
+              brand: 1,
             },
           },
           {

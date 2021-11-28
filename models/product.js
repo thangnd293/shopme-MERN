@@ -4,6 +4,7 @@ const AppError = require('../utils/appError');
 const Filter = require('./filter');
 // const appError = require('./../utils/appError');
 const Category = require('./category');
+const { ConnectContactLens } = require('aws-sdk');
 
 const productSchema = new mongoose.Schema(
   {
@@ -95,9 +96,7 @@ productSchema.pre('save', async function (next) {
     this._id = id;
   }
 
-  if (!this.variants || this.variants.length === 0) {
-    next(new AppError('A product must have at least one variant!!', 400));
-  }
+
 
   this.slug = slugify(this.name, { lower: true });
   this.facets = [];
@@ -110,6 +109,8 @@ productSchema.pre('save', async function (next) {
     );
   }
 
+  this.brand = brand.name;
+  
   if (!color) {
     return next(
       new AppError('Color does not exist. Please try again later.', 404)
@@ -166,11 +167,17 @@ productSchema.pre('save', async function (next) {
     })
   );
 
+  if (!this.variants || this.variants.length === 0) {
+    this.price = 0;
+    this.discountPrice = 0;
+    return next();
+  }
+
   let price = 99999;
   let discountPrice = 99999;
 
   await Promise.all(
-    this.variants.map(async (variant) => {
+    this.variants?.map(async (variant) => {
       if (!variant.price) {
         return next(
           new AppError('Please enter the price of the variant!!', 400)

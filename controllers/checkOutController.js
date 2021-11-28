@@ -1,5 +1,5 @@
 const Order = require('./../models/order');
-const ProductVariations = require('./../models/productVariations');
+const ProductVariations = require('./../models/product');
 const Cart = require('./../models/cart');
 const catchAsync = require('./../utils/catchAsync');
 const AppError = require('./../utils/appError');

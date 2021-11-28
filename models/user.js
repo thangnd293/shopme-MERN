@@ -2,16 +2,15 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 const bcrypt = require('bcryptjs');
 const crypto = require('crypto');
-const { truncate } = require('fs');
 
 const userSchema = new mongoose.Schema({
   fname: {
     type: String,
-    required: [true, 'Vui lòng nhập tên của bạn'],
+    required: [true, 'Please enter your first name'],
   },
   lname: {
     type: String,
-    required: [true, 'Vui lòng nhập tên của bạn'],
+    required: [true, 'Please enter your last name'],
   },
   role: {
     type: String,
@@ -20,27 +19,27 @@ const userSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-    required: [true, 'Vui lòng nhập email'],
+    required: [true, 'Please enter your email'],
     unique: true,
-    validate: [validator.isEmail, 'Email không hợp lệ'],
+    validate: [validator.isEmail, 'Invalid email!!'],
   },
   photo: {
     type: String,
   },
   password: {
     type: String,
-    required: [true, 'Vui lòng nhập mật khẩu'],
-    minlength: [8, 'Mật khẩu phải chứa ít nhất 8 ký tự'],
+    required: [true, 'Please enter your password'],
+    minlength: [8, 'Password must be at least 8 characters'],
     select: false,
   },
   passwordConfirm: {
     type: String,
-    required: [true, 'Vui lòng xác nhận mật khẩu'],
+    required: [true, 'Please confirm password'],
     validate: {
       validator: function (val) {
         return val === this.password;
       },
-      message: 'Mật khẩu không khớp',
+      message: 'Passwords are not the same',
     },
   },
   phoneNumber: {
@@ -64,15 +63,15 @@ const userSchema = new mongoose.Schema({
     default: false,
   },
   changePasswordAt: Date,
-  passwordResetToken: String,
+  passwordResetCode: String,
   passwordResetExpires: Date,
-  verifyToken: String,
+  verifyCode: String,
   verifyExpires: Date,
 });
 
 userSchema.index(
   { verifyExpires: 1 },
-  { expireAfterSeconds: process.env.TIME_VERIFY * 60 }
+  { expireAfterSeconds: 0 }
 );
 
 // Mã hóa mật khẩu trước khi lưu vào DB
@@ -128,17 +127,33 @@ userSchema.methods.createPasswordResetToken = function () {
   return resetToken;
 };
 
-// Tạo token xác nhận cho user
-userSchema.methods.createVerifyToken = function () {
-  const verifyToken = crypto.randomBytes(32).toString('hex');
-  this.verifyToken = crypto
-    .createHash('sha256')
-    .update(verifyToken)
-    .digest('hex');
+// Tạo code xác nhận cho user
+
+userSchema.methods.createVerifyCode = function () {
+  const verifyCode = `${Math.floor(Math.random()*900000) + 100000}`;
+  this.verifyCode = verifyCode;
   this.verifyExpires = Date.now() + process.env.TIME_VERIFY * 60 * 1000;
 
-  return verifyToken;
+  return verifyCode;
 };
+
+userSchema.methods.createResetCode = function () {
+  const resetCode = `${Math.floor(Math.random()*900000) + 100000}`;
+  this.passwordResetCode = resetCode;
+  this.passwordResetExpires = Date.now() + process.env.TIME_RESET * 60 * 1000;
+
+  return resetCode;
+};
+// userSchema.methods.createVerifyToken = function () {
+//   const verifyToken = crypto.randomBytes(32).toString('hex');
+//   this.verifyToken = crypto
+//     .createHash('sha256')
+//     .update(verifyToken)
+//     .digest('hex');
+//   this.verifyExpires = Date.now() + process.env.TIME_VERIFY * 60;
+
+//   return verifyToken;
+// };
 
 const User = mongoose.model('User', userSchema);
 

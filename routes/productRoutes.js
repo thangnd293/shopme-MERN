@@ -2,7 +2,6 @@ const express = require('express');
 
 const productController = require(`${__dirname}/../controllers/productController`);
 const authController = require('./../controllers/authController');
-const variationRoutes = require('./variationRoutes');
 
 const router = express.Router({ mergeParams: true });
 

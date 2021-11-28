@@ -35,6 +35,7 @@ cartSchema.index({ user: 1 });
 cartSchema.pre('save', async function (next) {
   let qty = 0;
   let total = 0;
+
   for (const item of this.items) {
     const vars = await Product.aggregate([
       {
@@ -56,12 +57,11 @@ cartSchema.pre('save', async function (next) {
         },
       },
     ]);
-    console.log(vars);
     if (!vars) {
       return next(new AppError('ID invalid!!', 400));
     }
 
-    total += vars[0].variants.discountPrice * item.quantity;
+    total += vars[0]?.variants.discountPrice * item.quantity;
     qty += item.quantity;
   }
 

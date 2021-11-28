@@ -95,61 +95,39 @@ exports.signup = catchAsync(async (req, res, next) => {
     );
   }
 
-  createSendToken(newUser, 200, res);
-  //2. Tạo token xác nhận email
-  // const verifyToken = newUser.createVerifyToken();
-  // await newUser.save({ validateBeforeSave: false });
-  // // 3. Gui toi email token de user reset password
-  // const resetURL = `${req.protocol}://${req.get(
-  //   'host'
-  // )}/api/v1/verify/${verifyToken}`;
-  // const message = `Press here to verify your account: ${resetURL}`;
+  //2. Tạo code xác nhận email
+  const verifyCode = newUser.createVerifyCode();
+  await newUser.save({ validateBeforeSave: false });
+  // 3. Gui toi email token de user reset password
+  const message = `Verify your account: ${verifyCode}`;
 
-  // // Neu email gui khong thanh cong thi phai reset verifyToken va verifyExpires
-  // try {
-  //   await sendEmail({
-  //     email: newUser.email,
-  //     subject: 'Verify your account (valid for 10 min)',
-  //     message,
-  //   });
+  // Neu email gui khong thanh cong thi phai reset verifyCode va verifyExpires
+  await sendToEmail(user, message, res, next);
 
-  //   res.status(200).json({
-  //     status: 'Success',
-  //     message: 'Token sent to email',
-  //   });
-  // } catch (err) {
-  //   newUser.verifyToken = undefined;
-  //   newUser.verifyExpires = undefined;
-  //   await newUser.save({ validateBeforeSave: false });
-  //   next(new AppError('There was an error sending the email'), 500);
-  // }
 });
 
 exports.verify = catchAsync(async (req, res, next) => {
   // 1. Lay user tuong ung
-  const verifyToken = crypto
-    .createHash('sha256')
-    .update(req.params.token)
-    .digest('hex');
-
+  const email = req.body.email;
+  const verifyCode = req.body.verifyCode;
   const user = await User.findOne({
-    verifyToken: verifyToken,
-    verifyExpires: { $gt: Date.now() },
+    email: email,
+    verifyCode: verifyCode,
+    verifyExpires: { $gt: Date.now() }
   });
+
   // 2. Kiem tra neu token hop le(con thoi gian su dung)
   if (!user) {
-    return next(new AppError('Xác minh không thành công!!'), 400);
+    return next(new AppError('Verification failed!!'), 400);
   }
 
   user.isVerified = true;
-  user.verifyToken = undefined;
+  user.verifyCode = undefined;
   user.verifyExpires = undefined;
 
   await user.save({ validateBeforeSave: false });
 
-  res.status(200).json({
-    status: 'Success',
-  });
+  createSendToken(user, 200, res);
 });
 
 exports.login = catchAsync(async function (req, res, next) {
@@ -158,11 +136,11 @@ exports.login = catchAsync(async function (req, res, next) {
   if (!email || !password)
     return next(new AppError('Please provide email and password', 400));
   // Kiem tra tai khoan & mat khau
-  // const user = await User.findOne({ email, isVerified: true }).select(
-  //   '+password'
-  // );
+  const user = await User.findOne({ email, isVerified: true }).select(
+    '+password'
+  );
 
-  const user = await User.findOne({ email }).select('+password');
+  // const user = await User.findOne({ email }).select('+password');
 
   if (!user || !(await user.correctPassword(password, user.password)))
     return next(new AppError('Incorrect email or password', 401));
@@ -178,13 +156,11 @@ exports.forgotPassword = catchAsync(async function (req, res, next) {
     return next(new AppError('There is no user with email address'), 404);
   }
   // 2. Tao token reset password
-  const resetToken = user.createPasswordResetToken();
+  const resetCode = user.createResetCode();
   await user.save({ validateBeforeSave: false });
   // 3. Gui toi email token de user reset password
-  const resetURL = `${req.protocol}://${req.get(
-    'host'
-  )}/api/v1/reset-password/${resetToken}`;
-  const message = `Forgot your password? Submit a PATCH request with your new password to: ${resetURL}. If you didn't forgot your password, please ignore this email!`;
+
+  const message = `Forgot your password? Submit a PATCH request with your new password to: ${resetCode}. If you didn't forgot your password, please ignore this email!`;
 
   // Neu email gui khong thanh cong thi phai reset passwordResetToken va passwordResetExpires
   try {
@@ -197,9 +173,10 @@ exports.forgotPassword = catchAsync(async function (req, res, next) {
     res.status(200).json({
       status: 'Success',
       message: 'Token sent to email',
+      email: user.email
     });
   } catch (err) {
-    user.passwordResetToken = undefined;
+    user.passwordResetCode = undefined;
     user.passwordResetExpires = undefined;
     await user.save({ validateBeforeSave: false });
     next(new AppError('There was an error sending the email'), 500);
@@ -208,16 +185,13 @@ exports.forgotPassword = catchAsync(async function (req, res, next) {
 
 exports.resetPassword = catchAsync(async function (req, res, next) {
   // 1. Lay user tuong ung
-  const resetToken = crypto
-    .createHash('sha256')
-    .update(req.params.token)
-    .digest('hex');
-
+  const email = req.body.email;
+  const resetCode = req.body.resetCode;
   const user = await User.findOne({
-    passwordResetToken: resetToken,
-    passwordResetExpires: { $gt: Date.now() },
+    email: email,
+    passwordResetCode: resetCode,
+    passwordResetExpires: { $gt: Date.now() }
   });
-
   // 2. Kiem tra neu token hop le(con thoi gian su dung) thi doi mat khau
   if (!user) {
     return next(new AppError('Invalid token reset password!!'), 400);
@@ -225,7 +199,7 @@ exports.resetPassword = catchAsync(async function (req, res, next) {
 
   user.password = req.body.password;
   user.passwordConfirm = req.body.passwordConfirm;
-  user.passwordResetToken = undefined;
+  user.passwordResetCode = undefined;
   user.passwordResetExpires = undefined;
 
   await user.save();
@@ -252,3 +226,42 @@ exports.updatePassword = catchAsync(async function (req, res, next) {
   // 4. Dang nhap user, cap JWT moi cho user
   createSendToken(user, 200, res);
 });
+
+exports.sendVerify = catchAsync(async function (req, res, next) {
+  const email = req.body.email;
+
+  const user = await User.findOne({email});
+
+  if (!user) {
+    return next(new AppError('Sending verification code failed!!'), 400);
+  }
+  const verifyCode = user.createVerifyCode();
+
+  await user.save({ validateBeforeSave: false });
+  // 3. Gui toi email token de user reset password
+  const message = `Verify your account: ${verifyCode}`;
+
+  // Neu email gui khong thanh cong thi phai reset verifyCode va verifyExpires
+  await sendToEmail(user, message, res, next);
+});
+
+const sendToEmail = async function(user, message, res, next) {
+  try {
+    await sendEmail({
+      email: user.email,
+      subject: 'Verify your account (valid for 5 min)',
+      message,
+    });
+
+    res.status(200).json({
+      status: 'Success',
+      message: 'Code sent to email',
+      email: user.email
+    });
+  } catch (err) {
+    user.verifyCode = undefined;
+    user.verifyExpires = undefined;
+    await user.save({ validateBeforeSave: false });
+    next(new AppError('Sending verification code failed!!'), 500);
+  }
+}
