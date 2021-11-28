@@ -15,7 +15,6 @@ const AppError = require(`${__dirname}/utils/appError`);
 const globalErrorHandler = require('./controllers/errorController');
 const app = express();
 const cors = require('cors');
-const multer = require('multer');
 
 app.use(cors());
 
@@ -25,7 +24,6 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 app.use('/api/v1/categories', categoryRoutes);
-// app.use('/api/v1/variations', variationRoutes);
 app.use('/api/v1/products', productRoutes);
 app.use('/api/v1/user', userRoutes);
 app.use('/api/v1/cart', cartRoutes);

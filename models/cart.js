@@ -58,8 +58,9 @@ cartSchema.pre('save', async function (next) {
         },
       },
     ]);
+
     if (!vars) {
-      return next(new AppError('ID invalid!!', 400));
+      return next(new AppError('Variant do not exists!!', 400));
     }
 
     total += vars[0]?.variants.discountPrice * item.quantity;
