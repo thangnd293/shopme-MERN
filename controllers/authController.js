@@ -102,7 +102,7 @@ exports.signup = catchAsync(async (req, res, next) => {
   const message = `Verify your account: ${verifyCode}`;
 
   // Neu email gui khong thanh cong thi phai reset verifyCode va verifyExpires
-  await sendToEmail(user, message, res, next);
+  await sendToEmail(newUser, message, res, next);
 
 });
 
