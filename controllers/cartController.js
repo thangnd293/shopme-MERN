@@ -96,18 +96,93 @@ exports.addToCart = catchAsync(async (req, res, next) => {
       quantity: req.body.quantity,
     });
   }
-
   await req.cart.save();
+
+  const result = req.cart._doc;
+  result.items = await Promise.all(
+    req.cart.items.map(
+      async (item) => {
+        const data = await Product.aggregate([
+          {
+            $unwind: '$variants',
+          },
+          {
+            $project: {
+              _id: 1,
+              name: 1,
+              imageCovers: 1,
+              images: 1,
+              slug: 1,
+              variants: 1,
+              brand: 1,
+            },
+          },
+          {
+            $match: {
+              'variants._id': item.productVariation,
+            },
+          }
+        ])
+        return {
+          data: data[0],
+          quantity: item.quantity
+        }
+      }
+    )
+  );
+
 
   res.status(200).json({
     status: 'Success',
-    data: req.cart,
+    data: result,
   });
 });
 
 exports.updateCart = catchAsync(async (req, res, next) => {
-  req.cart.items = req.body.items;
+  const productVariation = req.body.productVariation;
+  const quantity = req.body.quantity;
+
+  for (let i = 0; i < req.cart.items.length; i++) {
+    if(req.cart.items[i].productVariation === productVariation) {
+      req.cart.items[i].quantity = quantity;
+      break;
+    }
+  }
+
   req.cart = await req.cart.save();
+
+  const result = req.cart._doc;
+  result.items = await Promise.all(
+    req.cart.items.map (
+      async (item) => {
+        const data = await Product.aggregate([
+          {
+            $unwind: '$variants',
+          },
+          {
+            $project: {
+              _id: 1,
+              name: 1,
+              imageCovers: 1,
+              images: 1,
+              slug: 1,
+              variants: 1,
+              brand: 1,
+            },
+          },
+          {
+            $match: {
+              'variants._id': item.productVariation,
+            },
+          }
+        ])
+        return {
+          data: data[0],
+          quantity: item.quantity
+        }
+      }
+    )
+  );
 
   res.status(200).json({
     status: 'Success',
@@ -129,6 +204,39 @@ exports.removeItemCart = catchAsync(async (req, res, next) => {
   }
 
   await req.cart.save();
+
+  const result = cart._doc;
+  result.items = await Promise.all(
+    cart.items.map(
+      async (item) => {
+        const data = await Product.aggregate([
+          {
+            $unwind: '$variants',
+          },
+          {
+            $project: {
+              _id: 1,
+              name: 1,
+              imageCovers: 1,
+              images: 1,
+              slug: 1,
+              variants: 1,
+              brand: 1,
+            },
+          },
+          {
+            $match: {
+              'variants._id': item.productVariation,
+            },
+          }
+        ])
+        return {
+          data: data[0],
+          quantity: item.quantity
+        }
+      }
+    )
+  );
 
   res.status(200).json({
     status: 'Success',
