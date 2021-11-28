@@ -1,6 +1,7 @@
 const Bill = require('./../models/bill');
 const catchAsync = require('./../utils/catchAsync');
 const Cart = require('./../models/cart');
+const AppError = require('../utils/appError');
 
 exports.createBill = catchAsync(async (req, resp, next) => {
 
@@ -22,6 +23,10 @@ exports.createBill = catchAsync(async (req, resp, next) => {
 
     await Bill.create(billObj);
     const cart = Cart.findOne({user: req.user.id});
+    if(!cart) {
+        return next(new AppError('Bad request', 400));
+    }
+    
     cart.items = [];
     await cart.save();
 

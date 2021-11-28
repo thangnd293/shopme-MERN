@@ -34,7 +34,7 @@ const billSchema = mongoose.Schema({
     },
   ],
   amount: Number,
-  create_time: {
+  createAt: {
     type: Date,
     default: Date.now(),
   },
