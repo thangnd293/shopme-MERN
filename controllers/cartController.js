@@ -141,15 +141,13 @@ exports.addToCart = catchAsync(async (req, res, next) => {
 exports.updateCart = catchAsync(async (req, res, next) => {
   const productVariation = req.body.productVariation;
   const quantity = req.body.quantity;
-
   for (let i = 0; i < req.cart.items.length; i++) {
-    if(req.cart.items[i].productVariation === productVariation) {
+    if(`${req.cart.items[i].productVariation}` === productVariation) {
       req.cart.items[i].quantity = quantity;
       break;
     }
   }
-
-  req.cart = await req.cart.save();
+  await req.cart.save();
 
   const result = req.cart._doc;
   result.items = await Promise.all(
