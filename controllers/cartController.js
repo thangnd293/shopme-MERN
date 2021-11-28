@@ -64,7 +64,7 @@ exports.getCart = catchAsync(async (req, res, next) => {
           }
         ])
         return {
-          data: data,
+          data: data[0],
           quantity: item.quantity
         }
       }
@@ -75,8 +75,6 @@ exports.getCart = catchAsync(async (req, res, next) => {
     data: result,
   });
 });
-
-
 
 exports.addToCart = catchAsync(async (req, res, next) => {
   if (req.body.quantity <= 0 || !req.body.productVariation) {
@@ -91,7 +89,7 @@ exports.addToCart = catchAsync(async (req, res, next) => {
       break;
     }
   }
-  
+
   if (!flag) {
     req.cart.items.push({
       productVariation: req.body.productVariation,
@@ -125,6 +123,7 @@ exports.removeItemCart = catchAsync(async (req, res, next) => {
       break;
     }
   }
+
   if (index != undefined) {
     req.cart.items.splice(index, 1);
   }
