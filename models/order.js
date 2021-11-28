@@ -6,10 +6,7 @@ const orderSchema = mongoose.Schema({
     ref: 'user',
     require: true,
   },
-  paymentMethod: String,
   shipping_address: {
-    recipient_name: String,
-    line1: String,
     city: String,
     state: String,
     postal_code: String,
@@ -33,6 +30,7 @@ const orderSchema = mongoose.Schema({
         type: Number,
         require: true,
       },
+      total: Number
     },
   ],
   amount: Number,
