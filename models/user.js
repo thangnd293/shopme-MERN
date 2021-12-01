@@ -69,14 +69,11 @@ const userSchema = new mongoose.Schema({
   verifyExpires: Date,
   createAt: {
     type: Date,
-    default: Date.now()
-  }
+    default: Date.now(),
+  },
 });
 
-userSchema.index(
-  { verifyExpires: 1 },
-  { expireAfterSeconds: 0 }
-);
+userSchema.index({ verifyExpires: 1 }, { expireAfterSeconds: 0 });
 
 // Mã hóa mật khẩu trước khi lưu vào DB
 userSchema.pre('save', async function (next) {
@@ -134,7 +131,7 @@ userSchema.methods.createPasswordResetToken = function () {
 // Tạo code xác nhận cho user
 
 userSchema.methods.createVerifyCode = function () {
-  const verifyCode = `${Math.floor(Math.random()*900000) + 100000}`;
+  const verifyCode = `${Math.floor(Math.random() * 900000) + 100000}`;
   this.verifyCode = verifyCode;
   this.verifyExpires = Date.now() + process.env.TIME_VERIFY * 60 * 1000;
 
@@ -142,7 +139,7 @@ userSchema.methods.createVerifyCode = function () {
 };
 
 userSchema.methods.createResetCode = function () {
-  const resetCode = `${Math.floor(Math.random()*900000) + 100000}`;
+  const resetCode = `${Math.floor(Math.random() * 900000) + 100000}`;
   this.passwordResetCode = resetCode;
   this.passwordResetExpires = Date.now() + process.env.TIME_RESET * 60 * 1000;
 

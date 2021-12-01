@@ -111,9 +111,7 @@ exports.getAllProducts = catchAsync(async (req, res, next) => {
     .paginate();
 
   const doc = await features.query
-    .select(
-      '-filters -facets -createAt -longDescription -shortDescription -categories'
-    )
+    .select('-facets -createAt -longDescription -shortDescription -categories')
     .lean();
 
   res.status(200).json({
@@ -251,7 +249,7 @@ exports.getFacets = catchAsync(async (req, res, next) => {
 
 exports.getProduct = catchAsync(async (req, res, next) => {
   const product = await Product.findById(req.params.id)
-    .select('-filters -facets -createAt')
+    .select('-facets -createAt')
     .lean();
   if (!product) {
     return next(new AppError('No matching products found!!', 404));
