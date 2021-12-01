@@ -14,16 +14,14 @@ exports.getAll = catchAsync(async (req, res, next) => {
       f.name !== 'Shoe Sizes' &&
       f.name !== 'Brands'
     ) {
-      roots.push({
-        root: f,
-        children: [],
-      });
+      f.children = [];
+      roots.push(f);
     }
   });
 
   roots.forEach((r) => {
     filters.forEach((f) => {
-      if (r.root.name === f.type) {
+      if (r.name === f.type) {
         r.children.push(f);
       }
     });
