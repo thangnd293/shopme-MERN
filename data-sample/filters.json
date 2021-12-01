@@ -1,0 +1,1405 @@
+[{
+  "_id": "000001",
+  "type": "/",
+  "name": "Brands"
+},{
+  "_id": "000002",
+  "type": "/",
+  "name": "Categories"
+},{
+  "_id": "000003",
+  "type": "/",
+  "name": "Genders"
+},{
+  "_id": "000004",
+  "type": "/",
+  "name": "Products"
+},{
+  "_id": "000005",
+  "type": "/",
+  "name": "Clothing sizes"
+},{
+  "_id": "000006",
+  "type": "/",
+  "name": "Shoe Sizes"
+},{
+  "_id": "000007",
+  "type": "/",
+  "name": "Colors"
+},{
+  "_id": "000101",
+  "type": "Brands",
+  "name": "A Happy Brand"
+},{
+  "_id": "000102",
+  "type": "Brands",
+  "name": "Aden + Anais"
+},{
+  "_id": "000103",
+  "type": "Brands",
+  "name": "adidas Originals"
+},{
+  "_id": "000104",
+  "type": "Brands",
+  "name": "Riders on the Storm"
+},{
+  "_id": "000105",
+  "type": "Brands",
+  "name": "Aigle"
+},{
+  "_id": "000106",
+  "type": "Brands",
+  "name": "Anja Schwerbrock"
+},{
+  "_id": "000107",
+  "type": "Brands",
+  "name": "Balenciaga"
+},{
+  "_id": "000108",
+  "type": "Brands",
+  "name": "Balmain"
+},{
+  "_id": "000109",
+  "type": "Brands",
+  "name": "Bebe Organic"
+},{
+  "_id": "000110",
+  "type": "Brands",
+  "name": "Belle "
+},{
+  "_id": "000111",
+  "type": "Brands",
+  "name": "Enfant"
+},{
+  "_id": "000112",
+  "type": "Brands",
+  "name": "Bensimon"
+},{
+  "_id": "000113",
+  "type": "Brands",
+  "name": "Billybandit"
+},{
+  "_id": "000114",
+  "type": "Brands",
+  "name": "Birkenstock"
+},{
+  "_id": "000115",
+  "type": "Brands",
+  "name": "Bonpoint"
+},{
+  "_id": "000116",
+  "type": "Brands",
+  "name": "BOSS"
+},{
+  "_id": "000117",
+  "type": "Brands",
+  "name": "Buddy & Hope"
+},{
+  "_id": "000118",
+  "type": "Brands",
+  "name": "Burberry"
+},{
+  "_id": "000119",
+  "type": "Brands",
+  "name": "Camper"
+},{
+  "_id": "000120",
+  "type": "Brands",
+  "name": "Canada Goose"
+},{
+  "_id": "000121",
+  "type": "Brands",
+  "name": "Carrément Beau"
+},{
+  "_id": "000122",
+  "type": "Brands",
+  "name": "Collégien"
+},{
+  "_id": "000123",
+  "type": "Brands",
+  "name": "Condor"
+},{
+  "_id": "000124",
+  "type": "Brands",
+  "name": "Converse"
+},{
+  "_id": "000125",
+  "type": "Brands",
+  "name": "Dal Lago"
+},{
+  "_id": "000126",
+  "type": "Brands",
+  "name": "Diesel"
+},{
+  "_id": "000127",
+  "type": "Brands",
+  "name": "DKNY"
+},{
+  "_id": "000128",
+  "type": "Brands",
+  "name": "Dolce & Gabbana"
+},{
+  "_id": "000129",
+  "type": "Brands",
+  "name": "Dr. Martens"
+},{
+  "_id": "000130",
+  "type": "Brands",
+  "name": "Dsquared2"
+},{
+  "_id": "000131",
+  "type": "Brands",
+  "name": "Eleven Paris"
+},{
+  "_id": "000132",
+  "type": "Brands",
+  "name": "Emporio Armani"
+},{
+  "_id": "000133",
+  "type": "Brands",
+  "name": "Fabric Flavours"
+},{
+  "_id": "000134",
+  "type": "Brands",
+  "name": "Falke"
+},{
+  "_id": "000135",
+  "type": "Brands",
+  "name": "Fendi"
+},{
+  "_id": "000136",
+  "type": "Brands",
+  "name": "Flöss"
+},{
+  "_id": "000137",
+  "type": "Brands",
+  "name": "Freedom Moses"
+},{
+  "_id": "000138",
+  "type": "Brands",
+  "name": "Fusalp"
+},{
+  "_id": "000139",
+  "type": "Brands",
+  "name": "Garcia"
+},{
+  "_id": "000140",
+  "type": "Brands",
+  "name": "Gili's"
+},{
+  "_id": "000141",
+  "type": "Brands",
+  "name": "Golden Goose"
+},{
+  "_id": "000142",
+  "type": "Brands",
+  "name": "Gucci"
+},{
+  "_id": "000143",
+  "type": "Brands",
+  "name": "Havaianas"
+},{
+  "_id": "000144",
+  "type": "Brands",
+  "name": "Hunter"
+},{
+  "_id": "000145",
+  "type": "Brands",
+  "name": "IKKS"
+},{
+  "_id": "000146",
+  "type": "Brands",
+  "name": "Il Gufo"
+},{
+  "_id": "000147",
+  "type": "Brands",
+  "name": "IZIPIZI"
+},{
+  "_id": "000148",
+  "type": "Brands",
+  "name": "Jacadi"
+},{
+  "_id": "000149",
+  "type": "Brands",
+  "name": "Jellycat"
+},{
+  "_id": "000150",
+  "type": "Brands",
+  "name": "Jeune Premier"
+},{
+  "_id": "000151",
+  "type": "Brands",
+  "name": "Karl Lagerfeld Kids"
+},{
+  "_id": "000152",
+  "type": "Brands",
+  "name": "Kenzo"
+},{
+  "_id": "000153",
+  "type": "Brands",
+  "name": "Kuling"
+},{
+  "_id": "000154",
+  "type": "Brands",
+  "name": "K-Way"
+},{
+  "_id": "000155",
+  "type": "Brands",
+  "name": "Lacoste"
+},{
+  "_id": "000156",
+  "type": "Brands",
+  "name": "Lanvin"
+},{
+  "_id": "000157",
+  "type": "Brands",
+  "name": "Les Ultraviolettes"
+},{
+  "_id": "000158",
+  "type": "Brands",
+  "name": "Levis Kids"
+},{
+  "_id": "000159",
+  "type": "Brands",
+  "name": "Lison Paris"
+},{
+  "_id": "000160",
+  "type": "Brands",
+  "name": "M by Melijoe"
+},{
+  "_id": "000161",
+  "type": "Brands",
+  "name": "Maria Bianca"
+},{
+  "_id": "000162",
+  "type": "Brands",
+  "name": "Marni"
+},{
+  "_id": "000163",
+  "type": "Brands",
+  "name": "Mayoral"
+},{
+  "_id": "000164",
+  "type": "Brands",
+  "name": "MC2 Saint Barth"
+},{
+  "_id": "000165",
+  "type": "Brands",
+  "name": "Méduse"
+},{
+  "_id": "000166",
+  "type": "Brands",
+  "name": "Mini A Ture"
+},{
+  "_id": "000167",
+  "type": "Brands",
+  "name": "MM6 Maison Margiela"
+},{
+  "_id": "000168",
+  "type": "Brands",
+  "name": "Molo"
+},{
+  "_id": "000169",
+  "type": "Brands",
+  "name": "Moncler"
+},{
+  "_id": "000170",
+  "type": "Brands",
+  "name": "Moon Boot"
+},{
+  "_id": "000171",
+  "type": "Brands",
+  "name": "Mori"
+},{
+  "_id": "000172",
+  "type": "Brands",
+  "name": "Moschino Kid-Teen"
+},{
+  "_id": "000173",
+  "type": "Brands",
+  "name": "MP"
+},{
+  "_id": "000174",
+  "type": "Brands",
+  "name": "MSGM"
+},{
+  "_id": "000175",
+  "type": "Brands",
+  "name": "nadadelazos"
+},{
+  "_id": "000176",
+  "type": "Brands",
+  "name": "Neil Barrett"
+},{
+  "_id": "000177",
+  "type": "Brands",
+  "name": "No.21"
+},{
+  "_id": "000178",
+  "type": "Brands",
+  "name": "Novesta"
+},{
+  "_id": "000179",
+  "type": "Brands",
+  "name": "Oii"
+},{
+  "_id": "000180",
+  "type": "Brands",
+  "name": "Organic Zoo"
+},{
+  "_id": "000181",
+  "type": "Brands",
+  "name": "Paade Mode"
+},{
+  "_id": "000182",
+  "type": "Brands",
+  "name": "Parajumpers"
+},{
+  "_id": "000183",
+  "type": "Brands",
+  "name": "Patagonia"
+},{
+  "_id": "000184",
+  "type": "Brands",
+  "name": "Paul Smith Junior"
+},{
+  "_id": "000185",
+  "type": "Brands",
+  "name": "Pepe Jeans"
+},{
+  "_id": "000186",
+  "type": "Brands",
+  "name": "Perfect Moment"
+},{
+  "_id": "000187",
+  "type": "Brands",
+  "name": "Petit Bateau"
+},{
+  "_id": "000188",
+  "type": "Brands",
+  "name": "Play Up"
+},{
+  "_id": "000189",
+  "type": "Brands",
+  "name": "Poivre Blanc"
+},{
+  "_id": "000190",
+  "type": "Brands",
+  "name": "Pom d'Api"
+},{
+  "_id": "000191",
+  "type": "Brands",
+  "name": "Puma"
+},{
+  "_id": "000192",
+  "type": "Brands",
+  "name": "Ralph Lauren"
+},{
+  "_id": "000193",
+  "type": "Brands",
+  "name": "Reebok"
+},{
+  "_id": "000194",
+  "type": "Brands",
+  "name": "Save The Duck"
+},{
+  "_id": "000195",
+  "type": "Brands",
+  "name": "Schott"
+},{
+  "_id": "000196",
+  "type": "Brands",
+  "name": "Scotch & Soda"
+},{
+  "_id": "000197",
+  "type": "Brands",
+  "name": "Sorel"
+},{
+  "_id": "000198",
+  "type": "Brands",
+  "name": "Sproet and Sprout"
+},{
+  "_id": "000199",
+  "type": "Brands",
+  "name": "Spyder"
+},{
+  "_id": "000200",
+  "type": "Brands",
+  "name": "Stella McCartney Kids"
+},{
+  "_id": "000201",
+  "type": "Brands",
+  "name": "Stone Island"
+},{
+  "_id": "000202",
+  "type": "Brands",
+  "name": "Sundek"
+},{
+  "_id": "000203",
+  "type": "Brands",
+  "name": "Superga"
+},{
+  "_id": "000204",
+  "type": "Brands",
+  "name": "Tann's"
+},{
+  "_id": "000205",
+  "type": "Brands",
+  "name": "The Marc Jacobs"
+},{
+  "_id": "000206",
+  "type": "Brands",
+  "name": "The North Face"
+},{
+  "_id": "000207",
+  "type": "Brands",
+  "name": "Timberland"
+},{
+  "_id": "000208",
+  "type": "Brands",
+  "name": "Tommy Hilfiger"
+},{
+  "_id": "000209",
+  "type": "Brands",
+  "name": "Tretorn"
+},{
+  "_id": "000210",
+  "type": "Brands",
+  "name": "UGG"
+},{
+  "_id": "000211",
+  "type": "Brands",
+  "name": "Versace"
+},{
+  "_id": "000212",
+  "type": "Brands",
+  "name": "Wheat"
+},{
+  "_id": "000213",
+  "type": "Brands",
+  "name": "Wynken"
+},{
+  "_id": "000214",
+  "type": "Brands",
+  "name": "Young Sole"
+},{
+  "_id": "000215",
+  "type": "Brands",
+  "name": "Zadig & Voltaire"
+},{
+  "_id": "000216",
+  "type": "Brands",
+  "name": "NUNUNU"
+},{
+  "_id": "000217",
+  "type": "Brands",
+  "name": "Les Coyotes de Paris"
+},{
+  "_id": "312884",
+  "type": "Categories",
+  "name": "Accessories"
+},{
+  "_id": "312690",
+  "type": "Categories",
+  "name": "Bathtime"
+},{
+  "_id": "312919",
+  "type": "Categories",
+  "name": "Bloomers"
+},{
+  "_id": "312905",
+  "type": "Categories",
+  "name": "Bodysuits"
+},{
+  "_id": "312878",
+  "type": "Categories",
+  "name": "Bouncers & Rockers"
+},{
+  "_id": "312909",
+  "type": "Categories",
+  "name": "Cardigans"
+},{
+  "_id": "312885",
+  "type": "Categories",
+  "name": "Coats & jackets"
+},{
+  "_id": "312892",
+  "type": "Categories",
+  "name": "Cropped pants, Culottes"
+},{
+  "_id": "312910",
+  "type": "Categories",
+  "name": "Dresses"
+},{
+  "_id": "312872",
+  "type": "Categories",
+  "name": "Food"
+},{
+  "_id": "312879",
+  "type": "Categories",
+  "name": "Gift Sets"
+},{
+  "_id": "312874",
+  "type": "Categories",
+  "name": "Jeans"
+},{
+  "_id": "312881",
+  "type": "Categories",
+  "name": "Jumpsuits"
+},{
+  "_id": "312891",
+  "type": "Categories",
+  "name": "Leggings"
+},{
+  "_id": "312917",
+  "type": "Categories",
+  "name": "Mealtime"
+},{
+  "_id": "312888",
+  "type": "Categories",
+  "name": "Nursery"
+},{
+  "_id": "312877",
+  "type": "Categories",
+  "name": "Outdoors Shoes"
+},{
+  "_id": "312893",
+  "type": "Categories",
+  "name": "Outfit Sets"
+},{
+  "_id": "312886",
+  "type": "Categories",
+  "name": "Overalls"
+},{
+  "_id": "312887",
+  "type": "Categories",
+  "name": "Pants"
+},{
+  "_id": "312890",
+  "type": "Categories",
+  "name": "Pramsuits"
+},{
+  "_id": "312871",
+  "type": "Categories",
+  "name": "Pyjamas"
+},{
+  "_id": "312908",
+  "type": "Categories",
+  "name": "Shirts and Blouses"
+},{
+  "_id": "312870",
+  "type": "Categories",
+  "name": "Shoes"
+},{
+  "_id": "312901",
+  "type": "Categories",
+  "name": "Shorts"
+},{
+  "_id": "312900",
+  "type": "Categories",
+  "name": "Ski"
+},{
+  "_id": "312880",
+  "type": "Categories",
+  "name": "Skirts"
+},{
+  "_id": "312906",
+  "type": "Categories",
+  "name": "Sleep sacks"
+},{
+  "_id": "312869",
+  "type": "Categories",
+  "name": "Socks"
+},{
+  "_id": "312875",
+  "type": "Categories",
+  "name": "Suits"
+},{
+  "_id": "312889",
+  "type": "Categories",
+  "name": "Sweaters"
+},{
+  "_id": "312903",
+  "type": "Categories",
+  "name": "Sweatpants"
+},{
+  "_id": "312902",
+  "type": "Categories",
+  "name": "Sweatshirts"
+},{
+  "_id": "312883",
+  "type": "Categories",
+  "name": "Swimsuits"
+},{
+  "_id": "312918",
+  "type": "Categories",
+  "name": "Tights"
+},{
+  "_id": "312899",
+  "type": "Categories",
+  "name": "T-shirts"
+},{
+  "_id": "312895",
+  "type": "Categories",
+  "name": "Underwear"
+},{
+  "_id": "674080",
+  "type": "Genders",
+  "name": "Boy"
+},{
+  "_id": "674079",
+  "type": "Genders",
+  "name": "Girl"
+},{
+  "_id": "313729",
+  "type": "Products",
+  "name": "1 piece"
+},{
+  "_id": "313838",
+  "type": "Products",
+  "name": "Angel Wings"
+},{
+  "_id": "313851",
+  "type": "Products",
+  "name": "Anti-UV"
+},{
+  "_id": "313824",
+  "type": "Products",
+  "name": "Baby tableware"
+},{
+  "_id": "313850",
+  "type": "Products",
+  "name": "Backpacks"
+},{
+  "_id": "313826",
+  "type": "Products",
+  "name": "Bags"
+},{
+  "_id": "313688",
+  "type": "Products",
+  "name": "Beach Shoes"
+},{
+  "_id": "313852",
+  "type": "Products",
+  "name": "Beach towels"
+},{
+  "_id": "313785",
+  "type": "Products",
+  "name": "Beanies, fur hats, balaclavas"
+},{
+  "_id": "313728",
+  "type": "Products",
+  "name": "Bed linen"
+},{
+  "_id": "313702",
+  "type": "Products",
+  "name": "Belts"
+},{
+  "_id": "313703",
+  "type": "Products",
+  "name": "Belts, suspenders"
+},{
+  "_id": "313755",
+  "type": "Products",
+  "name": "Bibs"
+},{
+  "_id": "313738",
+  "type": "Products",
+  "name": "Blankets"
+},{
+  "_id": "313840",
+  "type": "Products",
+  "name": "Blankets, throws"
+},{
+  "_id": "313774",
+  "type": "Products",
+  "name": "Blazers"
+},{
+  "_id": "313856",
+  "type": "Products",
+  "name": "Blouses"
+},{
+  "_id": "313800",
+  "type": "Products",
+  "name": "Bomber jackets"
+},{
+  "_id": "313807",
+  "type": "Products",
+  "name": "Boots"
+},{
+  "_id": "313794",
+  "type": "Products",
+  "name": "Boots, booties"
+},{
+  "_id": "313698",
+  "type": "Products",
+  "name": "Brushes and Combs"
+},{
+  "_id": "313819",
+  "type": "Products",
+  "name": "Capes and ponchos"
+},{
+  "_id": "313813",
+  "type": "Products",
+  "name": "Caps"
+},{
+  "_id": "313723",
+  "type": "Products",
+  "name": "Cardigans"
+},{
+  "_id": "313706",
+  "type": "Products",
+  "name": "Chinos"
+},{
+  "_id": "313798",
+  "type": "Products",
+  "name": "Coats"
+},{
+  "_id": "313735",
+  "type": "Products",
+  "name": "Cropped pants, Culottes"
+},{
+  "_id": "313714",
+  "type": "Products",
+  "name": "Derbies"
+},{
+  "_id": "313747",
+  "type": "Products",
+  "name": "Diaper Bags"
+},{
+  "_id": "313709",
+  "type": "Products",
+  "name": "Dining Sets"
+},{
+  "_id": "313797",
+  "type": "Products",
+  "name": "Down and feather coats"
+},{
+  "_id": "313799",
+  "type": "Products",
+  "name": "False fur"
+},{
+  "_id": "313741",
+  "type": "Products",
+  "name": "First steps"
+},{
+  "_id": "313768",
+  "type": "Products",
+  "name": "Flats"
+},{
+  "_id": "313759",
+  "type": "Products",
+  "name": "Flip-flops"
+},{
+  "_id": "313720",
+  "type": "Products",
+  "name": "Fur and Shearling Coats"
+},{
+  "_id": "313726",
+  "type": "Products",
+  "name": "Games and Early-Learning Toys"
+},{
+  "_id": "313721",
+  "type": "Products",
+  "name": "Gloves, mittens"
+},{
+  "_id": "313677",
+  "type": "Products",
+  "name": "Hair accessories"
+},{
+  "_id": "313746",
+  "type": "Products",
+  "name": "Handbags"
+},{
+  "_id": "313704",
+  "type": "Products",
+  "name": "Hats and berets"
+},{
+  "_id": "313538",
+  "type": "Products",
+  "name": "Hooded"
+},{
+  "_id": "313855",
+  "type": "Products",
+  "name": "Hooded cardigans"
+},{
+  "_id": "313754",
+  "type": "Products",
+  "name": "Hooded Sweatshirts"
+},{
+  "_id": "313766",
+  "type": "Products",
+  "name": "Jackets"
+},{
+  "_id": "313781",
+  "type": "Products",
+  "name": "Jeggings"
+},{
+  "_id": "313725",
+  "type": "Products",
+  "name": "Jersey and Cotton"
+},{
+  "_id": "313719",
+  "type": "Products",
+  "name": "Lightweight pants"
+},{
+  "_id": "313733",
+  "type": "Products",
+  "name": "Loafers"
+},{
+  "_id": "313787",
+  "type": "Products",
+  "name": "Long"
+},{
+  "_id": "313778",
+  "type": "Products",
+  "name": "Long jumpsuits"
+},{
+  "_id": "313844",
+  "type": "Products",
+  "name": "Long skirts"
+},{
+  "_id": "313731",
+  "type": "Products",
+  "name": "Long Sleeved"
+},{
+  "_id": "313773",
+  "type": "Products",
+  "name": "Motorcycle jackets"
+},{
+  "_id": "313697",
+  "type": "Products",
+  "name": "Newborn Gift Sets"
+},{
+  "_id": "313784",
+  "type": "Products",
+  "name": "Nightgowns"
+},{
+  "_id": "313682",
+  "type": "Products",
+  "name": "Occasion Accessories"
+},{
+  "_id": "313681",
+  "type": "Products",
+  "name": "Occasion Cardigans"
+},{
+  "_id": "313679",
+  "type": "Products",
+  "name": "Occasion Shirts"
+},{
+  "_id": "313685",
+  "type": "Products",
+  "name": "Occasion Shorts"
+},{
+  "_id": "313684",
+  "type": "Products",
+  "name": "Occasion Trousers"
+},{
+  "_id": "313683",
+  "type": "Products",
+  "name": "Occassion Shoes"
+},{
+  "_id": "313710",
+  "type": "Products",
+  "name": "Onesies"
+},{
+  "_id": "313748",
+  "type": "Products",
+  "name": "Overalls"
+},{
+  "_id": "313534",
+  "type": "Products",
+  "name": "Pacifiers"
+},{
+  "_id": "313736",
+  "type": "Products",
+  "name": "Pants"
+},{
+  "_id": "313737",
+  "type": "Products",
+  "name": "Parkas"
+},{
+  "_id": "313699",
+  "type": "Products",
+  "name": "Pea Coats"
+},{
+  "_id": "313814",
+  "type": "Products",
+  "name": "Plush Toys"
+},{
+  "_id": "313536",
+  "type": "Products",
+  "name": "Polar Fleece"
+},{
+  "_id": "313740",
+  "type": "Products",
+  "name": "Polos"
+},{
+  "_id": "313687",
+  "type": "Products",
+  "name": "Rain Accessories"
+},{
+  "_id": "313837",
+  "type": "Products",
+  "name": "Rain boots"
+},{
+  "_id": "313801",
+  "type": "Products",
+  "name": "Raincoats, wind-breakers"
+},{
+  "_id": "313742",
+  "type": "Products",
+  "name": "Regular, straight"
+},{
+  "_id": "313752",
+  "type": "Products",
+  "name": "Robes"
+},{
+  "_id": "313749",
+  "type": "Products",
+  "name": "Sandals"
+},{
+  "_id": "313717",
+  "type": "Products",
+  "name": "Scarves, headscarves"
+},{
+  "_id": "313701",
+  "type": "Products",
+  "name": "Schoolbags"
+},{
+  "_id": "313848",
+  "type": "Products",
+  "name": "Schoolbags"
+},{
+  "_id": "313705",
+  "type": "Products",
+  "name": "Shirts"
+},{
+  "_id": "313711",
+  "type": "Products",
+  "name": "Short"
+},{
+  "_id": "313764",
+  "type": "Products",
+  "name": "Short Jackets"
+},{
+  "_id": "313843",
+  "type": "Products",
+  "name": "Short skirts"
+},{
+  "_id": "313730",
+  "type": "Products",
+  "name": "Short Sleeved"
+},{
+  "_id": "313790",
+  "type": "Products",
+  "name": "Shorties"
+},{
+  "_id": "313868",
+  "type": "Products",
+  "name": "Ski gloves"
+},{
+  "_id": "313696",
+  "type": "Products",
+  "name": "Ski Hats"
+},{
+  "_id": "313864",
+  "type": "Products",
+  "name": "Ski jackets"
+},{
+  "_id": "313867",
+  "type": "Products",
+  "name": "Ski masks"
+},{
+  "_id": "313866",
+  "type": "Products",
+  "name": "Ski mittens"
+},{
+  "_id": "313865",
+  "type": "Products",
+  "name": "Ski pants"
+},{
+  "_id": "313863",
+  "type": "Products",
+  "name": "Ski suits"
+},{
+  "_id": "313695",
+  "type": "Products",
+  "name": "Ski Thermals"
+},{
+  "_id": "313769",
+  "type": "Products",
+  "name": "Skinny"
+},{
+  "_id": "313771",
+  "type": "Products",
+  "name": "Sleep sacks"
+},{
+  "_id": "313861",
+  "type": "Products",
+  "name": "Sleeveless Body-Warmers"
+},{
+  "_id": "313724",
+  "type": "Products",
+  "name": "Sleeveless dresses"
+},{
+  "_id": "313751",
+  "type": "Products",
+  "name": "Slim"
+},{
+  "_id": "313795",
+  "type": "Products",
+  "name": "Slippers"
+},{
+  "_id": "313739",
+  "type": "Products",
+  "name": "Sneakers"
+},{
+  "_id": "313694",
+  "type": "Products",
+  "name": "Snow Boots"
+},{
+  "_id": "313777",
+  "type": "Products",
+  "name": "Socks, tights"
+},{
+  "_id": "313772",
+  "type": "Products",
+  "name": "Soft toys, comfort blankets"
+},{
+  "_id": "313780",
+  "type": "Products",
+  "name": "Special occasions"
+},{
+  "_id": "313692",
+  "type": "Products",
+  "name": "Sport Jackets"
+},{
+  "_id": "313693",
+  "type": "Products",
+  "name": "Sport Shorts"
+},{
+  "_id": "313690",
+  "type": "Products",
+  "name": "Sport Sweaters"
+},{
+  "_id": "313691",
+  "type": "Products",
+  "name": "Sport T-Shirts"
+},{
+  "_id": "313810",
+  "type": "Products",
+  "name": "Sunglasses"
+},{
+  "_id": "313750",
+  "type": "Products",
+  "name": "Swim Shorts"
+},{
+  "_id": "313796",
+  "type": "Products",
+  "name": "Synthetic padded coats"
+},{
+  "_id": "313806",
+  "type": "Products",
+  "name": "Tablewear"
+},{
+  "_id": "313847",
+  "type": "Products",
+  "name": "Tank Tops"
+},{
+  "_id": "313802",
+  "type": "Products",
+  "name": "Toilet Bags"
+},{
+  "_id": "313828",
+  "type": "Products",
+  "name": "Toiletry bags"
+},{
+  "_id": "313761",
+  "type": "Products",
+  "name": "Trench Coats"
+},{
+  "_id": "313862",
+  "type": "Products",
+  "name": "Trench Coats & Wax Jackets"
+},{
+  "_id": "313676",
+  "type": "Products",
+  "name": "Two pieces"
+},{
+  "_id": "313788",
+  "type": "Products",
+  "name": "Underwear"
+},{
+  "_id": "313756",
+  "type": "Products",
+  "name": "Zipped"
+},{
+  "_id": "671993",
+  "type": "Clothing sizes",
+  "name": "0-3 months"
+},{
+  "_id": "671060",
+  "type": "Clothing sizes",
+  "name": "3-6 months"
+},{
+  "_id": "671032",
+  "type": "Clothing sizes",
+  "name": "6-9 months"
+},{
+  "_id": "671009",
+  "type": "Clothing sizes",
+  "name": "9-12 months"
+},{
+  "_id": "671069",
+  "type": "Clothing sizes",
+  "name": "1  year"
+},{
+  "_id": "671002",
+  "type": "Clothing sizes",
+  "name": "2 years"
+},{
+  "_id": "671044",
+  "type": "Clothing sizes",
+  "name": "3 years"
+},{
+  "_id": "671012",
+  "type": "Clothing sizes",
+  "name": "4 years"
+},{
+  "_id": "671043",
+  "type": "Clothing sizes",
+  "name": "5 years"
+},{
+  "_id": "671057",
+  "type": "Clothing sizes",
+  "name": "6 years"
+},{
+  "_id": "671031",
+  "type": "Clothing sizes",
+  "name": "7 years"
+},{
+  "_id": "671022",
+  "type": "Clothing sizes",
+  "name": "8 years"
+},{
+  "_id": "671999",
+  "type": "Clothing sizes",
+  "name": "9 years"
+},{
+  "_id": "671010",
+  "type": "Clothing sizes",
+  "name": "10 years"
+},{
+  "_id": "671995",
+  "type": "Clothing sizes",
+  "name": "11 years"
+},{
+  "_id": "671005",
+  "type": "Clothing sizes",
+  "name": "12 years"
+},{
+  "_id": "671078",
+  "type": "Clothing sizes",
+  "name": "13+ years"
+},{
+  "_id": "671020",
+  "type": "Clothing sizes",
+  "name": "Maternity"
+},{
+  "_id": "672056",
+  "type": "Shoe Sizes",
+  "name": "14 (UK 12 - US 0)"
+},{
+  "_id": "672006",
+  "type": "Shoe Sizes",
+  "name": "15 (UK 0 - US 0)"
+},{
+  "_id": "672052",
+  "type": "Shoe Sizes",
+  "name": "16 (UK 0 - US 1)"
+},{
+  "_id": "672021",
+  "type": "Shoe Sizes",
+  "name": "17 (UK 1- US 2)"
+},{
+  "_id": "672038",
+  "type": "Shoe Sizes",
+  "name": "18 (UK 2 - US 3)"
+},{
+  "_id": "672024",
+  "type": "Shoe Sizes",
+  "name": "19 (UK 3- US 4)"
+},{
+  "_id": "672016",
+  "type": "Shoe Sizes",
+  "name": "20 (UK 4-US 5)"
+},{
+  "_id": "672998",
+  "type": "Shoe Sizes",
+  "name": "21 (UK 4.5-US 5.5)"
+},{
+  "_id": "672068",
+  "type": "Shoe Sizes",
+  "name": "22 (UK 5 - US 6)"
+},{
+  "_id": "672064",
+  "type": "Shoe Sizes",
+  "name": "23 (UK 6 - US 7)"
+},{
+  "_id": "672004",
+  "type": "Shoe Sizes",
+  "name": "24 (UK 7 - US 8)"
+},{
+  "_id": "672050",
+  "type": "Shoe Sizes",
+  "name": "25 (UK 8 - US 9)"
+},{
+  "_id": "672051",
+  "type": "Shoe Sizes",
+  "name": "26 (UK 8.5 - US 9.5)"
+},{
+  "_id": "672014",
+  "type": "Shoe Sizes",
+  "name": "27 (UK 9 - US 10)"
+},{
+  "_id": "672058",
+  "type": "Shoe Sizes",
+  "name": "28 (UK 10 - US 11)"
+},{
+  "_id": "672039",
+  "type": "Shoe Sizes",
+  "name": "29 (UK 11 - US 12)"
+},{
+  "_id": "672055",
+  "type": "Shoe Sizes",
+  "name": "30 (UK 12 - US 13)"
+},{
+  "_id": "672023",
+  "type": "Shoe Sizes",
+  "name": "31 (UK 12.5 - US 13.5)"
+},{
+  "_id": "672029",
+  "type": "Shoe Sizes",
+  "name": "32 (UK 13-US 1)"
+},{
+  "_id": "672074",
+  "type": "Shoe Sizes",
+  "name": "33 (UK 1 - US 2)"
+},{
+  "_id": "672001",
+  "type": "Shoe Sizes",
+  "name": "34 (UK 2-US 3)"
+},{
+  "_id": "672034",
+  "type": "Shoe Sizes",
+  "name": "35 (UK 2.5 - US 3.5)"
+},{
+  "_id": "672015",
+  "type": "Shoe Sizes",
+  "name": "36 (UK 3 - US 4)"
+},{
+  "_id": "672065",
+  "type": "Shoe Sizes",
+  "name": "37 (UK 4 - US 5)"
+},{
+  "_id": "672077",
+  "type": "Shoe Sizes",
+  "name": "38 (UK 5 - US 6)"
+},{
+  "_id": "672003",
+  "type": "Shoe Sizes",
+  "name": "39 (UK 6-US 7)"
+},{
+  "_id": "672035",
+  "type": "Shoe Sizes",
+  "name": "40 (UK 6.5 - US 8)"
+},{
+  "_id": "672025",
+  "type": "Shoe Sizes",
+  "name": "41 (UK 7)"
+},{
+  "_id": "672996",
+  "type": "Shoe Sizes",
+  "name": "42 (UK 8)"
+},{
+  "_id": "673097",
+  "type": "Colors",
+  "name": "Beige"
+},{
+  "_id": "673082",
+  "type": "Colors",
+  "name": "Black"
+},{
+  "_id": "673083",
+  "type": "Colors",
+  "name": "Blue"
+},{
+  "_id": "673081",
+  "type": "Colors",
+  "name": "Brown"
+},{
+  "_id": "673088",
+  "type": "Colors",
+  "name": "Cream - Ivory"
+},{
+  "_id": "673086",
+  "type": "Colors",
+  "name": "Denim"
+},{
+  "_id": "673093",
+  "type": "Colors",
+  "name": "Gold"
+},{
+  "_id": "673091",
+  "type": "Colors",
+  "name": "Green"
+},{
+  "_id": "673100",
+  "type": "Colors",
+  "name": "Grey"
+},{
+  "_id": "673099",
+  "type": "Colors",
+  "name": "Multicolored"
+},{
+  "_id": "673089",
+  "type": "Colors",
+  "name": "Orange"
+},{
+  "_id": "673092",
+  "type": "Colors",
+  "name": "Pink"
+},{
+  "_id": "673084",
+  "type": "Colors",
+  "name": "Prints"
+},{
+  "_id": "673095",
+  "type": "Colors",
+  "name": "Purple"
+},{
+  "_id": "673085",
+  "type": "Colors",
+  "name": "Red"
+},{
+  "_id": "673101",
+  "type": "Colors",
+  "name": "Silver"
+},{
+  "_id": "673087",
+  "type": "Colors",
+  "name": "White"
+},{
+  "_id": "673096",
+  "type": "Colors",
+  "name": "Yellow"
+},{
+  "_id": "000218",
+  "type": "Brands",
+  "name": "Billieblush"
+},{
+  "_id": "000219",
+  "type": "Brands",
+  "name": "Tartine et Chocolat"
+}]

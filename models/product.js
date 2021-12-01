@@ -4,7 +4,6 @@ const AppError = require('../utils/appError');
 const Filter = require('./filter');
 // const appError = require('./../utils/appError');
 const Category = require('./category');
-const { ConnectContactLens } = require('aws-sdk');
 
 const productSchema = new mongoose.Schema(
   {

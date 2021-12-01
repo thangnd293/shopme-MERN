@@ -20,6 +20,8 @@ router.route('/features').get(productController.getProductFeatured);
 
 router.route('/facets').get(productController.getFacets);
 
+router.route('/search').get(productController.findProducts);
+
 router
   .route('/')
   .get(productController.getAllProducts)

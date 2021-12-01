@@ -1,5 +1,5 @@
-const multer = require('multer');
-const sharp = require('sharp');
+// const multer = require('multer');
+// const sharp = require('sharp');
 const mongoose = require('mongoose');
 
 const Product = require(`${__dirname}/../models/product`);
@@ -9,62 +9,62 @@ const APIFeatures = require('./../utils/apiFeatures');
 const catchAsync = require('./../utils/catchAsync');
 const factory = require('./handlerFactory');
 
-const multerStorage = multer.memoryStorage();
+// const multerStorage = multer.memoryStorage();
 
-const multerFilter = (req, file, cb) => {
-  if (file.mimetype.startsWith('image')) {
-    cb(null, true);
-  } else {
-    cb(new AppError('Not an image! Please upload only images.', 400), true);
-  }
-};
+// const multerFilter = (req, file, cb) => {
+//   if (file.mimetype.startsWith('image')) {
+//     cb(null, true);
+//   } else {
+//     cb(new AppError('Not an image! Please upload only images.', 400), true);
+//   }
+// };
 
-const upload = multer({
-  storage: multerStorage,
-  fileFilter: multerFilter,
-});
+// const upload = multer({
+//   storage: multerStorage,
+//   fileFilter: multerFilter,
+// });
 
-exports.uploadProductImages = upload.fields([
-  { name: 'imageCovers', maxCount: 2 },
-  { name: 'images', maxCount: 10 },
-]);
+// exports.uploadProductImages = upload.fields([
+//   { name: 'imageCovers', maxCount: 2 },
+//   { name: 'images', maxCount: 10 },
+// ]);
 
-exports.resizeProductImages = async function (req, res, next) {
-  if (!req.files.imageCovers || !req.files.images) {
-    return next();
-  }
-  req.body.imageCovers = [];
-  await Promise.all(
-    req.files.imageCovers.map(async (imageCover, i) => {
-      const filename = `product-${req.params.id}-${Date.now()}-cover-${
-        i + 1
-      }.jpeg`;
+// exports.resizeProductImages = async function (req, res, next) {
+//   if (!req.files.imageCovers || !req.files.images) {
+//     return next();
+//   }
+//   req.body.imageCovers = [];
+//   await Promise.all(
+//     req.files.imageCovers.map(async (imageCover, i) => {
+//       const filename = `product-${req.params.id}-${Date.now()}-cover-${
+//         i + 1
+//       }.jpeg`;
 
-      await sharp(imageCover.buffer)
-        .resize(1600, 1600)
-        .toFormat('jpeg')
-        .jpeg({ quality: 90 })
-        .toFile(`public/img/products/${filename}`);
-      req.body.imageCovers.push(filename);
-    })
-  );
+//       await sharp(imageCover.buffer)
+//         .resize(1600, 1600)
+//         .toFormat('jpeg')
+//         .jpeg({ quality: 90 })
+//         .toFile(`public/img/products/${filename}`);
+//       req.body.imageCovers.push(filename);
+//     })
+//   );
 
-  req.body.images = [];
-  await Promise.all(
-    req.files.images.map(async (image, i) => {
-      const filename = `product-${req.params.id}-${Date.now()}-${i + 1}.jpeg`;
+//   req.body.images = [];
+//   await Promise.all(
+//     req.files.images.map(async (image, i) => {
+//       const filename = `product-${req.params.id}-${Date.now()}-${i + 1}.jpeg`;
 
-      await sharp(image.buffer)
-        .resize(1600, 1600)
-        .toFormat('jpeg')
-        .jpeg({ quality: 90 })
-        .toFile(`public/img/products/${filename}`);
-      req.body.images.push(filename);
-    })
-  );
+//       await sharp(image.buffer)
+//         .resize(1600, 1600)
+//         .toFormat('jpeg')
+//         .jpeg({ quality: 90 })
+//         .toFile(`public/img/products/${filename}`);
+//       req.body.images.push(filename);
+//     })
+//   );
 
-  next();
-};
+//   next();
+// };
 
 exports.updateProduct = catchAsync(async function (req, res, next) {
   const product = await Product.findById(req.params.id);
@@ -122,6 +122,33 @@ exports.getAllProducts = catchAsync(async (req, res, next) => {
     data: doc,
   });
 }); //done
+
+
+exports.findProducts = catchAsync(async (req, res, next) => {
+  const { key } = req.query;
+  const filter = { slug: {
+    $regex: key.toLowerCase()
+  }};
+
+  const features = new APIFeatures(Product.find(filter), req.query)
+    .filterFacets()
+    .sort()
+    .limitFields()
+    .paginate();
+
+  const doc = await features.query
+    .select(
+      '-filters -facets -createAt -longDescription -shortDescription -categories'
+    )
+    .lean();
+
+  res.status(200).json({
+    status: 'Success',
+    results: doc.length,
+    data: doc,
+  });
+}); //done
+
 
 exports.getFacets = catchAsync(async (req, res, next) => {
   const category = await Category.findById(req.params.categoryId);
