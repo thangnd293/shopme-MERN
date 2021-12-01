@@ -33,6 +33,7 @@ const billSchema = mongoose.Schema({
       total: Number
     },
   ],
+  quantity: Number,
   amount: Number,
   createAt: {
     type: Date,

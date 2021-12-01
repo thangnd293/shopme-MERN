@@ -11,6 +11,7 @@ const cartRoutes = require('./routes/cartRoutes');
 const wishListRoutes = require('./routes/wishListRoutes');
 const billRoutes = require('./routes/billRoutes');
 const filterRoutes = require('./routes/filterRoutes');
+const dashboardRoutes = require('./routes/dashboardRoutes');
 const AppError = require(`${__dirname}/utils/appError`);
 const globalErrorHandler = require('./controllers/errorController');
 const app = express();
@@ -30,6 +31,7 @@ app.use('/api/v1/cart', cartRoutes);
 app.use('/api/v1/wishlist', wishListRoutes);
 app.use('/api/v1/bill', billRoutes);
 app.use('/api/v1/filters', filterRoutes);
+app.use('/api/v1/dashboard', dashboardRoutes);
 app.use(
   '/api/v1/insert',
   express.Router().post('/', async (req, res, next) => {

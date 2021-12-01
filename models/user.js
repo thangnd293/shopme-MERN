@@ -67,6 +67,10 @@ const userSchema = new mongoose.Schema({
   passwordResetExpires: Date,
   verifyCode: String,
   verifyExpires: Date,
+  createAt: {
+    type: Date,
+    default: Date.now()
+  }
 });
 
 userSchema.index(

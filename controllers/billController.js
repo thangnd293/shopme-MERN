@@ -5,7 +5,7 @@ const AppError = require('../utils/appError');
 
 exports.createBill = catchAsync(async (req, resp, next) => {
 
-    const { shipping_address, data, total } = req.body;
+    const { shipping_address, data, quantity, total } = req.body;
     const items = data?.map(item => ({
         sku: item.sku,
         name: item.name,
@@ -18,7 +18,8 @@ exports.createBill = catchAsync(async (req, resp, next) => {
         user: req.user.id,
         shipping_address,
         items,
-        amount: total
+        amount: total,
+        quantity
     }
 
     await Bill.create(billObj);

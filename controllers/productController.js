@@ -123,12 +123,14 @@ exports.getAllProducts = catchAsync(async (req, res, next) => {
   });
 }); //done
 
-
 exports.findProducts = catchAsync(async (req, res, next) => {
   const { key } = req.query;
-  const filter = { slug: {
-    $regex: key.toLowerCase()
-  }};
+  const filter = {
+    name: {
+      $regex: key,
+      $options: 'i',
+    },
+  };
 
   const features = new APIFeatures(Product.find(filter), req.query)
     .filterFacets()
@@ -149,17 +151,43 @@ exports.findProducts = catchAsync(async (req, res, next) => {
   });
 }); //done
 
-
 exports.getFacets = catchAsync(async (req, res, next) => {
-  const category = await Category.findById(req.params.categoryId);
+  // const { categoryId, key } = req.query;
+  // let query;
+  // if (categoryId) {
+  //   const category = await Category.findById(categoryId);
+  //   if (categoryId.startsWith('88')) {
+  //     query = { brand: category.name };
+  //     if (
+  //       categoryId === '8836' ||
+  //       categoryId === '8837' ||
+  //       categoryId === '8893'
+  //     ) {
+  //       query = {};
+  //     }
+  //     console.log(query);
+  //   } else {
+  //     query = { categoryPath: new RegExp(`${category.path}`) };
+  //   }
+  // } else {
+  //   query = { name: { $regex: key, $options: 'i' } };
+  // }
+  const { categoryId } = req.params;
+  const category = await Category.findById(categoryId);
 
-  if (!category) {
-    return next(new AppError('ID không hợp lệ', 400));
+  if (categoryId.startsWith('88')) {
+    query = { brand: category.name };
+    if (
+      categoryId === '8836' ||
+      categoryId === '8837' ||
+      categoryId === '8893'
+    ) {
+      query = {};
+    }
   }
 
-  const p = { categoryPath: new RegExp(`${category.path}`) };
   const f = await Product.aggregate([
-    { $match: p },
+    { $match: query },
     { $unwind: '$facets' },
     {
       $group: {
@@ -378,48 +406,3 @@ exports.deleteVariant = catchAsync(async (req, res, next) => {
     data: product,
   });
 });
-
-// exports.getProduct = catchAsync(async (req, res, next) => {
-//   const product = await Product.findById(req.params.id)
-//     .select('-filters -facets -createAt')
-//     .lean();
-//   if (!product) {
-//     return next(new AppError('No matching products found!!', 404));
-//   }
-
-//   let variants = ProductVariation.find({ product: product._id }).select('-__v');
-//   variants.flag = true;
-//   variants = await variants.lean();
-//   product.variants = variants;
-
-//   res.status(200).json({
-//     status: 'Success',
-//     data: product,
-//   });
-// });
-
-// exports.createProduct = catchAsync(async (req, res, next) => {
-//   const { variants, ...objBody } = req.body;
-//   const product = await Product.create(objBody);
-//   let vars = [];
-//   try {
-//     vars = await Promise.all(
-//       variants.map(
-//         async (v) =>
-//           await ProductVariation.create({
-//             product: product._id,
-//             ...v,
-//           })
-//       )
-//     );
-//   } catch (err) {
-//     await ProductVariation.deleteMany({ product: product._id });
-//     await Product.findByIdAndDelete(product._id);
-//     return next(new AppError(err.message, 400));
-//   }
-//   const productObj = { ...product._doc, variants: vars };
-//   res.status(200).json({
-//     status: 'Success',
-//     data: productObj,
-//   });
-// });
