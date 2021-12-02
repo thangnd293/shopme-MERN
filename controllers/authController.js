@@ -110,7 +110,6 @@ exports.signup = catchAsync(async (req, res, next) => {
   });
   html = html.replace('<%NAME>', newUser.fname);
   html = html.replace('<%CODE>', verifyCode);
-  // const html = 'Embedded image: <img src="cid:logo@nodemailer.com"/>';
   const attachments = [
     {
       filename: 'logo.png',
@@ -131,11 +130,35 @@ exports.signup = catchAsync(async (req, res, next) => {
       filename: 'twitter.png',
       path: __dirname + './../public/images/twitter.png',
       cid: 'twitter@nodemailer.com', //same cid value as in the html img src
+    },
+    {
+      filename: 'whitedown.png',
+      path: __dirname + './../public/images/white_down.png',
+      cid: 'whitedown@nodemailer.com', //same cid value as in the html img src
     }
   ];
   const subject = 'Verify your account';
   // Neu email gui khong thanh cong thi phai reset verifyCode va verifyExpires
-  await sendToEmail(newUser, subject, html, attachments, res, next);
+
+  try {
+    await sendEmail({
+      email: newUser.email,
+      subject,
+      html,
+      attachments,
+    });
+
+    res.status(200).json({
+      status: 'Success',
+      message: 'Code sent to email',
+      email: newUser.email,
+    });
+  } catch (err) {
+    newUser.verifyCode = undefined;
+    newUser.verifyExpires = undefined;
+    await newUser.save({ validateBeforeSave: false });
+    next(new AppError('Sending verify code failed!!'), 500);
+  }
 });
 
 exports.verify = catchAsync(async (req, res, next) => {
@@ -192,14 +215,42 @@ exports.forgotPassword = catchAsync(async function (req, res, next) {
   await user.save({ validateBeforeSave: false });
   // 3. Gui toi email token de user reset password
 
-  const message = `Forgot your password? Submit a PATCH request with your new password to: ${resetCode}. If you didn't forgot your password, please ignore this email!`;
+  let html = fs.readFileSync(`${__dirname}/../emailtemplate/resetpassword.html`, {
+    encoding: 'utf-8',
+  });
+  html = html.replace('<%CODE>', resetCode);
+  const attachments = [
+    {
+      filename: 'logo.png',
+      path: __dirname + './../public/images/logo.png',
+      cid: 'logo@nodemailer.com', //same cid value as in the html img src
+    },
+    {
+      filename: 'resetpassword.png',
+      path: __dirname + './../public/images/resetpassword.png',
+      cid: 'resetpassword@nodemailer.com', //same cid value as in the html img src
+    },
+    {
+      filename: 'facebook.png',
+      path: __dirname + './../public/images/facebook.png',
+      cid: 'facebook@nodemailer.com', //same cid value as in the html img src
+    },
+    {
+      filename: 'twitter.png',
+      path: __dirname + './../public/images/twitter.png',
+      cid: 'twitter@nodemailer.com', //same cid value as in the html img src
+    }
+  ];
+  const subject = 'Forgot your account';
+  // Neu email gui khong thanh cong thi phai reset verifyCode va verifyExpires
 
-  // Neu email gui khong thanh cong thi phai reset passwordResetToken va passwordResetExpires
+  // Neu email gui khong thanh cong thi phai reset passwordResetCode va passwordResetExpires
   try {
     await sendEmail({
       email: user.email,
-      subject: 'Your password reset token (valid for 10 min)',
-      message,
+      subject,
+      html,
+      attachments
     });
 
     res.status(200).json({
@@ -259,49 +310,3 @@ exports.updatePassword = catchAsync(async function (req, res, next) {
   createSendToken(user, 200, res);
 });
 
-exports.sendVerify = catchAsync(async function (req, res, next) {
-  const email = req.body.email;
-
-  const user = await User.findOne({ email });
-
-  if (!user) {
-    return next(new AppError('Sending verification code failed!!'), 400);
-  }
-  const verifyCode = user.createVerifyCode();
-
-  await user.save({ validateBeforeSave: false });
-  // 3. Gui toi email token de user reset password
-  const message = `Verify your account: ${verifyCode}`;
-
-  // Neu email gui khong thanh cong thi phai reset verifyCode va verifyExpires
-  await sendToEmail(user, message, res, next);
-});
-
-const sendToEmail = async function (
-  user,
-  subject,
-  html,
-  attachments,
-  res,
-  next
-) {
-  try {
-    await sendEmail({
-      email: user.email,
-      subject,
-      html,
-      attachments,
-    });
-
-    res.status(200).json({
-      status: 'Success',
-      message: 'Code sent to email',
-      email: user.email,
-    });
-  } catch (err) {
-    user.verifyCode = undefined;
-    user.verifyExpires = undefined;
-    await user.save({ validateBeforeSave: false });
-    next(new AppError('Sending verification code failed!!'), 500);
-  }
-};

@@ -1,13 +1,13 @@
 // const multer = require('multer');
 // const sharp = require('sharp');
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const Product = require(`${__dirname}/../models/product`);
-const Category = require('./../models/category');
-const AppError = require('./../utils/appError');
-const APIFeatures = require('./../utils/apiFeatures');
-const catchAsync = require('./../utils/catchAsync');
-const factory = require('./handlerFactory');
+const Category = require("./../models/category");
+const AppError = require("./../utils/appError");
+const APIFeatures = require("./../utils/apiFeatures");
+const catchAsync = require("./../utils/catchAsync");
+const factory = require("./handlerFactory");
 
 // const multerStorage = multer.memoryStorage();
 
@@ -69,7 +69,7 @@ const factory = require('./handlerFactory');
 exports.updateProduct = catchAsync(async function (req, res, next) {
   const product = await Product.findById(req.params.id);
   if (!product) {
-    return next(new AppError('Invalid ID!!', 404));
+    return next(new AppError("Invalid ID!!", 404));
   }
   const { variants, ...body } = req.body;
 
@@ -78,7 +78,7 @@ exports.updateProduct = catchAsync(async function (req, res, next) {
   await product.save();
 
   res.status(200).json({
-    status: 'Success',
+    status: "Success",
     data: product,
   });
 }); //done
@@ -88,15 +88,15 @@ exports.getAllProducts = catchAsync(async (req, res, next) => {
   if (req.params.categoryId) {
     const category = await Category.findById(req.params.categoryId).lean();
     if (!category) {
-      return next(new AppError('ID không hợp lệ', 400));
+      return next(new AppError("ID không hợp lệ", 400));
     }
-    if (req.params.categoryId.startsWith('88')) {
+    if (req.params.categoryId.startsWith("88")) {
       filter = { brand: category.name };
 
       if (
-        req.params.categoryId === '8836' ||
-        req.params.categoryId === '8837' ||
-        req.params.categoryId === '8893'
+        req.params.categoryId === "8836" ||
+        req.params.categoryId === "8837" ||
+        req.params.categoryId === "8893"
       ) {
         filter = { brand: { $ne: null } };
       }
@@ -111,11 +111,11 @@ exports.getAllProducts = catchAsync(async (req, res, next) => {
     .paginate();
 
   const doc = await features.query
-    .select('-facets -createAt -longDescription -shortDescription -categories')
+    .select("-facets -createAt -longDescription -shortDescription -categories")
     .lean();
 
   res.status(200).json({
-    status: 'Success',
+    status: "Success",
     results: doc.length,
     data: doc,
   });
@@ -126,7 +126,7 @@ exports.findProducts = catchAsync(async (req, res, next) => {
   const filter = {
     name: {
       $regex: key,
-      $options: 'i',
+      $options: "i",
     },
   };
 
@@ -138,12 +138,12 @@ exports.findProducts = catchAsync(async (req, res, next) => {
 
   const doc = await features.query
     .select(
-      '-filters -facets -createAt -longDescription -shortDescription -categories'
+      "-filters -facets -createAt -longDescription -shortDescription -categories"
     )
     .lean();
 
   res.status(200).json({
-    status: 'Success',
+    status: "Success",
     results: doc.length,
     data: doc,
   });
@@ -172,24 +172,26 @@ exports.getFacets = catchAsync(async (req, res, next) => {
   // }
   const { categoryId } = req.params;
   const category = await Category.findById(categoryId);
-
-  if (categoryId.startsWith('88')) {
+  let query = {};
+  if (categoryId.startsWith("88")) {
     query = { brand: category.name };
     if (
-      categoryId === '8836' ||
-      categoryId === '8837' ||
-      categoryId === '8893'
+      categoryId === "8836" ||
+      categoryId === "8837" ||
+      categoryId === "8893"
     ) {
       query = {};
     }
+  } else {
+    query = { categoryPath: new RegExp(`${category.path}`) };
   }
 
   const f = await Product.aggregate([
     { $match: query },
-    { $unwind: '$facets' },
+    { $unwind: "$facets" },
     {
       $group: {
-        _id: '$facets',
+        _id: "$facets",
         count: { $sum: 1 },
       },
     },
@@ -242,21 +244,21 @@ exports.getFacets = catchAsync(async (req, res, next) => {
   }
 
   res.status(200).json({
-    status: 'Success',
+    status: "Success",
     data: facets,
   });
 }); //done
 
 exports.getProduct = catchAsync(async (req, res, next) => {
   const product = await Product.findById(req.params.id)
-    .select('-facets -createAt')
+    .select("-facets -createAt")
     .lean();
   if (!product) {
-    return next(new AppError('No matching products found!!', 404));
+    return next(new AppError("No matching products found!!", 404));
   }
 
   res.status(200).json({
-    status: 'Success',
+    status: "Success",
     data: product,
   });
 }); //done
@@ -272,7 +274,7 @@ exports.getProductFeatured = catchAsync(async (req, res, next) => {
     .lean();
 
   res.status(200).json({
-    status: 'Success',
+    status: "Success",
     results: product.length,
     data: product,
   });
@@ -283,7 +285,7 @@ exports.getProductFeatured = catchAsync(async (req, res, next) => {
 exports.getVariant = catchAsync(async (req, res, next) => {
   const variant = await Product.aggregate([
     {
-      $unwind: '$variants',
+      $unwind: "$variants",
     },
     {
       $project: {
@@ -297,13 +299,13 @@ exports.getVariant = catchAsync(async (req, res, next) => {
     },
     {
       $match: {
-        'variants._id': new mongoose.mongo.ObjectId(req.params.id),
+        "variants._id": new mongoose.mongo.ObjectId(req.params.id),
       },
     },
   ]);
 
   res.status(200).json({
-    status: 'Success',
+    status: "Success",
     data: variant,
   });
 });
@@ -311,7 +313,7 @@ exports.getVariant = catchAsync(async (req, res, next) => {
 exports.getAllVariants = catchAsync(async (req, res, next) => {
   const variants = await Product.aggregate([
     {
-      $unwind: '$variants',
+      $unwind: "$variants",
     },
     {
       $project: {
@@ -326,7 +328,7 @@ exports.getAllVariants = catchAsync(async (req, res, next) => {
   ]);
 
   res.status(200).json({
-    status: 'Success',
+    status: "Success",
     results: variants.length,
     data: variants,
   });
@@ -336,14 +338,14 @@ exports.createVariant = catchAsync(async (req, res, next) => {
   const product = await Product.findById(req.params.id);
 
   if (!product) {
-    return next(new AppError('No matching products found!!', 404));
+    return next(new AppError("No matching products found!!", 404));
   }
 
   product.variants.push(req.body);
   await product.save();
 
   res.status(201).json({
-    status: 'Success',
+    status: "Success",
     data: product,
   });
 });
@@ -352,7 +354,7 @@ exports.updateVariant = catchAsync(async (req, res, next) => {
   const product = await Product.findById(req.params.productId);
 
   if (!product) {
-    return next(new AppError('No matching products found!!', 404));
+    return next(new AppError("No matching products found!!", 404));
   }
 
   const varIndex = product.variants.findIndex(
@@ -360,7 +362,7 @@ exports.updateVariant = catchAsync(async (req, res, next) => {
   );
 
   if (varIndex === -1) {
-    return next(new AppError('No matching variants found!!', 404));
+    return next(new AppError("No matching variants found!!", 404));
   }
 
   product.variants[varIndex].sizeId = !req.body.sizeId
@@ -376,7 +378,7 @@ exports.updateVariant = catchAsync(async (req, res, next) => {
   await product.save();
 
   res.status(200).json({
-    status: 'Success',
+    status: "Success",
     data: product,
   });
 });
@@ -385,14 +387,14 @@ exports.deleteVariant = catchAsync(async (req, res, next) => {
   const product = await Product.findById(req.params.productId);
 
   if (!product) {
-    return next(new AppError('No matching products found!!', 404));
+    return next(new AppError("No matching products found!!", 404));
   }
   const varIndex = product.variants.findIndex(
     (v) => `${v._id}` === req.params.id
   );
 
   if (varIndex === -1) {
-    return next(new AppError('No matching variants found!!', 404));
+    return next(new AppError("No matching variants found!!", 404));
   }
 
   product.variants.splice(varIndex, 1);
@@ -400,7 +402,7 @@ exports.deleteVariant = catchAsync(async (req, res, next) => {
   await product.save();
 
   res.status(200).json({
-    status: 'Success',
+    status: "Success",
     data: product,
   });
 });
