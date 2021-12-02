@@ -1,9 +1,9 @@
-const crypto = require('crypto');
-const jwt = require('jsonwebtoken');
-const fs = require('fs');
-const User = require('./../models/user');
-const sendEmail = require('./../utils/email');
-const catchAsync = require('./../utils/catchAsync');
+const crypto = require("crypto");
+const jwt = require("jsonwebtoken");
+const fs = require("fs");
+const User = require("./../models/user");
+const sendEmail = require("./../utils/email");
+const catchAsync = require("./../utils/catchAsync");
 const AppError = require(`./../utils/appError`);
 
 const createToken = function (id, lname, fname) {
@@ -21,9 +21,9 @@ const createSendToken = function (user, code, res) {
     ),
     httpOnly: true,
   };
-  res.cookie('jwt', token, cookieOption);
+  res.cookie("jwt", token, cookieOption);
   res.status(code).json({
-    status: 'Success',
+    status: "Success",
     token,
     data: {
       fname: user.fname,
@@ -39,10 +39,10 @@ exports.protect = catchAsync(async function (req, res, next) {
   // 1. Lay token
   let token;
   if (req.headers.authorization) {
-    token = req.headers.authorization.split(' ')[1];
+    token = req.headers.authorization.split(" ")[1];
   }
 
-  if (!token) return next(new AppError('You are not logged in', 401));
+  if (!token) return next(new AppError("You are not logged in", 401));
 
   // 2. Xac thuc token
   const decode = jwt.verify(token, process.env.JWT_SECRET_KEY);
@@ -51,7 +51,7 @@ exports.protect = catchAsync(async function (req, res, next) {
   const currentUser = await User.findById(decode.id);
   if (!currentUser) {
     return next(
-      new AppError('The user belonging to this token does no longer exist', 401)
+      new AppError("The user belonging to this token does no longer exist", 401)
     );
   }
   //4. Kiem tra thoi gian thay doi mat khau cua user voi thoi gian duoc cap token
@@ -59,7 +59,7 @@ exports.protect = catchAsync(async function (req, res, next) {
     currentUser.changePasswordAfter(currentUser.changePasswordAt, decode.iat)
   ) {
     return next(
-      new AppError('User recently changed password. Please log in again')
+      new AppError("User recently changed password. Please log in again")
     );
   }
 
@@ -71,7 +71,7 @@ exports.protect = catchAsync(async function (req, res, next) {
 exports.restrictTo = function (...roles) {
   return (req, res, next) => {
     if (!roles.includes(req.user.role)) {
-      return next(new AppError('You do not have permission!!!'));
+      return next(new AppError("You do not have permission!!!"));
     }
     return next();
   };
@@ -97,7 +97,7 @@ exports.signup = catchAsync(async (req, res, next) => {
     newUser = await User.create(newUserObj);
   } catch (e) {
     return next(
-      new AppError('Email already exists, please use another email', 400)
+      new AppError("Email already exists, please use another email", 400)
     );
   }
 
@@ -106,38 +106,33 @@ exports.signup = catchAsync(async (req, res, next) => {
   await newUser.save({ validateBeforeSave: false });
   // 3. Gui toi email token de user reset password
   let html = fs.readFileSync(`${__dirname}/../emailtemplate/verify.html`, {
-    encoding: 'utf-8',
+    encoding: "utf-8",
   });
-  html = html.replace('<%NAME>', newUser.fname);
-  html = html.replace('<%CODE>', verifyCode);
+  html = html.replace("<%NAME>", newUser.fname);
+  html = html.replace("<%CODE>", verifyCode);
   const attachments = [
     {
-      filename: 'logo.png',
-      path: __dirname + './../public/images/logo.png',
-      cid: 'logo@nodemailer.com', //same cid value as in the html img src
+      filename: "logo.png",
+      path: __dirname + "./../public/images/logo.png",
+      cid: "logo@nodemailer.com",
     },
     {
-      filename: 'welcome.png',
-      path: __dirname + './../public/images/welcome.png',
-      cid: 'welcome@nodemailer.com', //same cid value as in the html img src
+      filename: "welcome.png",
+      path: __dirname + "./../public/images/welcome.png",
+      cid: "welcome@nodemailer.com",
     },
     {
-      filename: 'facebook.png',
-      path: __dirname + './../public/images/facebook.png',
-      cid: 'facebook@nodemailer.com', //same cid value as in the html img src
+      filename: "facebook.png",
+      path: __dirname + "./../public/images/facebook.png",
+      cid: "facebook@nodemailer.com",
     },
     {
-      filename: 'twitter.png',
-      path: __dirname + './../public/images/twitter.png',
-      cid: 'twitter@nodemailer.com', //same cid value as in the html img src
+      filename: "twitter.png",
+      path: __dirname + "./../public/images/twitter.png",
+      cid: "twitter@nodemailer.com",
     },
-    {
-      filename: 'whitedown.png',
-      path: __dirname + './../public/images/white_down.png',
-      cid: 'whitedown@nodemailer.com', //same cid value as in the html img src
-    }
   ];
-  const subject = 'Verify your account';
+  const subject = "Verify your account";
   // Neu email gui khong thanh cong thi phai reset verifyCode va verifyExpires
 
   try {
@@ -149,15 +144,15 @@ exports.signup = catchAsync(async (req, res, next) => {
     });
 
     res.status(200).json({
-      status: 'Success',
-      message: 'Code sent to email',
+      status: "Success",
+      message: "Code sent to email",
       email: newUser.email,
     });
   } catch (err) {
     newUser.verifyCode = undefined;
     newUser.verifyExpires = undefined;
     await newUser.save({ validateBeforeSave: false });
-    next(new AppError('Sending verify code failed!!'), 500);
+    next(new AppError("Sending verify code failed!!"), 500);
   }
 });
 
@@ -173,7 +168,7 @@ exports.verify = catchAsync(async (req, res, next) => {
 
   // 2. Kiem tra neu token hop le(con thoi gian su dung)
   if (!user) {
-    return next(new AppError('Verification failed!!'), 400);
+    return next(new AppError("Verification failed!!"), 400);
   }
 
   user.isVerified = true;
@@ -189,16 +184,16 @@ exports.login = catchAsync(async function (req, res, next) {
   const { email, password } = req.body;
   // Kiem tra dau vao hop le
   if (!email || !password)
-    return next(new AppError('Please provide email and password', 400));
+    return next(new AppError("Please provide email and password", 400));
   // Kiem tra tai khoan & mat khau
   const user = await User.findOne({ email, isVerified: true }).select(
-    '+password'
+    "+password"
   );
 
   // const user = await User.findOne({ email }).select('+password');
 
   if (!user || !(await user.correctPassword(password, user.password)))
-    return next(new AppError('Incorrect email or password', 401));
+    return next(new AppError("Incorrect email or password", 401));
 
   // Gui token ve cho client
   createSendToken(user, 200, res);
@@ -208,40 +203,43 @@ exports.forgotPassword = catchAsync(async function (req, res, next) {
   // 1. Kiem tra email co ton tai hay khong
   const user = await User.findOne({ email: req.body.email });
   if (!user) {
-    return next(new AppError('There is no user with email address'), 404);
+    return next(new AppError("There is no user with email address"), 404);
   }
   // 2. Tao token reset password
   const resetCode = user.createResetCode();
   await user.save({ validateBeforeSave: false });
   // 3. Gui toi email token de user reset password
 
-  let html = fs.readFileSync(`${__dirname}/../emailtemplate/resetpassword.html`, {
-    encoding: 'utf-8',
-  });
-  html = html.replace('<%CODE>', resetCode);
+  let html = fs.readFileSync(
+    `${__dirname}/../emailtemplate/resetpassword.html`,
+    {
+      encoding: "utf-8",
+    }
+  );
+  html = html.replace("<%CODE>", resetCode);
   const attachments = [
     {
-      filename: 'logo.png',
-      path: __dirname + './../public/images/logo.png',
-      cid: 'logo@nodemailer.com', //same cid value as in the html img src
+      filename: "logo.png",
+      path: __dirname + "./../public/images/logo.png",
+      cid: "logo@nodemailer.com",
     },
     {
-      filename: 'resetpassword.png',
-      path: __dirname + './../public/images/resetpassword.png',
-      cid: 'resetpassword@nodemailer.com', //same cid value as in the html img src
+      filename: "resetpassword.png",
+      path: __dirname + "./../public/images/resetpassword.png",
+      cid: "resetpassword@nodemailer.com",
     },
     {
-      filename: 'facebook.png',
-      path: __dirname + './../public/images/facebook.png',
-      cid: 'facebook@nodemailer.com', //same cid value as in the html img src
+      filename: "facebook.png",
+      path: __dirname + "./../public/images/facebook.png",
+      cid: "facebook@nodemailer.com",
     },
     {
-      filename: 'twitter.png',
-      path: __dirname + './../public/images/twitter.png',
-      cid: 'twitter@nodemailer.com', //same cid value as in the html img src
-    }
+      filename: "twitter.png",
+      path: __dirname + "./../public/images/twitter.png",
+      cid: "twitter@nodemailer.com",
+    },
   ];
-  const subject = 'Forgot your account';
+  const subject = "Forgot your account";
   // Neu email gui khong thanh cong thi phai reset verifyCode va verifyExpires
 
   // Neu email gui khong thanh cong thi phai reset passwordResetCode va passwordResetExpires
@@ -250,19 +248,19 @@ exports.forgotPassword = catchAsync(async function (req, res, next) {
       email: user.email,
       subject,
       html,
-      attachments
+      attachments,
     });
 
     res.status(200).json({
-      status: 'Success',
-      message: 'Token sent to email',
+      status: "Success",
+      message: "Token sent to email",
       email: user.email,
     });
   } catch (err) {
     user.passwordResetCode = undefined;
     user.passwordResetExpires = undefined;
     await user.save({ validateBeforeSave: false });
-    next(new AppError('There was an error sending the email'), 500);
+    next(new AppError("There was an error sending the email"), 500);
   }
 });
 
@@ -277,7 +275,7 @@ exports.resetPassword = catchAsync(async function (req, res, next) {
   });
   // 2. Kiem tra neu token hop le(con thoi gian su dung) thi doi mat khau
   if (!user) {
-    return next(new AppError('Invalid token reset password!!'), 400);
+    return next(new AppError("Invalid token reset password!!"), 400);
   }
 
   user.password = req.body.password;
@@ -296,10 +294,10 @@ exports.resetPassword = catchAsync(async function (req, res, next) {
 // Cap nhat mat khau cho user da login
 exports.updatePassword = catchAsync(async function (req, res, next) {
   // 1. Lay thong tin cua nguoi dung
-  const user = await User.findById(req.user.id).select('+password');
+  const user = await User.findById(req.user.id).select("+password");
   // 2. Kiem tra mat khau nguoi dung nhap co dung voi mk hien tai khong
   if (!user.correctPassword(req.body.passwordCurrent, user.password)) {
-    return next(new AppError('Password incorrect. Please try again'), 401);
+    return next(new AppError("Password incorrect. Please try again"), 401);
   }
   // 3. Cap nhat mat khau
   user.password = req.body.password;
@@ -309,4 +307,3 @@ exports.updatePassword = catchAsync(async function (req, res, next) {
   // 4. Dang nhap user, cap JWT moi cho user
   createSendToken(user, 200, res);
 });
-
