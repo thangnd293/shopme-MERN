@@ -140,7 +140,7 @@ exports.signup = catchAsync(async (req, res, next) => {
       email: newUser.email,
       subject,
       html,
-      // attachments,
+      attachments,
     });
 
     res.status(200).json({

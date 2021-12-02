@@ -16,7 +16,7 @@ const sendEmail = async function (options) {
     to: options.email,
     subject: options.subject,
     message: options.html,
-    // attachments: options.attachments,
+    attachments: options.attachments,
   };
   // 3. Gui email
   await transporter.sendMail(mailOptions);
