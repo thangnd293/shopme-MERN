@@ -140,7 +140,7 @@ exports.signup = catchAsync(async (req, res, next) => {
       email: newUser.email,
       subject,
       html,
-      attachments,
+      // attachments,
     });
 
     res.status(200).json({
@@ -253,7 +253,7 @@ exports.forgotPassword = catchAsync(async function (req, res, next) {
 
     res.status(200).json({
       status: "Success",
-      message: "Token sent to email",
+      message: "Code sent to email",
       email: user.email,
     });
   } catch (err) {

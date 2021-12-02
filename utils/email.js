@@ -1,22 +1,22 @@
-const nodemailer = require('nodemailer');
+const nodemailer = require("nodemailer");
 
 const sendEmail = async function (options) {
   // 1. Tao mot transporter
   const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    service: "gmail",
     auth: {
-      user: 'shopme293@gmail.com',
-      pass: 'nxcyezzyxxuqvxor', // naturally, replace both with your real credentials or an application-specific password
+      user: "shopme293@gmail.com",
+      pass: "nxcyezzyxxuqvxor", // naturally, replace both with your real credentials or an application-specific password
     },
   });
 
   // 2. Tao email option
   const mailOptions = {
-    from: 'Shopme <shopme293@gmail.com>',
+    from: "Shopme <shopme293@gmail.com>",
     to: options.email,
     subject: options.subject,
-    html: options.html,
-    attachments: options.attachments,
+    message: options.html,
+    // attachments: options.attachments,
   };
   // 3. Gui email
   await transporter.sendMail(mailOptions);
