@@ -152,7 +152,7 @@ exports.signup = catchAsync(async (req, res, next) => {
     newUser.verifyCode = undefined;
     newUser.verifyExpires = undefined;
     await newUser.save({ validateBeforeSave: false });
-    next(new AppError("Sending verify code failed!!"), 500);
+    next(new AppError(err), 500);
   }
 });
 
