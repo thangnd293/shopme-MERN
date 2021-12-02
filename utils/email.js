@@ -6,18 +6,18 @@ const sendEmail = async function (options) {
     service: 'gmail',
     auth: {
       user: 'shopme293@gmail.com',
-      pass: 'nxcyezzyxxuqvxor' // naturally, replace both with your real credentials or an application-specific password
-    }
+      pass: 'nxcyezzyxxuqvxor', // naturally, replace both with your real credentials or an application-specific password
+    },
   });
 
   // 2. Tao email option
   const mailOptions = {
-    from: 'Thang dep trai <thangnd293@gmail.com>',
+    from: 'Shopme <shopme293@gmail.com>',
     to: options.email,
     subject: options.subject,
-    text: options.message,
+    html: options.html,
+    attachments: options.attachments,
   };
-  console.log(mailOptions);
   // 3. Gui email
   await transporter.sendMail(mailOptions);
 };

@@ -23,6 +23,7 @@ app.options('*', cors());
 
 app.use(morgan('dev'));
 app.use(express.json());
+app.use(express.static('public'));
 
 app.use('/api/v1/categories', categoryRoutes);
 app.use('/api/v1/products', productRoutes);

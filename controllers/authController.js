@@ -1,6 +1,6 @@
 const crypto = require('crypto');
 const jwt = require('jsonwebtoken');
-
+const fs = require('fs');
 const User = require('./../models/user');
 const sendEmail = require('./../utils/email');
 const catchAsync = require('./../utils/catchAsync');
@@ -81,21 +81,20 @@ exports.signup = catchAsync(async (req, res, next) => {
   //1. Lấy dữ liệu user nhập
   const newUserObj = {
     fname: req.body.fname,
-      lname: req.body.lname,
-      email: req.body.email,
-      password: req.body.password,
-      passwordConfirm: req.body.passwordConfirm,
-      phoneNumber: req.body.phoneNumber
-  }
+    lname: req.body.lname,
+    email: req.body.email,
+    password: req.body.password,
+    passwordConfirm: req.body.passwordConfirm,
+    phoneNumber: req.body.phoneNumber,
+  };
   let newUser;
   try {
-    const user = await User.findOne({email: req.body.email}).lean();
-    if(user && !user.isVerified) {
+    const user = await User.findOne({ email: req.body.email }).lean();
+    if (user && !user.isVerified) {
       await User.findByIdAndDelete(user._id);
     }
 
     newUser = await User.create(newUserObj);
-
   } catch (e) {
     return next(
       new AppError('Email already exists, please use another email', 400)
@@ -106,11 +105,37 @@ exports.signup = catchAsync(async (req, res, next) => {
   const verifyCode = newUser.createVerifyCode();
   await newUser.save({ validateBeforeSave: false });
   // 3. Gui toi email token de user reset password
-  const message = `Verify your account: ${verifyCode}`;
-
+  let html = fs.readFileSync(`${__dirname}/../emailtemplate/verify.html`, {
+    encoding: 'utf-8',
+  });
+  html = html.replace('<%NAME>', newUser.fname);
+  html = html.replace('<%CODE>', verifyCode);
+  // const html = 'Embedded image: <img src="cid:logo@nodemailer.com"/>';
+  const attachments = [
+    {
+      filename: 'logo.png',
+      path: __dirname + './../public/images/logo.png',
+      cid: 'logo@nodemailer.com', //same cid value as in the html img src
+    },
+    {
+      filename: 'welcome.png',
+      path: __dirname + './../public/images/welcome.png',
+      cid: 'welcome@nodemailer.com', //same cid value as in the html img src
+    },
+    {
+      filename: 'facebook.png',
+      path: __dirname + './../public/images/facebook.png',
+      cid: 'facebook@nodemailer.com', //same cid value as in the html img src
+    },
+    {
+      filename: 'twitter.png',
+      path: __dirname + './../public/images/twitter.png',
+      cid: 'twitter@nodemailer.com', //same cid value as in the html img src
+    }
+  ];
+  const subject = 'Verify your account';
   // Neu email gui khong thanh cong thi phai reset verifyCode va verifyExpires
-  await sendToEmail(newUser, message, res, next);
-
+  await sendToEmail(newUser, subject, html, attachments, res, next);
 });
 
 exports.verify = catchAsync(async (req, res, next) => {
@@ -120,7 +145,7 @@ exports.verify = catchAsync(async (req, res, next) => {
   const user = await User.findOne({
     email: email,
     verifyCode: verifyCode,
-    verifyExpires: { $gt: Date.now() }
+    verifyExpires: { $gt: Date.now() },
   });
 
   // 2. Kiem tra neu token hop le(con thoi gian su dung)
@@ -180,7 +205,7 @@ exports.forgotPassword = catchAsync(async function (req, res, next) {
     res.status(200).json({
       status: 'Success',
       message: 'Token sent to email',
-      email: user.email
+      email: user.email,
     });
   } catch (err) {
     user.passwordResetCode = undefined;
@@ -197,7 +222,7 @@ exports.resetPassword = catchAsync(async function (req, res, next) {
   const user = await User.findOne({
     email: email,
     passwordResetCode: resetCode,
-    passwordResetExpires: { $gt: Date.now() }
+    passwordResetExpires: { $gt: Date.now() },
   });
   // 2. Kiem tra neu token hop le(con thoi gian su dung) thi doi mat khau
   if (!user) {
@@ -237,7 +262,7 @@ exports.updatePassword = catchAsync(async function (req, res, next) {
 exports.sendVerify = catchAsync(async function (req, res, next) {
   const email = req.body.email;
 
-  const user = await User.findOne({email});
+  const user = await User.findOne({ email });
 
   if (!user) {
     return next(new AppError('Sending verification code failed!!'), 400);
@@ -252,18 +277,26 @@ exports.sendVerify = catchAsync(async function (req, res, next) {
   await sendToEmail(user, message, res, next);
 });
 
-const sendToEmail = async function(user, message, res, next) {
+const sendToEmail = async function (
+  user,
+  subject,
+  html,
+  attachments,
+  res,
+  next
+) {
   try {
     await sendEmail({
       email: user.email,
-      subject: 'Verify your account (valid for 5 min)',
-      message,
+      subject,
+      html,
+      attachments,
     });
 
     res.status(200).json({
       status: 'Success',
       message: 'Code sent to email',
-      email: user.email
+      email: user.email,
     });
   } catch (err) {
     user.verifyCode = undefined;
@@ -271,4 +304,4 @@ const sendToEmail = async function(user, message, res, next) {
     await user.save({ validateBeforeSave: false });
     next(new AppError('Sending verification code failed!!'), 500);
   }
-}
+};
