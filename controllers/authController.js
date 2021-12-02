@@ -105,7 +105,7 @@ exports.signup = catchAsync(async (req, res, next) => {
   const verifyCode = newUser.createVerifyCode();
   await newUser.save({ validateBeforeSave: false });
   // 3. Gui toi email token de user reset password
-  let html = fs.readFileSync(`${__dirname}/../emailtemplate/verify.html`, {
+  let html = fs.readFileSync(`${__dirname}/../emailtemplate/index.html`, {
     encoding: "utf-8",
   });
   html = html.replace("<%NAME>", newUser.fname);
