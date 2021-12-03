@@ -194,7 +194,7 @@ exports.forgotPassword = catchAsync(async function (req, res, next) {
   //   }
   // );
   let html = fs.readFileSync(
-    `${__dirname}/../emailtemplate/resetPassword.html`,
+    `${__dirname}/../emailtemplate/resetpassword.html`,
     {
       encoding: "utf-8",
     }
