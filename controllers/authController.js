@@ -110,28 +110,6 @@ exports.signup = catchAsync(async (req, res, next) => {
   });
   html = html.replace("<%NAME>", newUser.fname);
   html = html.replace("<%CODE>", verifyCode);
-  const attachments = [
-    {
-      filename: "logo.png",
-      path: __dirname + "./../public/images/logo.png",
-      cid: "logo@nodemailer.com",
-    },
-    {
-      filename: "welcome.png",
-      path: __dirname + "./../public/images/welcome.png",
-      cid: "welcome@nodemailer.com",
-    },
-    {
-      filename: "facebook.png",
-      path: __dirname + "./../public/images/facebook.png",
-      cid: "facebook@nodemailer.com",
-    },
-    {
-      filename: "twitter.png",
-      path: __dirname + "./../public/images/twitter.png",
-      cid: "twitter@nodemailer.com",
-    },
-  ];
   const subject = "Verify your account";
   // Neu email gui khong thanh cong thi phai reset verifyCode va verifyExpires
 
@@ -140,7 +118,6 @@ exports.signup = catchAsync(async (req, res, next) => {
       email: newUser.email,
       subject,
       html,
-      attachments,
     });
 
     res.status(200).json({
@@ -211,36 +188,13 @@ exports.forgotPassword = catchAsync(async function (req, res, next) {
   // 3. Gui toi email token de user reset password
 
   let html = fs.readFileSync(
-    `${__dirname}/../emailtemplate/resetpassword.html`,
+    `${__dirname}/../emailtemplate/resetPassword.html`,
     {
       encoding: "utf-8",
     }
   );
   html = html.replace("<%CODE>", resetCode);
-  const attachments = [
-    {
-      filename: "logo.png",
-      path: __dirname + "./../public/images/logo.png",
-      cid: "logo@nodemailer.com",
-    },
-    {
-      filename: "resetpassword.png",
-      path: __dirname + "./../public/images/resetpassword.png",
-      cid: "resetpassword@nodemailer.com",
-    },
-    {
-      filename: "facebook.png",
-      path: __dirname + "./../public/images/facebook.png",
-      cid: "facebook@nodemailer.com",
-    },
-    {
-      filename: "twitter.png",
-      path: __dirname + "./../public/images/twitter.png",
-      cid: "twitter@nodemailer.com",
-    },
-  ];
-  const subject = "Forgot your account";
-  // Neu email gui khong thanh cong thi phai reset verifyCode va verifyExpires
+  const subject = "Forgot your password";
 
   // Neu email gui khong thanh cong thi phai reset passwordResetCode va passwordResetExpires
   try {
@@ -248,7 +202,6 @@ exports.forgotPassword = catchAsync(async function (req, res, next) {
       email: user.email,
       subject,
       html,
-      attachments,
     });
 
     res.status(200).json({
