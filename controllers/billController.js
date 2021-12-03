@@ -33,7 +33,7 @@ exports.createBill = catchAsync(async (req, resp, next) => {
   cart.items = [];
   await cart.save();
 
-  res.status(200).json(billObj);
+  resp.status(200).json(billObj);
 
   // let html = fs.readFileSync(`${__dirname}/../emailtemplate/transaction.html`, {
   //   encoding: "utf-8",
