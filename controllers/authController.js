@@ -104,7 +104,7 @@ exports.signup = catchAsync(async (req, res, next) => {
   //2. Tạo code xác nhận email
   const verifyCode = newUser.createVerifyCode();
   await newUser.save({ validateBeforeSave: false });
-  // 3. Gui toi email token de user reset password
+  // 3. Gui toi email Code de user verify email
   let html = fs.readFileSync(`${__dirname}/../emailtemplate/emailVerify.html`, {
     encoding: "utf-8",
   });
@@ -187,15 +187,18 @@ exports.forgotPassword = catchAsync(async function (req, res, next) {
   await user.save({ validateBeforeSave: false });
   // 3. Gui toi email token de user reset password
 
-  let html = fs.readFileSync(
-    `${__dirname}/../emailtemplate/resetPassword.html`,
-    {
-      encoding: "utf-8",
-    }
-  );
+  // let html = fs.readFileSync(
+  //   `${__dirname}/../emailtemplate/resetPassword.html`,
+  //   {
+  //     encoding: "utf-8",
+  //   }
+  // );
+  let html = fs.readFileSync(`${__dirname}/../emailtemplate/emailVerify.html`, {
+    encoding: "utf-8",
+  });
+
   html = html.replace("<%CODE>", resetCode);
   const subject = "Forgot your password";
-
   // Neu email gui khong thanh cong thi phai reset passwordResetCode va passwordResetExpires
   try {
     await sendEmail({
