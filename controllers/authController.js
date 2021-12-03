@@ -193,9 +193,12 @@ exports.forgotPassword = catchAsync(async function (req, res, next) {
   //     encoding: "utf-8",
   //   }
   // );
-  let html = fs.readFileSync(`${__dirname}/../emailtemplate/emailVerify.html`, {
-    encoding: "utf-8",
-  });
+  let html = fs.readFileSync(
+    `${__dirname}/../emailtemplate/resetPassword.html`,
+    {
+      encoding: "utf-8",
+    }
+  );
 
   html = html.replace("<%CODE>", resetCode);
   const subject = "Forgot your password";
