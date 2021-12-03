@@ -6,7 +6,7 @@ const fs = require("fs");
 const sendEmail = require("./../utils/email");
 
 exports.createBill = catchAsync(async (req, resp, next) => {
-  const { shipping_address, data, quantity, total } = req.body;
+  const { shipping_address, data, quantityTotal, total } = req.body;
   const items = data?.map((item) => ({
     sku: item.sku,
     name: item.name,
@@ -20,7 +20,7 @@ exports.createBill = catchAsync(async (req, resp, next) => {
     shipping_address,
     items,
     amount: total,
-    quantity,
+    quantity: quantityTotal,
   };
 
   const newBill = await Bill.create(billObj);
@@ -38,35 +38,12 @@ exports.createBill = catchAsync(async (req, resp, next) => {
   });
   html = html.replace("<%NAME>", req.user.fname);
   html = html.replace("<%AMOUNT>", newBill.amount);
-  const attachments = [
-    {
-      filename: "logo.png",
-      path: __dirname + "./../public/images/logo.png",
-      cid: "logo@nodemailer.com",
-    },
-    {
-      filename: "check.jpg",
-      path: __dirname + "./../public/images/check.jpg",
-      cid: "check@nodemailer.com",
-    },
-    {
-      filename: "facebook.png",
-      path: __dirname + "./../public/images/facebook.png",
-      cid: "facebook@nodemailer.com",
-    },
-    {
-      filename: "twitter.png",
-      path: __dirname + "./../public/images/twitter.png",
-      cid: "twitter@nodemailer.com",
-    },
-  ];
 
   try {
     await sendEmail({
       email: req.user.email,
       subject,
       html,
-      attachments,
     });
 
     res.status(200).json({
