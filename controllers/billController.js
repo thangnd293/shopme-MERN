@@ -33,29 +33,9 @@ exports.createBill = catchAsync(async (req, resp, next) => {
   cart.items = [];
   await cart.save();
 
-  resp.status(200).json(billObj);
-
-  // let html = fs.readFileSync(`${__dirname}/../emailtemplate/transaction.html`, {
-  //   encoding: "utf-8",
-  // });
-  // html = html.replace("<%NAME>", req.user.fname);
-  // html = html.replace("<%AMOUNT>", newBill.amount);
-
-  // try {
-  //   await sendEmail({
-  //     email: req.user.email,
-  //     subject,
-  //     html,
-  //   });
-
-  //   res.status(200).json({
-  //     status: "Success",
-  //     message: "Email send",
-  //     email: req.user.email,
-  //   });
-  // } catch (err) {
-  //   next(new AppError("Sending email failed!!"), 500);
-  // }
+  resp.status(200).json({
+    status: "success",
+  });
 });
 
 exports.getAllBill = catchAsync(async (req, resp, next) => {

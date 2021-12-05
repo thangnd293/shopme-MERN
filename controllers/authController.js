@@ -54,6 +54,7 @@ exports.protect = catchAsync(async function (req, res, next) {
       new AppError("The user belonging to this token does no longer exist", 401)
     );
   }
+
   //4. Kiem tra thoi gian thay doi mat khau cua user voi thoi gian duoc cap token
   if (
     currentUser.changePasswordAfter(currentUser.changePasswordAt, decode.iat)
@@ -64,7 +65,6 @@ exports.protect = catchAsync(async function (req, res, next) {
   }
 
   req.user = currentUser;
-
   next();
 });
 
