@@ -71,7 +71,7 @@ exports.updateProduct = catchAsync(async function (req, res, next) {
   if (!product) {
     return next(new AppError("Invalid ID!!", 404));
   }
-  const { variants, ...body } = req.body;
+  const body = req.body;
 
   product.set(body);
 
@@ -276,133 +276,6 @@ exports.getProductFeatured = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: "Success",
     results: product.length,
-    data: product,
-  });
-});
-
-// ======================================Variants===========================================
-
-exports.getVariant = catchAsync(async (req, res, next) => {
-  const variant = await Product.aggregate([
-    {
-      $unwind: "$variants",
-    },
-    {
-      $project: {
-        _id: 1,
-        name: 1,
-        imageCovers: 1,
-        images: 1,
-        slug: 1,
-        variants: 1,
-      },
-    },
-    {
-      $match: {
-        "variants._id": new mongoose.mongo.ObjectId(req.params.id),
-      },
-    },
-  ]);
-
-  res.status(200).json({
-    status: "Success",
-    data: variant,
-  });
-});
-
-exports.getAllVariants = catchAsync(async (req, res, next) => {
-  const variants = await Product.aggregate([
-    {
-      $unwind: "$variants",
-    },
-    {
-      $project: {
-        _id: 1,
-        name: 1,
-        imageCovers: 1,
-        images: 1,
-        slug: 1,
-        variants: 1,
-      },
-    },
-  ]);
-
-  res.status(200).json({
-    status: "Success",
-    results: variants.length,
-    data: variants,
-  });
-});
-
-exports.createVariant = catchAsync(async (req, res, next) => {
-  const product = await Product.findById(req.params.id);
-
-  if (!product) {
-    return next(new AppError("No matching products found!!", 404));
-  }
-
-  product.variants.push(req.body);
-  await product.save();
-
-  res.status(201).json({
-    status: "Success",
-    data: product,
-  });
-});
-
-exports.updateVariant = catchAsync(async (req, res, next) => {
-  const product = await Product.findById(req.params.productId);
-
-  if (!product) {
-    return next(new AppError("No matching products found!!", 404));
-  }
-
-  const varIndex = product.variants.findIndex(
-    (v) => `${v._id}` === req.params.id
-  );
-
-  if (varIndex === -1) {
-    return next(new AppError("No matching variants found!!", 404));
-  }
-
-  product.variants[varIndex].sizeId = !req.body.sizeId
-    ? product.variants[varIndex].sizeId
-    : req.body.sizeId;
-  product.variants[varIndex].price = !req.body.price
-    ? product.variants[varIndex].price
-    : req.body.price;
-  product.variants[varIndex].discountPrice = !req.body.discountPrice
-    ? product.variants[varIndex].discountPrice
-    : req.body.discountPrice;
-
-  await product.save();
-
-  res.status(200).json({
-    status: "Success",
-    data: product,
-  });
-});
-
-exports.deleteVariant = catchAsync(async (req, res, next) => {
-  const product = await Product.findById(req.params.productId);
-
-  if (!product) {
-    return next(new AppError("No matching products found!!", 404));
-  }
-  const varIndex = product.variants.findIndex(
-    (v) => `${v._id}` === req.params.id
-  );
-
-  if (varIndex === -1) {
-    return next(new AppError("No matching variants found!!", 404));
-  }
-
-  product.variants.splice(varIndex, 1);
-
-  await product.save();
-
-  res.status(200).json({
-    status: "Success",
     data: product,
   });
 });
