@@ -8,7 +8,11 @@ const AppError = require("./../utils/appError");
 const APIFeatures = require("./../utils/apiFeatures");
 const catchAsync = require("./../utils/catchAsync");
 const factory = require("./handlerFactory");
-
+const AWS = require("aws-sdk");
+const { v4: uuidv4 } = require("uuid");
+const { encode, decode } = require("node-base64-image");
+const { base64ToBlob, blobToBase64 } = require("base64-blob");
+const fs = require("fs");
 // const multerStorage = multer.memoryStorage();
 
 // const multerFilter = (req, file, cb) => {
@@ -66,17 +70,76 @@ const factory = require("./handlerFactory");
 //   next();
 // };
 
+AWS.config.update({
+  accessKeyId: "AKIAVYDNOUE7KXC45AEJ",
+  secretAccessKey: "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",
+});
+
+const s3 = new AWS.S3({ params: { Bucket: "thangngu" } });
+
+const uploadImageApi = async (base64) => {
+  if (typeof base64 !== "string") {
+    return;
+  }
+
+  const base64Data = new Buffer.from(
+    base64.replace(/^data:image\/\w+;base64,/, ""),
+    "base64"
+  );
+
+  const type = base64.split(";")[0].split("/")[1];
+
+  const params = {
+    Key: `${uuidv4()}.${type}`, // type is not required
+    Body: base64Data,
+    ACL: "public-read",
+    ContentEncoding: "base64", // required
+    ContentType: `image/${type}`, // required. Notice the back ticks
+  };
+
+  try {
+    const { Location } = await s3.upload(params).promise();
+    location = Location;
+  } catch (error) {
+    // console.log(error)
+  }
+
+  return location;
+};
+
 exports.updateProduct = catchAsync(async function (req, res, next) {
+  let { images, imageCovers } = req.body;
+
+  let newImages = await Promise.all(
+    images.map(async (value) => {
+      if (typeof value === "string") {
+        return value;
+      }
+
+      let data = await uploadImageApi(value.data);
+      return data;
+    })
+  );
+
+  let newImageCovers = await Promise.all(
+    imageCovers.map(async (value) => {
+      if (typeof value === "string") {
+        return value;
+      }
+
+      let data = await uploadImageApi(value.data);
+      return data;
+    })
+  );
+
   const product = await Product.findById(req.params.id);
   if (!product) {
     return next(new AppError("Invalid ID!!", 404));
   }
-  const { variants, ...body } = req.body;
+  const data = { ...req.body, images: newImages, imageCovers: newImageCovers };
 
-  product.set(body);
-
+  product.set(data);
   await product.save();
-
   res.status(200).json({
     status: "Success",
     data: product,
