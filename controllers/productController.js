@@ -72,7 +72,7 @@ exports.updateProduct = catchAsync(async function (req, res, next) {
     return next(new AppError("Invalid ID!!", 404));
   }
   const body = req.body;
-
+  delete body.__v;
   product.set(body);
 
   await product.save();

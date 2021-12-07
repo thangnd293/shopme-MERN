@@ -1,0 +1,79 @@
+[{
+  "_id": {
+    "$oid": "61a35c942900e2d28e1f2afe"
+  },
+  "fname": "Phát",
+  "lname": "Phạm",
+  "role": "admin",
+  "email": "minhphatdev@gmail.com",
+  "password": "$2a$12$gex98rujYKwObFb3vDmMQ.6mfzueXurr8aEkOBg8ijOnYy9H6wIOu",
+  "phoneNumber": "0943987432",
+  "isVerified": true,
+  "address": [],
+  "__v": 0,
+  "createAt": {
+    "$date": "2021-04-28T16:24:08.898Z"
+  },
+  "passwordResetCode": "399738",
+  "changePasswordAt": {
+    "$date": "2021-12-03T07:45:14.307Z"
+  }
+},{
+  "_id": {
+    "$oid": "61a3b38cb729e817716b8796"
+  },
+  "fname": "Thắng",
+  "lname": "Nguyễn Đắc",
+  "role": "admin",
+  "email": "dthang2509@gmail.com",
+  "password": "$2a$12$lgukbiyLfeo5GLfWfINcFOJhs2bXQOpA.hLffndfIpjr8eGZD/foG",
+  "phoneNumber": "0779731217",
+  "isVerified": true,
+  "address": [],
+  "__v": 0,
+  "createAt": {
+    "$date": "2021-12-01T16:24:08.898Z"
+  },
+  "passwordResetCode": "684073",
+  "passwordResetExpires": {
+    "$date": "2021-12-03T01:11:32.534Z"
+  },
+  "changePasswordAt": {
+    "$date": "2021-12-03T07:33:27.149Z"
+  }
+},{
+  "_id": {
+    "$oid": "61a9cc4372830f7ef3029dce"
+  },
+  "fname": "Phát",
+  "lname": "Phạm",
+  "role": "user",
+  "email": "phatphamm01@gmail.com",
+  "password": "$2a$12$1q/VtHsOlvUA3rkhK1tmee16GCQhePZouMzowg9F6v7aztSm9TWvi",
+  "phoneNumber": "0943987432",
+  "isVerified": true,
+  "createAt": {
+    "$date": "2021-12-03T07:37:24.666Z"
+  },
+  "address": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61aaeb93ccc32ef12bfd1ddc"
+  },
+  "fname": "Thang",
+  "lname": "Nguyen",
+  "role": "user",
+  "email": "19110293@student.hcmute.edu.vn",
+  "password": "$2a$12$.DQUhmkmV8cFOzjusIqO0ucaskSFGmdAj8eUDuP3jMHM1o.mdqeEO",
+  "phoneNumber": "12345678",
+  "isVerified": true,
+  "createAt": {
+    "$date": "2021-12-04T04:14:00.752Z"
+  },
+  "address": [],
+  "__v": 0,
+  "changePasswordAt": {
+    "$date": "2021-12-04T04:19:24.148Z"
+  }
+}]
