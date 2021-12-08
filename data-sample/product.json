@@ -1,0 +1,1230 @@
+[{
+  "_id": "70554",
+  "brand": "Stella McCartney Kids",
+  "brandId": "000200",
+  "categories": [
+    "320"
+  ],
+  "categoryPath": "/girl/clothing/cardigans;",
+  "color": "673097",
+  "createAt": {
+    "$date": "2021-12-03T08:07:14.424Z"
+  },
+  "discountPrice": 630,
+  "facets": [
+    {
+      "_id": "000200",
+      "name": "Stella McCartney Kids",
+      "type": "Brands"
+    },
+    {
+      "_id": "673097",
+      "name": "Beige",
+      "type": "Colors"
+    },
+    {
+      "_id": "674079",
+      "name": "Girl",
+      "type": "Genders"
+    },
+    {
+      "_id": "313681",
+      "name": "Occasion Cardigans",
+      "type": "Products"
+    },
+    {
+      "_id": "312909",
+      "name": "Cardigans",
+      "type": "Categories"
+    },
+    {
+      "_id": "313723",
+      "name": "Cardigans",
+      "type": "Products"
+    },
+    {
+      "_id": "671057",
+      "name": "6 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671010",
+      "name": "10 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671005",
+      "name": "12 years",
+      "type": "Clothing sizes"
+    }
+  ],
+  "filters": [
+    "674079",
+    "313681",
+    "312909",
+    "313723"
+  ],
+  "imageCovers": [
+    "https://www.melijoe.com/images/247153/card_medium.jpg",
+    "https://www.melijoe.com/images/247199/card_medium.jpg"
+  ],
+  "images": [
+    "https://www.melijoe.com/images/247153/image_gallery_large.jpg",
+    "https://www.melijoe.com/images/247199/image_gallery_large.jpg"
+  ],
+  "isFeatured": true,
+  "longDescription": "&#8211; Round neck&#8211; Button closure at the front&#8211; Ribbed cuffs and hem&#8211; Rhinestone details all over",
+  "name": "White Colourblock Dalmation Spots Cardigan",
+  "price": 630,
+  "shortDescription": "&#8211; 100% Cashmere&#8211; Hand wash only",
+  "slug": "white-colourblock-dalmation-spots-cardigan",
+  "variants": [
+    {
+      "_id": "7055418982",
+      "discountPrice": 630,
+      "price": 630,
+      "size": "6 years",
+      "sizeId": "671057"
+    },
+    {
+      "_id": "70554593694",
+      "discountPrice": 635,
+      "price": 635,
+      "size": "10 years",
+      "sizeId": "671010"
+    },
+    {
+      "_id": "70554702517",
+      "discountPrice": 645,
+      "price": 645,
+      "size": "12 years",
+      "sizeId": "671005"
+    }
+  ]
+},{
+  "_id": "21221",
+  "brand": "Stella McCartney Kids",
+  "brandId": "000200",
+  "categories": [
+    "320"
+  ],
+  "categoryPath": "/girl/clothing/cardigans;",
+  "color": "673087",
+  "createAt": {
+    "$date": "2021-12-03T08:08:25.262Z"
+  },
+  "discountPrice": 117,
+  "facets": [
+    {
+      "_id": "000200",
+      "name": "Stella McCartney Kids",
+      "type": "Brands"
+    },
+    {
+      "_id": "673087",
+      "name": "White",
+      "type": "Colors"
+    },
+    {
+      "_id": "313681",
+      "name": "Occasion Cardigans",
+      "type": "Products"
+    },
+    {
+      "_id": "312909",
+      "name": "Cardigans",
+      "type": "Categories"
+    },
+    {
+      "_id": "674079",
+      "name": "Girl",
+      "type": "Genders"
+    },
+    {
+      "_id": "313723",
+      "name": "Cardigans",
+      "type": "Products"
+    },
+    {
+      "_id": "671002",
+      "name": "2 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671044",
+      "name": "3 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671012",
+      "name": "4 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671043",
+      "name": "5 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671057",
+      "name": "6 years",
+      "type": "Clothing sizes"
+    }
+  ],
+  "filters": [
+    "313681",
+    "312909",
+    "674079",
+    "313723"
+  ],
+  "imageCovers": [
+    "https://www.melijoe.com/images/259985/card_medium.jpg",
+    "https://www.melijoe.com/images/260002/card_medium.jpg"
+  ],
+  "images": [
+    "https://www.melijoe.com/images/259985/image_gallery_large.jpg",
+    "https://www.melijoe.com/images/260002/image_gallery_large.jpg"
+  ],
+  "isFeatured": true,
+  "longDescription": "&#8211; Button closure at the front&#8211; Ribbed cuffs and hem&#8211; Knitted heart shapes all over",
+  "name": "White Hearts Cardigan",
+  "price": 117,
+  "shortDescription": "&#8211; 80% Cotton, 13% Polyester, 5% Wool, 1% Polyamide, 1% Metallic Fiber&#8211; Machine washable 30 degrees",
+  "slug": "white-hearts-cardigan",
+  "variants": [
+    {
+      "_id": "21221431027",
+      "discountPrice": 117,
+      "price": 117,
+      "size": "2 years",
+      "sizeId": "671002"
+    },
+    {
+      "_id": "21221627247",
+      "discountPrice": 117,
+      "price": 117,
+      "size": "3 years",
+      "sizeId": "671044"
+    },
+    {
+      "_id": "21221987945",
+      "discountPrice": 117,
+      "price": 117,
+      "size": "4 years",
+      "sizeId": "671012"
+    },
+    {
+      "_id": "2122128046",
+      "discountPrice": 117,
+      "price": 117,
+      "size": "5 years",
+      "sizeId": "671043"
+    },
+    {
+      "_id": "21221936853",
+      "discountPrice": 117,
+      "price": 117,
+      "size": "6 years",
+      "sizeId": "671057"
+    }
+  ]
+},{
+  "_id": "1555",
+  "brand": "Bonpoint",
+  "brandId": "000115",
+  "categories": [
+    "320"
+  ],
+  "categoryPath": "/girl/clothing/cardigans;",
+  "color": "673097",
+  "createAt": {
+    "$date": "2021-12-03T08:08:34.254Z"
+  },
+  "discountPrice": 295,
+  "facets": [
+    {
+      "_id": "000115",
+      "name": "Bonpoint",
+      "type": "Brands"
+    },
+    {
+      "_id": "673097",
+      "name": "Beige",
+      "type": "Colors"
+    },
+    {
+      "_id": "313681",
+      "name": "Occasion Cardigans",
+      "type": "Products"
+    },
+    {
+      "_id": "312909",
+      "name": "Cardigans",
+      "type": "Categories"
+    },
+    {
+      "_id": "674079",
+      "name": "Girl",
+      "type": "Genders"
+    },
+    {
+      "_id": "313723",
+      "name": "Cardigans",
+      "type": "Products"
+    },
+    {
+      "_id": "671012",
+      "name": "4 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671057",
+      "name": "6 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671022",
+      "name": "8 years",
+      "type": "Clothing sizes"
+    }
+  ],
+  "filters": [
+    "313681",
+    "312909",
+    "674079",
+    "313723"
+  ],
+  "imageCovers": [
+    "https://www.melijoe.com/images/247149/card_medium.jpg",
+    "https://www.melijoe.com/images/247150/card_medium.jpg"
+  ],
+  "images": [
+    "https://www.melijoe.com/images/247149/image_gallery_large.jpg",
+    "https://www.melijoe.com/images/247150/image_gallery_large.jpg"
+  ],
+  "isFeatured": true,
+  "longDescription": "&#8211; V-neck design&#8211; Button closure at the front&#8211; Ribbed material&#8211; Two front pockets",
+  "name": "Beige Cardigan",
+  "price": 295,
+  "shortDescription": "&#8211; 55% Polyamide, 36% Wool, 9% Cashmere&#8211; Machine washable 30 degrees",
+  "slug": "beige-cardigan",
+  "variants": [
+    {
+      "_id": "1555578244",
+      "discountPrice": 295,
+      "price": 295,
+      "size": "4 years",
+      "sizeId": "671012"
+    },
+    {
+      "_id": "1555972045",
+      "discountPrice": 295,
+      "price": 295,
+      "size": "6 years",
+      "sizeId": "671057"
+    },
+    {
+      "_id": "1555285142",
+      "discountPrice": 305,
+      "price": 305,
+      "size": "8 years",
+      "sizeId": "671022"
+    }
+  ]
+},{
+  "_id": "71067",
+  "brand": "Tartine et Chocolat",
+  "brandId": "000219",
+  "categories": [
+    "320"
+  ],
+  "categoryPath": "/girl/clothing/cardigans;",
+  "color": "673092",
+  "createAt": {
+    "$date": "2021-12-03T08:08:43.052Z"
+  },
+  "discountPrice": 126,
+  "facets": [
+    {
+      "_id": "000219",
+      "name": "Tartine et Chocolat",
+      "type": "Brands"
+    },
+    {
+      "_id": "673092",
+      "name": "Pink",
+      "type": "Colors"
+    },
+    {
+      "_id": "313681",
+      "name": "Occasion Cardigans",
+      "type": "Products"
+    },
+    {
+      "_id": "312909",
+      "name": "Cardigans",
+      "type": "Categories"
+    },
+    {
+      "_id": "674079",
+      "name": "Girl",
+      "type": "Genders"
+    },
+    {
+      "_id": "313723",
+      "name": "Cardigans",
+      "type": "Products"
+    },
+    {
+      "_id": "671044",
+      "name": "3 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671012",
+      "name": "4 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671005",
+      "name": "12 years",
+      "type": "Clothing sizes"
+    }
+  ],
+  "filters": [
+    "313681",
+    "312909",
+    "674079",
+    "313723"
+  ],
+  "imageCovers": [
+    "https://www.melijoe.com/images/220294/card_medium.jpg",
+    "https://www.melijoe.com/images/220300/card_medium.jpg"
+  ],
+  "images": [
+    "https://www.melijoe.com/images/220294/image_gallery_large.jpg",
+    "https://www.melijoe.com/images/220300/image_gallery_large.jpg"
+  ],
+  "longDescription": "&#8211; Button closure at the front&#8211; Ribbed crew neckline&#8211; Embroidered flowers on the shoulders and on the sleeves",
+  "name": "Pink Floral Cardigan",
+  "price": 126,
+  "shortDescription": "&#8211; 70% Cotton, 25% Wool, 5% Cashmere&#8211; Machine washable 30 degrees",
+  "slug": "pink-floral-cardigan",
+  "variants": [
+    {
+      "_id": "7106747638",
+      "discountPrice": 126,
+      "price": 126,
+      "size": "3 years",
+      "sizeId": "671044"
+    },
+    {
+      "_id": "71067144179",
+      "discountPrice": 126,
+      "price": 126,
+      "size": "4 years",
+      "sizeId": "671012"
+    },
+    {
+      "_id": "71067437745",
+      "discountPrice": 145,
+      "price": 145,
+      "size": "12 years",
+      "sizeId": "671005"
+    }
+  ]
+},{
+  "_id": "49984",
+  "brand": "The Marc Jacobs",
+  "brandId": "000205",
+  "categories": [
+    "320"
+  ],
+  "categoryPath": "/girl/clothing/cardigans;",
+  "color": "673081",
+  "createAt": {
+    "$date": "2021-12-03T08:08:51.651Z"
+  },
+  "discountPrice": 126,
+  "facets": [
+    {
+      "_id": "000205",
+      "name": "The Marc Jacobs",
+      "type": "Brands"
+    },
+    {
+      "_id": "673081",
+      "name": "Brown",
+      "type": "Colors"
+    },
+    {
+      "_id": "312909",
+      "name": "Cardigans",
+      "type": "Categories"
+    },
+    {
+      "_id": "674079",
+      "name": "Girl",
+      "type": "Genders"
+    },
+    {
+      "_id": "313723",
+      "name": "Cardigans",
+      "type": "Products"
+    },
+    {
+      "_id": "671057",
+      "name": "6 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671022",
+      "name": "8 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671010",
+      "name": "10 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671005",
+      "name": "12 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671078",
+      "name": "13+ years",
+      "type": "Clothing sizes"
+    }
+  ],
+  "filters": [
+    "312909",
+    "674079",
+    "313723"
+  ],
+  "imageCovers": [
+    "https://www.melijoe.com/images/223060/card_medium.jpg",
+    "https://www.melijoe.com/images/223061/card_medium.jpg"
+  ],
+  "images": [
+    "https://www.melijoe.com/images/223060/image_gallery_large.jpg",
+    "https://www.melijoe.com/images/223061/image_gallery_large.jpg",
+    "https://www.melijoe.com/images/223062/image_gallery_large.jpg"
+  ],
+  "longDescription": "&#8211; Zip closure at the front&#8211; Contrast-colored chest pocket with a zip closure&#8211; Sherpa-lined high collar&#8211; Jersey lining",
+  "name": "Brown Cheetah Sherpa Zip Sweater",
+  "price": 126,
+  "shortDescription": "&#8211; Shell: 100% Polyester&#8211; Lining: 100% Cotton&#8211; Trimming: 55% Cotton, 45% Polyamide&#8211; Machine washable 30 degrees",
+  "slug": "brown-cheetah-sherpa-zip-sweater",
+  "variants": [
+    {
+      "_id": "4998444957",
+      "discountPrice": 126,
+      "price": 126,
+      "size": "6 years",
+      "sizeId": "671057"
+    },
+    {
+      "_id": "49984138421",
+      "discountPrice": 126,
+      "price": 126,
+      "size": "8 years",
+      "sizeId": "671022"
+    },
+    {
+      "_id": "4998427163",
+      "discountPrice": 126,
+      "price": 126,
+      "size": "10 years",
+      "sizeId": "671010"
+    },
+    {
+      "_id": "49984344942",
+      "discountPrice": 126,
+      "price": 126,
+      "size": "12 years",
+      "sizeId": "671005"
+    },
+    {
+      "_id": "4998455754",
+      "discountPrice": 126,
+      "price": 126,
+      "size": "13+ years",
+      "sizeId": "671078"
+    }
+  ]
+},{
+  "_id": "36468",
+  "brand": "Petit Bateau",
+  "brandId": "000187",
+  "categories": [
+    "320"
+  ],
+  "categoryPath": "/girl/clothing/cardigans;",
+  "color": "673082",
+  "createAt": {
+    "$date": "2021-12-03T08:09:01.184Z"
+  },
+  "discountPrice": 59,
+  "facets": [
+    {
+      "_id": "000187",
+      "name": "Petit Bateau",
+      "type": "Brands"
+    },
+    {
+      "_id": "673082",
+      "name": "Black",
+      "type": "Colors"
+    },
+    {
+      "_id": "674079",
+      "name": "Girl",
+      "type": "Genders"
+    },
+    {
+      "_id": "313681",
+      "name": "Occasion Cardigans",
+      "type": "Products"
+    },
+    {
+      "_id": "312909",
+      "name": "Cardigans",
+      "type": "Categories"
+    },
+    {
+      "_id": "671044",
+      "name": "3 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671012",
+      "name": "4 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671043",
+      "name": "5 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671057",
+      "name": "6 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671010",
+      "name": "10 years",
+      "type": "Clothing sizes"
+    }
+  ],
+  "filters": [
+    "674079",
+    "313681",
+    "312909"
+  ],
+  "imageCovers": [
+    "https://www.melijoe.com/images/254650/card_medium.jpg",
+    "https://www.melijoe.com/images/254653/card_medium.jpg"
+  ],
+  "images": [
+    "https://www.melijoe.com/images/254650/image_gallery_large.jpg",
+    "https://www.melijoe.com/images/254653/image_gallery_large.jpg",
+    "https://www.melijoe.com/images/254652/image_gallery_large.jpg"
+  ],
+  "longDescription": "&#8211; Regular fit&#8211; Quilted design&#8211; Snap button closure at the front",
+  "name": "Navy Cardigan",
+  "price": 59,
+  "shortDescription": "&#8211; 75% Cotton, 25% Polyester&#8211; Machine washable 30 degrees",
+  "slug": "navy-cardigan",
+  "variants": [
+    {
+      "_id": "36468553479",
+      "discountPrice": 59,
+      "price": 59,
+      "size": "3 years",
+      "sizeId": "671044"
+    },
+    {
+      "_id": "36468139515",
+      "discountPrice": 59,
+      "price": 59,
+      "size": "4 years",
+      "sizeId": "671012"
+    },
+    {
+      "_id": "36468688988",
+      "discountPrice": 65,
+      "price": 65,
+      "size": "5 years",
+      "sizeId": "671043"
+    },
+    {
+      "_id": "36468982950",
+      "discountPrice": 65,
+      "price": 65,
+      "size": "6 years",
+      "sizeId": "671057"
+    },
+    {
+      "_id": "36468337853",
+      "discountPrice": 65,
+      "price": 65,
+      "size": "10 years",
+      "sizeId": "671010"
+    }
+  ]
+},{
+  "_id": "83498",
+  "brand": "Wheat",
+  "brandId": "000212",
+  "categories": [
+    "320"
+  ],
+  "categoryPath": "/girl/clothing/cardigans;",
+  "color": "673091",
+  "createAt": {
+    "$date": "2021-12-03T08:09:19.476Z"
+  },
+  "discountPrice": 33,
+  "facets": [
+    {
+      "_id": "000212",
+      "name": "Wheat",
+      "type": "Brands"
+    },
+    {
+      "_id": "673091",
+      "name": "Green",
+      "type": "Colors"
+    },
+    {
+      "_id": "674079",
+      "name": "Girl",
+      "type": "Genders"
+    },
+    {
+      "_id": "313681",
+      "name": "Occasion Cardigans",
+      "type": "Products"
+    },
+    {
+      "_id": "312909",
+      "name": "Cardigans",
+      "type": "Categories"
+    },
+    {
+      "_id": "671993",
+      "name": "0-3 months",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671060",
+      "name": "3-6 months",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671032",
+      "name": "6-9 months",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671009",
+      "name": "9-12 months",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671002",
+      "name": "2 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671044",
+      "name": "3 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671012",
+      "name": "4 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671043",
+      "name": "5 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671057",
+      "name": "6 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671031",
+      "name": "7 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671022",
+      "name": "8 years",
+      "type": "Clothing sizes"
+    }
+  ],
+  "filters": [
+    "674079",
+    "313681",
+    "312909"
+  ],
+  "imageCovers": [
+    "https://www.melijoe.com/images/261610/card_medium.jpg",
+    "https://www.melijoe.com/images/261614/card_medium.jpg"
+  ],
+  "images": [
+    "https://www.melijoe.com/images/261610/image_gallery_large.jpg",
+    "https://www.melijoe.com/images/261614/image_gallery_large.jpg"
+  ],
+  "longDescription": "&#8211; Knitted design with pointelle details&#8211; Button closure at the front&#8211; This product is crafted with sustainable organic cotton",
+  "name": "Winter Moss Maja Cardigan",
+  "price": 33,
+  "shortDescription": "&#8211; 100% Organic Cotton&#8211; Machine washable 30 degrees",
+  "slug": "winter-moss-maja-cardigan",
+  "variants": [
+    {
+      "_id": "83498981300",
+      "discountPrice": 33,
+      "price": 33,
+      "size": "0-3 months",
+      "sizeId": "671993"
+    },
+    {
+      "_id": "83498601151",
+      "discountPrice": 33,
+      "price": 33,
+      "size": "3-6 months",
+      "sizeId": "671060"
+    },
+    {
+      "_id": "83498982329",
+      "discountPrice": 33,
+      "price": 33,
+      "size": "6-9 months",
+      "sizeId": "671032"
+    },
+    {
+      "_id": "83498239752",
+      "discountPrice": 33,
+      "price": 33,
+      "size": "9-12 months",
+      "sizeId": "671009"
+    },
+    {
+      "_id": "83498199479",
+      "discountPrice": 33,
+      "price": 33,
+      "size": "2 years",
+      "sizeId": "671002"
+    },
+    {
+      "_id": "83498584632",
+      "discountPrice": 42,
+      "price": 42,
+      "size": "3 years",
+      "sizeId": "671044"
+    },
+    {
+      "_id": "83498352772",
+      "discountPrice": 42,
+      "price": 42,
+      "size": "4 years",
+      "sizeId": "671012"
+    },
+    {
+      "_id": "83498102648",
+      "discountPrice": 42,
+      "price": 42,
+      "size": "5 years",
+      "sizeId": "671043"
+    },
+    {
+      "_id": "8349843761",
+      "discountPrice": 42,
+      "price": 42,
+      "size": "6 years",
+      "sizeId": "671057"
+    },
+    {
+      "_id": "8349815525",
+      "discountPrice": 42,
+      "price": 42,
+      "size": "7 years",
+      "sizeId": "671031"
+    },
+    {
+      "_id": "83498573394",
+      "discountPrice": 42,
+      "price": 42,
+      "size": "8 years",
+      "sizeId": "671022"
+    }
+  ]
+},{
+  "_id": "92520",
+  "brand": "Petit Bateau",
+  "brandId": "000187",
+  "categories": [
+    "320"
+  ],
+  "categoryPath": "/girl/clothing/cardigans;",
+  "color": "673092",
+  "createAt": {
+    "$date": "2021-12-03T08:09:35.404Z"
+  },
+  "discountPrice": 59,
+  "facets": [
+    {
+      "_id": "000187",
+      "name": "Petit Bateau",
+      "type": "Brands"
+    },
+    {
+      "_id": "673092",
+      "name": "Pink",
+      "type": "Colors"
+    },
+    {
+      "_id": "674079",
+      "name": "Girl",
+      "type": "Genders"
+    },
+    {
+      "_id": "313681",
+      "name": "Occasion Cardigans",
+      "type": "Products"
+    },
+    {
+      "_id": "312909",
+      "name": "Cardigans",
+      "type": "Categories"
+    },
+    {
+      "_id": "671044",
+      "name": "3 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671043",
+      "name": "5 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671057",
+      "name": "6 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671010",
+      "name": "10 years",
+      "type": "Clothing sizes"
+    }
+  ],
+  "filters": [
+    "674079",
+    "313681",
+    "312909"
+  ],
+  "imageCovers": [
+    "https://www.melijoe.com/images/256620/card_medium.jpg",
+    "https://www.melijoe.com/images/256639/card_medium.jpg"
+  ],
+  "images": [
+    "https://www.melijoe.com/images/256620/image_gallery_large.jpg",
+    "https://www.melijoe.com/images/256639/image_gallery_large.jpg"
+  ],
+  "longDescription": "&#8211; Quilted pattern&#8211; Snap buttons at the front",
+  "name": "Pink Quilt Cardigan",
+  "price": 59,
+  "shortDescription": "&#8211; 75% Cotton, 25% Polyester&#8211; Machine washable 40 degrees",
+  "slug": "pink-quilt-cardigan",
+  "variants": [
+    {
+      "_id": "92520207858",
+      "discountPrice": 59,
+      "price": 59,
+      "size": "3 years",
+      "sizeId": "671044"
+    },
+    {
+      "_id": "92520350719",
+      "discountPrice": 59,
+      "price": 59,
+      "size": "5 years",
+      "sizeId": "671043"
+    },
+    {
+      "_id": "92520581032",
+      "discountPrice": 65,
+      "price": 65,
+      "size": "6 years",
+      "sizeId": "671057"
+    },
+    {
+      "_id": "92520320414",
+      "discountPrice": 65,
+      "price": 65,
+      "size": "10 years",
+      "sizeId": "671010"
+    }
+  ]
+},{
+  "_id": "77506",
+  "brand": "Stella McCartney Kids",
+  "brandId": "000200",
+  "categories": [
+    "320"
+  ],
+  "categoryPath": "/girl/clothing/cardigans;",
+  "color": "673082",
+  "createAt": {
+    "$date": "2021-12-03T08:09:47.606Z"
+  },
+  "discountPrice": 130,
+  "facets": [
+    {
+      "_id": "000200",
+      "name": "Stella McCartney Kids",
+      "type": "Brands"
+    },
+    {
+      "_id": "673082",
+      "name": "Black",
+      "type": "Colors"
+    },
+    {
+      "_id": "674079",
+      "name": "Girl",
+      "type": "Genders"
+    },
+    {
+      "_id": "313681",
+      "name": "Occasion Cardigans",
+      "type": "Products"
+    },
+    {
+      "_id": "312909",
+      "name": "Cardigans",
+      "type": "Categories"
+    },
+    {
+      "_id": "671012",
+      "name": "4 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671043",
+      "name": "5 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671022",
+      "name": "8 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671010",
+      "name": "10 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671005",
+      "name": "12 years",
+      "type": "Clothing sizes"
+    }
+  ],
+  "filters": [
+    "674079",
+    "313681",
+    "312909"
+  ],
+  "imageCovers": [
+    "https://www.melijoe.com/images/232078/card_medium.jpg",
+    "https://www.melijoe.com/images/232062/card_medium.jpg"
+  ],
+  "images": [
+    "https://www.melijoe.com/images/232078/image_gallery_large.jpg",
+    "hhttps://www.melijoe.com/images/232062/image_gallery_large.jpg"
+  ],
+  "longDescription": "&#8211; Sequin design&#8211; V-neck design&#8211; Button closure at the front&#8211; Ribbed cuffs and hem",
+  "name": "Black Multicolor Sequin Cardigan",
+  "price": 130,
+  "shortDescription": "&#8211; 95% Cotton, 5% Elastane&#8211; Machine washable 30 degrees",
+  "slug": "black-multicolor-sequin-cardigan",
+  "variants": [
+    {
+      "_id": "77506123119",
+      "discountPrice": 130,
+      "price": 130,
+      "size": "4 years",
+      "sizeId": "671012"
+    },
+    {
+      "_id": "77506677077",
+      "discountPrice": 130,
+      "price": 130,
+      "size": "5 years",
+      "sizeId": "671043"
+    },
+    {
+      "_id": "77506942877",
+      "discountPrice": 150,
+      "price": 150,
+      "size": "8 years",
+      "sizeId": "671022"
+    },
+    {
+      "_id": "77506103971",
+      "discountPrice": 150,
+      "price": 150,
+      "size": "10 years",
+      "sizeId": "671010"
+    },
+    {
+      "_id": "77506316195",
+      "discountPrice": 150,
+      "price": 150,
+      "size": "12 years",
+      "sizeId": "671005"
+    }
+  ]
+},{
+  "_id": "46113",
+  "brand": "MSGM",
+  "brandId": "000174",
+  "categories": [
+    "320"
+  ],
+  "categoryPath": "/girl/clothing/cardigans;",
+  "color": "673092",
+  "createAt": {
+    "$date": "2021-12-03T08:10:05.287Z"
+  },
+  "discountPrice": 126,
+  "facets": [
+    {
+      "_id": "000174",
+      "name": "MSGM",
+      "type": "Brands"
+    },
+    {
+      "_id": "673092",
+      "name": "Pink",
+      "type": "Colors"
+    },
+    {
+      "_id": "674079",
+      "name": "Girl",
+      "type": "Genders"
+    },
+    {
+      "_id": "313754",
+      "name": "Hooded Sweatshirts",
+      "type": "Products"
+    },
+    {
+      "_id": "313855",
+      "name": "Hooded cardigans",
+      "type": "Products"
+    },
+    {
+      "_id": "312902",
+      "name": "Sweatshirts",
+      "type": "Categories"
+    },
+    {
+      "_id": "313723",
+      "name": "Cardigans",
+      "type": "Products"
+    },
+    {
+      "_id": "671012",
+      "name": "4 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671057",
+      "name": "6 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671022",
+      "name": "8 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671010",
+      "name": "10 years",
+      "type": "Clothing sizes"
+    },
+    {
+      "_id": "671005",
+      "name": "12 years",
+      "type": "Clothing sizes"
+    }
+  ],
+  "filters": [
+    "674079",
+    "313754",
+    "313855",
+    "312902",
+    "313723"
+  ],
+  "imageCovers": [
+    "https://www.melijoe.com/images/246918/card_medium.jpg",
+    "https://www.melijoe.com/images/246919/card_medium.jpg"
+  ],
+  "images": [
+    "https://www.melijoe.com/images/246918/image_gallery_large.jpg",
+    "https://www.melijoe.com/images/246919/image_gallery_large.jpg"
+  ],
+  "longDescription": "&#8211; Jersey-lined hood&#8211; Brushed fleece lining&#8211; Ribbed cuffs and hem&#8211; Quilted heart shape at the front",
+  "name": "Pink Quilted Heart Hoodie",
+  "price": 126,
+  "shortDescription": "&#8211; 100% Cotton&#8211; Machine washable 30 degrees",
+  "slug": "pink-quilted-heart-hoodie",
+  "variants": [
+    {
+      "_id": "46113867660",
+      "discountPrice": 126,
+      "price": 126,
+      "size": "4 years",
+      "sizeId": "671012"
+    },
+    {
+      "_id": "46113763741",
+      "discountPrice": 126,
+      "price": 126,
+      "size": "6 years",
+      "sizeId": "671057"
+    },
+    {
+      "_id": "46113468967",
+      "discountPrice": 126,
+      "price": 126,
+      "size": "8 years",
+      "sizeId": "671022"
+    },
+    {
+      "_id": "4611357752",
+      "discountPrice": 126,
+      "price": 126,
+      "size": "10 years",
+      "sizeId": "671010"
+    },
+    {
+      "_id": "46113800055",
+      "discountPrice": 126,
+      "price": 126,
+      "size": "12 years",
+      "sizeId": "671005"
+    }
+  ]
+}]

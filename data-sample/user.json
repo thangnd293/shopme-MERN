@@ -1,0 +1,41 @@
+[{
+  "_id": {
+    "$oid": "61a1c98f52c4976f535f8764"
+  },
+  "email": "test@gmail.com",
+  "fname": "test",
+  "lname": "test",
+  "password": "ri4M+nVkTF8Iz3DZIaxEpA==:7hi0XP+gbYK1BVfGxmy8dg==",
+  "phoneNumber": "000000000",
+  "role": "USER",
+  "createAt": {
+    "$date": "2021-12-01T16:24:08.898Z"
+  }
+},{
+  "_id": {
+    "$oid": "61a1cb7a06864249012094aa"
+  },
+  "email": "test@gmail.com",
+  "fname": "test",
+  "lname": "test",
+  "password": "vLS8MJoJbrlUBEmFDESnow==:MGZlDcvlltaeu+gVujdcew==",
+  "phoneNumber": "000000000",
+  "role": "USER",
+  "createAt": {
+    "$date": "2021-12-03T07:37:24.666Z"
+  }
+},{
+  "_id": {
+    "$oid": "61a9cf335ba9f4221282cf54"
+  },
+  "email": "dthang2509@gmail.com",
+  "fname": "admin",
+  "isVerify": true,
+  "lname": "admin",
+  "password": "6FlwPYWzl1QKJYTcIh44iQ==:C3X0qM5pPrNSK2gI6Kid0w==",
+  "phoneNumber": "000000000",
+  "role": "ADMIN",
+  "createAt": {
+    "$date": "2021-12-04T04:14:00.752Z"
+  }
+}]
