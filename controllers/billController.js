@@ -2,8 +2,6 @@ const Bill = require("./../models/bill");
 const catchAsync = require("./../utils/catchAsync");
 const Cart = require("./../models/cart");
 const AppError = require("../utils/appError");
-const fs = require("fs");
-const sendEmail = require("./../utils/email");
 
 exports.createBill = catchAsync(async (req, resp, next) => {
   const { shipping_address, data, quantityTotal, total } = req.body;
@@ -24,7 +22,10 @@ exports.createBill = catchAsync(async (req, resp, next) => {
   };
 
   const newBill = await Bill.create(billObj);
-  const cart = await Cart.findOne({ user: req.user.id });
+
+  const cart = await Cart.findOne({
+    user: req.user.id,
+  });
 
   if (!cart) {
     return next(new AppError("Bad request", 400));

@@ -9,19 +9,9 @@ process.on("uncaughtException", (err) => {
   process.exit(1);
 });
 
-const connectString = process.env.DATABASE.replace(
-  "<PASSWORD>",
-  process.env.DATABASE_PASSWORD
-);
-
-// mongoose
-//   .connect(connectString)
-//   .then(() => console.log('Connection database successfully'));
-
 const app = require("./app");
 
 const mongoUrl = `mongodb://admin:DRX1OYxkHm9PDBaH@sg-thangnd-48377.servers.mongodirector.com:27017/test?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false`;
-// const mongoUrl = `mongodb+srv://thangnd:kVCjpMjwvKd5vzFS@shopme.e2nl2.mongodb.net/test?retryWrites=true&w=majority`;
 
 mongoose
   .connect(mongoUrl)
