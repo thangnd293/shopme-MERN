@@ -11,7 +11,7 @@ process.on("uncaughtException", (err) => {
 
 const app = require("./app");
 
-const mongoUrl = `mongodb://admin:DRX1OYxkHm9PDBaH@sg-thangnd-48377.servers.mongodirector.com:27017/test?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false`;
+const mongoUrl = `mongodb://admin:5nK1prGpXbG1FBV9@sg-thangnd-49121.servers.mongodirector.com:27017/shopme?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false`;
 
 mongoose
   .connect(mongoUrl)
